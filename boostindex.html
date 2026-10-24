@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time Tracker & Task Manager</title>
+    <title>Boost</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -365,40 +365,426 @@
             background-color: #f57c00;
         }
 
-        /* Checklist Styles */
-        .checklist-item {
+        /* Header & Quick Links */
+        .app-header {
             display: flex;
             align-items: center;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
             margin-bottom: 10px;
-            background: #fafafa;
         }
 
-        .checklist-item.completed {
-            background: #e8f5e8;
-            text-decoration: line-through;
-            opacity: 0.7;
+        .app-header h1 {
+            margin: 0;
         }
 
-        .checklist-item input[type="checkbox"] {
-            width: auto;
-            margin-right: 10px;
+        /* Apps & Links Styles */
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
         }
 
-        .checklist-item span {
-            flex-grow: 1;
+        .link-card {
+            position: relative;
         }
 
-        .add-item {
+        .quick-link {
             display: flex;
-            margin-bottom: 20px;
+            align-items: center;
+            justify-content: center;
+            min-height: 90px;
+            padding: 15px;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
         }
 
-        .add-item input {
-            flex-grow: 1;
-            margin-right: 10px;
+        .quick-link:hover {
+            opacity: 0.85;
+        }
+
+        .link-remove {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            background: rgba(0,0,0,0.25);
+            padding: 0 7px;
+            margin: 0;
+            font-size: 13px;
+            line-height: 20px;
+            border-radius: 50%;
+        }
+
+        .link-remove:hover {
+            background: #f44336;
+        }
+
+        .add-link {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .add-link input {
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .add-link button {
+            margin-right: 0;
+        }
+
+        /* Main Tabs */
+        .main-tabs {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #4CAF50;
+        }
+
+        .main-tabs .tab {
+            margin-right: 0;
+            font-size: 15px;
+        }
+
+        .main-tabs .tab:not(.active) {
+            color: #333;
+        }
+
+        .main-tabs .tab:not(.active):hover {
+            background: #ccc;
+        }
+
+        .layout-toggle {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: normal;
+            font-size: 14px;
+            margin-bottom: 4px;
+            cursor: pointer;
+        }
+
+        .layout-toggle input {
+            width: auto;
+        }
+
+        .workspace.side-by-side {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .workspace.side-by-side .tab-content {
+            display: block;
+        }
+
+        .workspace.side-by-side .focus-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .focus-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .focus-grid .container {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 800px) {
+            .workspace.side-by-side,
+            .focus-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .small-btn {
+            padding: 5px 10px;
+            font-size: 13px;
+            margin-right: 5px;
+        }
+
+        /* Applications Styles */
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0 15px;
+        }
+
+        .status-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 20px 0 15px;
+        }
+
+        .status-filter {
+            background: #eee;
+            color: #333;
+            font-size: 13px;
+            padding: 6px 12px;
+            margin-right: 0;
+            border-radius: 16px;
+        }
+
+        .status-filter:hover {
+            background: #ddd;
+        }
+
+        .status-filter.active {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .application-item {
+            border: 1px solid #ddd;
+            border-left: 5px solid #9e9e9e;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            background: #f9f9f9;
+        }
+
+        .application-item.applied { border-left-color: #2196F3; }
+        .application-item.interviewing { border-left-color: #ff9800; }
+        .application-item.offer { border-left-color: #4CAF50; }
+        .application-item.rejected { border-left-color: #f44336; opacity: 0.75; }
+
+        .application-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .application-head h4 {
+            margin: 0;
+            color: #333;
+        }
+
+        .application-head .position {
+            font-weight: normal;
+            color: #666;
+        }
+
+        .application-item p {
+            margin: 8px 0;
+            color: #666;
+        }
+
+        .status-select {
+            width: auto;
+            padding: 5px 8px;
+            font-size: 13px;
+        }
+
+        /* Reminder Steps & Drag */
+        .reminder-head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .reminder-head h4 {
+            margin: 0;
+            flex: 1;
+        }
+
+        .drag-handle {
+            cursor: grab;
+            color: #999;
+            font-size: 18px;
+            user-select: none;
+            padding: 0 4px;
+        }
+
+        .drag-handle:active {
+            cursor: grabbing;
+        }
+
+        .reminder-item.dragging {
+            opacity: 0.4;
+            border-style: dashed;
+        }
+
+        .step-progress {
+            font-size: 13px;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .steps {
+            margin: 10px 0;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 8px;
+            border-radius: 4px;
+            background: white;
+            border: 1px solid #eee;
+            margin-bottom: 5px;
+        }
+
+        .step-item input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+
+        .step-item span {
+            flex: 1;
+        }
+
+        .step-item.completed span {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .step-delete {
+            background: none;
+            color: #999;
+            padding: 0 6px;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .step-delete:hover {
+            background: none;
+            color: #f44336;
+        }
+
+        .add-step {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .add-step input {
+            padding: 6px 8px;
+            font-size: 13px;
+        }
+
+        .add-step button {
+            white-space: nowrap;
+        }
+
+        /* Timer Styles */
+        .timer-display {
+            font-size: 64px;
+            font-weight: bold;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .timer-display.done {
+            color: #f44336;
+        }
+
+        .timer-label {
+            text-align: center;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .timer-presets,
+        .timer-controls {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .timer-presets button,
+        .timer-controls button {
+            margin-right: 0;
+        }
+
+        .preset-btn {
+            background: #eee;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .preset-btn:hover {
+            background: #ddd;
+        }
+
+        .preset-btn.active {
+            background: #2196F3;
+            color: white;
+        }
+
+        .timer-settings {
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+        }
+
+        .timer-settings h4 {
+            margin: 0 0 10px 0;
+            color: #555;
+        }
+
+        .timer-settings-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .timer-settings label {
+            font-size: 13px;
+            font-weight: normal;
+        }
+
+        .timer-settings input {
+            padding: 6px 8px;
+        }
+
+        .custom-time {
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+        }
+
+        .custom-time > div {
+            flex: 1;
+        }
+
+        .custom-time button {
+            margin-right: 0;
+        }
+
+        /* Scratchpad Styles */
+        .scratchpad {
+            min-height: 300px;
+            font-family: Arial, sans-serif;
+            resize: vertical;
+        }
+
+        .scratchpad-status {
+            font-size: 12px;
+            color: #999;
+            margin: 6px 0 10px;
         }
 
         /* Reminders & Todo Styles */
@@ -482,150 +868,362 @@
     </style>
 </head>
 <body>
-    <h1>Time Tracker & Task Manager</h1>
+    <div class="app-header">
+        <h1>Boost</h1>
+    </div>
 
-    <!-- Checklist Tabs -->
-    <div class="container">
-        <h2>Checklists</h2>
-        <div class="tabs">
-            <button class="tab active" onclick="switchTab('daily')">Daily Checklist</button>
-            <button class="tab" onclick="switchTab('permanent')">Permanent Checklist</button>
-        </div>
+    <div class="main-tabs">
+        <button class="tab" data-tab="applications" onclick="switchMainTab('applications')">Job Applications</button>
+        <button class="tab" data-tab="remindersTab" onclick="switchMainTab('remindersTab')">Reminders</button>
+        <button class="tab" data-tab="focusTab" onclick="switchMainTab('focusTab')">Timer &amp; Scratchpad</button>
+        <button class="tab" data-tab="linksTab" onclick="switchMainTab('linksTab')">Apps &amp; Links</button>
+        <label class="layout-toggle" title="Show Reminders next to the Timer &amp; Scratchpad">
+            <input type="checkbox" id="sideBySideToggle" onchange="setSideBySide(this.checked)">
+            Side by side
+        </label>
+    </div>
 
-        <!-- Daily Checklist -->
-        <div id="daily" class="tab-content active">
-            <div class="add-item">
-                <input type="text" id="newDailyItem" placeholder="Add new daily task..." onkeypress="if(event.key==='Enter') addChecklistItem('daily')">
-                <button onclick="addChecklistItem('daily')">Add Item</button>
-            </div>
-            <div id="dailyChecklist"></div>
-            <button class="clear-btn" onclick="clearChecklist('daily')">Clear Completed</button>
-            <button class="delete-btn" onclick="clearAllChecklist('daily')">Clear All</button>
-        </div>
+    <!-- Applications Tab -->
+    <div id="applications" class="tab-content">
+        <div class="container">
+            <h2>Job Applications</h2>
+            <form id="applicationForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="appCompany">Company:</label>
+                        <input type="text" id="appCompany" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="appPosition">Position:</label>
+                        <input type="text" id="appPosition" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="appStatus">Status:</label>
+                        <select id="appStatus">
+                            <option value="wishlist">Wishlist</option>
+                            <option value="applied" selected>Applied</option>
+                            <option value="interviewing">Interviewing</option>
+                            <option value="offer">Offer</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="appDate">Date Applied:</label>
+                        <input type="date" id="appDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="appLink">Job Posting Link:</label>
+                        <input type="url" id="appLink" placeholder="https://...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="appNotes">Notes:</label>
+                    <textarea id="appNotes" rows="2" placeholder="Contacts, salary, next steps..."></textarea>
+                </div>
+                <button type="submit" id="appSubmitBtn">Add Application</button>
+                <button type="button" onclick="clearApplicationForm()">Clear Form</button>
+            </form>
 
-        <!-- Permanent Checklist -->
-        <div id="permanent" class="tab-content">
-            <div class="add-item">
-                <input type="text" id="newPermanentItem" placeholder="Add new permanent task..." onkeypress="if(event.key==='Enter') addChecklistItem('permanent')">
-                <button onclick="addChecklistItem('permanent')">Add Item</button>
-            </div>
-            <div id="permanentChecklist"></div>
-            <button class="clear-btn" onclick="clearChecklist('permanent')">Clear Completed</button>
-            <button class="delete-btn" onclick="clearAllChecklist('permanent')">Clear All</button>
+            <div class="status-filters" id="statusFilters"></div>
+            <div id="applicationList"></div>
         </div>
     </div>
 
-    <!-- Reminders & Todo Section -->
-    <div class="container">
-        <h2>Reminders & Todo</h2>
-        <form id="reminderForm">
-            <div class="form-group">
-                <label for="title">Title:</label>
-                <input type="text" id="title" name="title" required>
+    <div class="workspace" id="workspace">
+        <!-- Reminders Tab -->
+        <div id="remindersTab" class="tab-content">
+            <div class="container">
+                <h2>Reminders &amp; Todo</h2>
+                <form id="reminderForm">
+                    <div class="form-group">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea id="description" name="description" rows="3" placeholder="Enter details..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="steps">Steps (one per line, optional):</label>
+                        <textarea id="steps" name="steps" rows="3" placeholder="Step 1&#10;Step 2"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="priority">Priority:</label>
+                        <select id="priority" name="priority">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dueDate">Due Date:</label>
+                        <input type="date" id="dueDate" name="dueDate">
+                    </div>
+
+                    <button type="submit" id="reminderSubmitBtn">Add Reminder</button>
+                    <button type="button" onclick="clearReminderForm()">Clear Form</button>
+                </form>
+
+                <p style="color: #999; font-size: 13px; margin-top: 20px;">Drag the ⋮⋮ handle to reorder reminders.</p>
+                <div id="reminders"></div>
+                <button class="clear-btn" onclick="sortRemindersByPriority()">Sort by Priority</button>
+                <button class="delete-btn" onclick="clearAllReminders()">Delete All Reminders</button>
             </div>
+        </div>
 
-            <div class="form-group">
-                <label for="description">Description:</label>
-                <textarea id="description" name="description" rows="3" placeholder="Enter details..."></textarea>
+        <!-- Timer & Scratchpad Tab -->
+        <div id="focusTab" class="tab-content">
+            <div class="focus-grid">
+                <div class="container">
+                    <h2>Timer</h2>
+                    <div class="timer-display" id="timerDisplay">25:00</div>
+                    <div class="timer-label" id="timerLabel">Focus</div>
+                    <div class="timer-presets" id="timerPresets"></div>
+                    <div class="timer-controls">
+                        <button id="timerStartBtn" onclick="toggleTimer()">Start</button>
+                        <button class="clear-btn" onclick="resetTimer()">Reset</button>
+                    </div>
+                    <div class="timer-settings">
+                        <h4>Timer lengths (minutes)</h4>
+                        <div class="timer-settings-grid">
+                            <div>
+                                <label for="presetFocus">Focus</label>
+                                <input type="number" id="presetFocus" min="1" max="600" onchange="updatePreset('focus', this.value)">
+                            </div>
+                            <div>
+                                <label for="presetShort">Short Break</label>
+                                <input type="number" id="presetShort" min="1" max="600" onchange="updatePreset('short', this.value)">
+                            </div>
+                            <div>
+                                <label for="presetLong">Long Break</label>
+                                <input type="number" id="presetLong" min="1" max="600" onchange="updatePreset('long', this.value)">
+                            </div>
+                        </div>
+                        <div class="custom-time">
+                            <div>
+                                <label for="customMinutes">Custom minutes</label>
+                                <input type="number" id="customMinutes" min="0" max="600" placeholder="0">
+                            </div>
+                            <div>
+                                <label for="customSeconds">Seconds</label>
+                                <input type="number" id="customSeconds" min="0" max="59" placeholder="0">
+                            </div>
+                            <button onclick="setCustomTimer()">Set</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h2>Scratchpad</h2>
+                    <textarea id="scratchpad" class="scratchpad" placeholder="Jot anything down... it saves automatically."></textarea>
+                    <div class="scratchpad-status" id="scratchpadStatus"></div>
+                    <button class="small-btn" onclick="copyScratchpad()">Copy</button>
+                    <button class="small-btn delete-btn" onclick="clearScratchpad()">Clear</button>
+                </div>
             </div>
+        </div>
+    </div>
 
-            <div class="form-group">
-                <label for="priority">Priority:</label>
-                <select id="priority" name="priority">
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
-                </select>
-            </div>
+    <!-- Apps & Links Tab -->
+    <div id="linksTab" class="tab-content">
+        <div class="container">
+            <h2>Apps &amp; Links</h2>
+            <div class="link-grid" id="linkGrid"></div>
 
-            <div class="form-group">
-                <label for="dueDate">Due Date:</label>
-                <input type="date" id="dueDate" name="dueDate">
-            </div>
-
-            <button type="submit">Add Reminder</button>
-            <button type="button" onclick="clearReminderForm()">Clear Form</button>
-        </form>
-
-        <div id="reminders" style="margin-top: 20px;"></div>
-        <button class="delete-btn" onclick="clearAllReminders()">Delete All Reminders</button>
+            <h4 style="margin: 25px 0 10px; color: #555;">Add a link</h4>
+            <form id="linkForm" class="add-link">
+                <input type="text" id="linkName" placeholder="Name (e.g. LinkedIn)" required>
+                <input type="url" id="linkUrl" placeholder="https://..." required>
+                <button type="submit">Add Link</button>
+            </form>
+        </div>
     </div>
 
     <script>
         // Initialize everything when page loads
         window.onload = function() {
-            loadChecklist('daily');
-            loadChecklist('permanent');
+            loadApplications();
             loadReminders();
+            initTimer();
+            initScratchpad();
+            loadLinks();
+            setSideBySide(localStorage.getItem('sideBySide') === 'true');
+            switchMainTab(localStorage.getItem('activeTab') || 'applications');
         };
 
-        // Checklist Functions
-        function addChecklistItem(type) {
-            const input = document.getElementById(`new${type.charAt(0).toUpperCase() + type.slice(1)}Item`);
-            const text = input.value.trim();
-            
-            if (text === '') return;
-
-            const checklist = JSON.parse(localStorage.getItem(`${type}Checklist`)) || [];
-            checklist.push({
-                text: text,
-                completed: false,
-                id: Date.now()
-            });
-
-            localStorage.setItem(`${type}Checklist`, JSON.stringify(checklist));
-            input.value = '';
-            loadChecklist(type);
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text == null ? '' : String(text);
+            return div.innerHTML;
         }
 
-        function loadChecklist(type) {
-            const checklist = JSON.parse(localStorage.getItem(`${type}Checklist`)) || [];
-            const container = document.getElementById(`${type}Checklist`);
-            
-            if (checklist.length === 0) {
-                container.innerHTML = '<p>No items yet. Add one above!</p>';
+        // Tab Functions
+        function switchMainTab(tabId) {
+            if (!document.getElementById(tabId)) tabId = 'applications';
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.toggle('active', el.id === tabId));
+            document.getElementById('workspace').style.display = isWorkspaceTab(tabId) ? '' : 'none';
+            updateTabButtons(tabId);
+            localStorage.setItem('activeTab', tabId);
+        }
+
+        // Reminders and Timer & Scratchpad are the tabs that can be shown side by side
+        function isWorkspaceTab(tabId) {
+            return tabId === 'remindersTab' || tabId === 'focusTab';
+        }
+
+        function updateTabButtons(tabId) {
+            const sideBySide = document.getElementById('sideBySideToggle').checked;
+            document.querySelectorAll('.main-tabs .tab').forEach(btn => {
+                const t = btn.dataset.tab;
+                const active = t === tabId || (sideBySide && isWorkspaceTab(t) && isWorkspaceTab(tabId));
+                btn.classList.toggle('active', active);
+            });
+        }
+
+        function setSideBySide(enabled) {
+            document.getElementById('sideBySideToggle').checked = enabled;
+            document.getElementById('workspace').classList.toggle('side-by-side', enabled);
+            localStorage.setItem('sideBySide', enabled);
+            const current = localStorage.getItem('activeTab') || 'applications';
+            // Turning on side by side from another tab jumps straight to the combined view
+            if (enabled && !isWorkspaceTab(current)) {
+                switchMainTab('remindersTab');
+            } else {
+                updateTabButtons(current);
+            }
+        }
+
+        // Applications Functions
+        const STATUS_LABELS = {
+            wishlist: 'Wishlist',
+            applied: 'Applied',
+            interviewing: 'Interviewing',
+            offer: 'Offer',
+            rejected: 'Rejected'
+        };
+        let applicationFilter = 'all';
+
+        document.getElementById('applicationForm').onsubmit = function(e) {
+            e.preventDefault();
+            saveApplication();
+        };
+
+        function getApplications() {
+            return JSON.parse(localStorage.getItem('applications')) || [];
+        }
+
+        function setApplications(applications) {
+            localStorage.setItem('applications', JSON.stringify(applications));
+        }
+
+        function saveApplication() {
+            const form = document.getElementById('applicationForm');
+            const data = {
+                company: document.getElementById('appCompany').value.trim(),
+                position: document.getElementById('appPosition').value.trim(),
+                status: document.getElementById('appStatus').value,
+                dateApplied: document.getElementById('appDate').value,
+                link: document.getElementById('appLink').value.trim(),
+                notes: document.getElementById('appNotes').value.trim()
+            };
+
+            let applications = getApplications();
+            if (form.hasAttribute('data-editing-id')) {
+                const editingId = parseInt(form.getAttribute('data-editing-id'));
+                applications = applications.map(app => app.id === editingId ? { ...app, ...data } : app);
+            } else {
+                applications.unshift({ ...data, id: Date.now() });
+            }
+            setApplications(applications);
+            clearApplicationForm();
+            loadApplications();
+        }
+
+        function clearApplicationForm() {
+            const form = document.getElementById('applicationForm');
+            form.reset();
+            form.removeAttribute('data-editing-id');
+            document.getElementById('appSubmitBtn').textContent = 'Add Application';
+        }
+
+        function loadApplications() {
+            const applications = getApplications();
+
+            const filters = document.getElementById('statusFilters');
+            const counts = { all: applications.length };
+            Object.keys(STATUS_LABELS).forEach(s => counts[s] = applications.filter(a => a.status === s).length);
+            filters.innerHTML = ['all', ...Object.keys(STATUS_LABELS)].map(s => `
+                <button class="status-filter ${applicationFilter === s ? 'active' : ''}" onclick="setApplicationFilter('${s}')">
+                    ${s === 'all' ? 'All' : STATUS_LABELS[s]} (${counts[s]})
+                </button>
+            `).join('');
+
+            const container = document.getElementById('applicationList');
+            const shown = applicationFilter === 'all' ? applications : applications.filter(a => a.status === applicationFilter);
+            if (shown.length === 0) {
+                container.innerHTML = '<p>No applications yet.</p>';
                 return;
             }
 
             container.innerHTML = '';
-            checklist.forEach((item, index) => {
-                const itemDiv = document.createElement('div');
-                itemDiv.className = `checklist-item ${item.completed ? 'completed' : ''}`;
-                itemDiv.innerHTML = `
-                    <input type="checkbox" ${item.completed ? 'checked' : ''} onchange="toggleItem('${type}', ${index})">
-                    <span>${item.text}</span>
-                    <button class="delete-btn" onclick="deleteItem('${type}', ${index})">Delete</button>
+            shown.forEach(app => {
+                const div = document.createElement('div');
+                div.className = `application-item ${app.status}`;
+                const options = Object.entries(STATUS_LABELS).map(([value, label]) =>
+                    `<option value="${value}" ${app.status === value ? 'selected' : ''}>${label}</option>`).join('');
+                const safeLink = /^https?:\/\//i.test(app.link) ? app.link : '';
+                div.innerHTML = `
+                    <div class="application-head">
+                        <h4>${escapeHtml(app.company)} <span class="position">— ${escapeHtml(app.position)}</span></h4>
+                        <select class="status-select" onchange="updateApplicationStatus(${app.id}, this.value)">${options}</select>
+                    </div>
+                    <p><strong>Date Applied:</strong> ${app.dateApplied || 'Not set'}</p>
+                    ${safeLink ? `<p><strong>Posting:</strong> <a href="${escapeHtml(safeLink)}" target="_blank" rel="noopener">${escapeHtml(safeLink)}</a></p>` : ''}
+                    ${app.notes ? `<p><strong>Notes:</strong> ${escapeHtml(app.notes)}</p>` : ''}
+                    <button class="edit-btn small-btn" onclick="editApplication(${app.id})">Edit</button>
+                    <button class="delete-btn small-btn" onclick="deleteApplication(${app.id})">Delete</button>
                 `;
-                container.appendChild(itemDiv);
+                container.appendChild(div);
             });
         }
 
-        function toggleItem(type, index) {
-            let checklist = JSON.parse(localStorage.getItem(`${type}Checklist`)) || [];
-            checklist[index].completed = !checklist[index].completed;
-            localStorage.setItem(`${type}Checklist`, JSON.stringify(checklist));
-            loadChecklist(type);
+        function setApplicationFilter(status) {
+            applicationFilter = status;
+            loadApplications();
         }
 
-        function deleteItem(type, index) {
-            let checklist = JSON.parse(localStorage.getItem(`${type}Checklist`)) || [];
-            checklist.splice(index, 1);
-            localStorage.setItem(`${type}Checklist`, JSON.stringify(checklist));
-            loadChecklist(type);
+        function updateApplicationStatus(id, status) {
+            setApplications(getApplications().map(app => app.id === id ? { ...app, status } : app));
+            loadApplications();
         }
 
-        function clearChecklist(type) {
-            let checklist = JSON.parse(localStorage.getItem(`${type}Checklist`)) || [];
-            checklist = checklist.filter(item => !item.completed);
-            localStorage.setItem(`${type}Checklist`, JSON.stringify(checklist));
-            loadChecklist(type);
+        function editApplication(id) {
+            const app = getApplications().find(a => a.id === id);
+            if (!app) return;
+
+            document.getElementById('appCompany').value = app.company;
+            document.getElementById('appPosition').value = app.position;
+            document.getElementById('appStatus').value = app.status;
+            document.getElementById('appDate').value = app.dateApplied || '';
+            document.getElementById('appLink').value = app.link || '';
+            document.getElementById('appNotes').value = app.notes || '';
+
+            const form = document.getElementById('applicationForm');
+            form.setAttribute('data-editing-id', id);
+            document.getElementById('appSubmitBtn').textContent = 'Save Changes';
+            form.scrollIntoView({ behavior: 'smooth' });
         }
 
-        function clearAllChecklist(type) {
-            if (confirm(`Are you sure you want to clear all ${type} checklist items?`)) {
-                localStorage.removeItem(`${type}Checklist`);
-                loadChecklist(type);
-            }
+        function deleteApplication(id) {
+            if (!confirm('Delete this application?')) return;
+            setApplications(getApplications().filter(app => app.id !== id));
+            loadApplications();
         }
 
         // Reminders Functions
@@ -634,88 +1232,202 @@
             saveReminder();
         };
 
+        function getReminders() {
+            return JSON.parse(localStorage.getItem('reminders')) || [];
+        }
+
+        function setReminders(reminders) {
+            localStorage.setItem('reminders', JSON.stringify(reminders));
+        }
+
+        function parseSteps(text, existingSteps = []) {
+            return text.split('\n').map(line => line.trim()).filter(Boolean).map((line, i) => {
+                const existing = existingSteps.find(s => s.text === line);
+                return existing || { text: line, completed: false, id: Date.now() + i };
+            });
+        }
+
         function saveReminder() {
+            const form = document.getElementById('reminderForm');
             const reminderData = {
                 title: document.getElementById('title').value,
                 description: document.getElementById('description').value,
                 priority: document.getElementById('priority').value,
-                dueDate: document.getElementById('dueDate').value,
-                timestamp: new Date().toLocaleString(),
-                id: Date.now()
+                dueDate: document.getElementById('dueDate').value
             };
+            const stepsText = document.getElementById('steps').value;
 
-            let reminders = JSON.parse(localStorage.getItem('reminders')) || [];
-            if (document.getElementById('reminderForm').hasAttribute('data-editing-id')) {
-                const editingId = parseInt(document.getElementById('reminderForm').getAttribute('data-editing-id'));
-                reminders = reminders.map(reminder => reminder.id === editingId ? { ...reminder, ...reminderData } : reminder);
-                document.getElementById('reminderForm').removeAttribute('data-editing-id');
+            let reminders = getReminders();
+            if (form.hasAttribute('data-editing-id')) {
+                const editingId = parseInt(form.getAttribute('data-editing-id'));
+                reminders = reminders.map(reminder => reminder.id === editingId
+                    ? { ...reminder, ...reminderData, steps: parseSteps(stepsText, reminder.steps) }
+                    : reminder);
             } else {
-                reminders.push(reminderData);
+                reminders.push({
+                    ...reminderData,
+                    steps: parseSteps(stepsText),
+                    timestamp: new Date().toLocaleString(),
+                    id: Date.now()
+                });
             }
-            localStorage.setItem('reminders', JSON.stringify(reminders));
+            setReminders(reminders);
 
             clearReminderForm();
             loadReminders();
         }
 
         function clearReminderForm() {
-            document.getElementById('reminderForm').reset();
+            const form = document.getElementById('reminderForm');
+            form.reset();
+            form.removeAttribute('data-editing-id');
+            document.getElementById('reminderSubmitBtn').textContent = 'Add Reminder';
         }
 
         function loadReminders() {
-            const reminders = JSON.parse(localStorage.getItem('reminders')) || [];
+            const reminders = getReminders();
             const container = document.getElementById('reminders');
-            
+
             if (reminders.length === 0) {
                 container.innerHTML = '<p>No reminders yet.</p>';
                 return;
             }
 
-            // Sort by priority (high, medium, low) and due date
-            reminders.sort((a, b) => {
-                const priorityOrder = { high: 3, medium: 2, low: 1 };
-                if (priorityOrder[a.priority] !== priorityOrder[b.priority]) {
-                    return priorityOrder[b.priority] - priorityOrder[a.priority];
-                }
-                return new Date(a.dueDate) - new Date(b.dueDate);
-            });
-
             container.innerHTML = '';
-            reminders.forEach((reminder, index) => {
+            reminders.forEach(reminder => {
+                const steps = reminder.steps || [];
+                const doneCount = steps.filter(s => s.completed).length;
+                const stepsHtml = steps.map(step => `
+                    <div class="step-item ${step.completed ? 'completed' : ''}">
+                        <input type="checkbox" ${step.completed ? 'checked' : ''} onchange="toggleStep(${reminder.id}, ${step.id})">
+                        <span>${escapeHtml(step.text)}</span>
+                        <button class="step-delete" title="Remove step" onclick="deleteStep(${reminder.id}, ${step.id})">✕</button>
+                    </div>
+                `).join('');
+
                 const reminderDiv = document.createElement('div');
                 reminderDiv.className = `reminder-item ${reminder.priority}`;
+                reminderDiv.dataset.id = reminder.id;
                 reminderDiv.innerHTML = `
-                    <h4>${reminder.title} <span class="priority-badge ${reminder.priority}">${reminder.priority.toUpperCase()}</span></h4>
-                    <p><strong>Description:</strong> ${reminder.description || 'No description'}</p>
+                    <div class="reminder-head">
+                        <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+                        <h4>${escapeHtml(reminder.title)} <span class="priority-badge ${reminder.priority}">${reminder.priority.toUpperCase()}</span></h4>
+                        ${steps.length ? `<span class="step-progress">${doneCount}/${steps.length} steps</span>` : ''}
+                    </div>
+                    <p><strong>Description:</strong> ${escapeHtml(reminder.description) || 'No description'}</p>
                     <p><strong>Due Date:</strong> ${reminder.dueDate || 'No due date'}</p>
                     <p><strong>Added:</strong> ${reminder.timestamp}</p>
-                    <button class="edit-btn" onclick="editReminder(${reminder.id})">Edit</button>
-                    <button class="delete-btn" onclick="deleteReminder(${reminder.id})">Delete</button>
+                    <div class="steps">${stepsHtml}</div>
+                    <div class="add-step">
+                        <input type="text" placeholder="Add a step..." onkeypress="if(event.key==='Enter') addStep(${reminder.id}, this)">
+                        <button class="small-btn" onclick="addStep(${reminder.id}, this.previousElementSibling)">Add Step</button>
+                    </div>
+                    <button class="edit-btn small-btn" onclick="editReminder(${reminder.id})">Edit</button>
+                    <button class="delete-btn small-btn" onclick="deleteReminder(${reminder.id})">Delete</button>
                 `;
+                setupReminderDrag(reminderDiv);
                 container.appendChild(reminderDiv);
             });
         }
 
+        function updateReminder(id, changeFn) {
+            setReminders(getReminders().map(r => r.id === id ? changeFn({ ...r, steps: r.steps || [] }) : r));
+            loadReminders();
+        }
+
+        function addStep(reminderId, input) {
+            const text = input.value.trim();
+            if (text === '') return;
+            updateReminder(reminderId, r => ({ ...r, steps: [...r.steps, { text, completed: false, id: Date.now() }] }));
+            // Keep focus in the new step box so several steps can be added in a row
+            const card = document.querySelector(`.reminder-item[data-id="${reminderId}"] .add-step input`);
+            if (card) card.focus();
+        }
+
+        function toggleStep(reminderId, stepId) {
+            updateReminder(reminderId, r => ({
+                ...r,
+                steps: r.steps.map(s => s.id === stepId ? { ...s, completed: !s.completed } : s)
+            }));
+        }
+
+        function deleteStep(reminderId, stepId) {
+            updateReminder(reminderId, r => ({ ...r, steps: r.steps.filter(s => s.id !== stepId) }));
+        }
+
+        // Drag and drop reordering: only the handle starts a drag so text and inputs stay usable
+        let draggedReminder = null;
+
+        function setupReminderDrag(card) {
+            const handle = card.querySelector('.drag-handle');
+            handle.addEventListener('mousedown', () => card.draggable = true);
+            handle.addEventListener('mouseup', () => card.draggable = false);
+
+            card.addEventListener('dragstart', e => {
+                draggedReminder = card;
+                card.classList.add('dragging');
+                e.dataTransfer.effectAllowed = 'move';
+                e.dataTransfer.setData('text/plain', card.dataset.id);
+            });
+
+            card.addEventListener('dragover', e => {
+                if (!draggedReminder || draggedReminder === card) return;
+                e.preventDefault();
+                const rect = card.getBoundingClientRect();
+                const after = e.clientY > rect.top + rect.height / 2;
+                card.parentNode.insertBefore(draggedReminder, after ? card.nextSibling : card);
+            });
+
+            card.addEventListener('drop', e => e.preventDefault());
+
+            card.addEventListener('dragend', () => {
+                card.classList.remove('dragging');
+                card.draggable = false;
+                draggedReminder = null;
+                saveReminderOrder();
+            });
+        }
+
+        function saveReminderOrder() {
+            const order = [...document.querySelectorAll('#reminders .reminder-item')].map(el => parseInt(el.dataset.id));
+            const reminders = getReminders();
+            reminders.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
+            setReminders(reminders);
+        }
+
+        function sortRemindersByPriority() {
+            const priorityOrder = { high: 3, medium: 2, low: 1 };
+            const reminders = getReminders();
+            reminders.sort((a, b) => {
+                if (priorityOrder[a.priority] !== priorityOrder[b.priority]) {
+                    return priorityOrder[b.priority] - priorityOrder[a.priority];
+                }
+                return (a.dueDate || '9999').localeCompare(b.dueDate || '9999');
+            });
+            setReminders(reminders);
+            loadReminders();
+        }
+
         function deleteReminder(id) {
-            let reminders = JSON.parse(localStorage.getItem('reminders')) || [];
-            reminders = reminders.filter(reminder => reminder.id !== id);
-            localStorage.setItem('reminders', JSON.stringify(reminders));
+            setReminders(getReminders().filter(reminder => reminder.id !== id));
             loadReminders();
         }
 
         function editReminder(id) {
-            const reminders = JSON.parse(localStorage.getItem('reminders')) || [];
-            const reminder = reminders.find(r => r.id === id);
+            const reminder = getReminders().find(r => r.id === id);
             if (!reminder) return;
 
             document.getElementById('title').value = reminder.title;
             document.getElementById('description').value = reminder.description || '';
+            document.getElementById('steps').value = (reminder.steps || []).map(s => s.text).join('\n');
             document.getElementById('dueDate').value = reminder.dueDate || '';
             document.getElementById('priority').value = reminder.priority || 'medium';
 
             // Change the form submission to update the reminder
             const form = document.getElementById('reminderForm');
             form.setAttribute('data-editing-id', id);
+            document.getElementById('reminderSubmitBtn').textContent = 'Save Changes';
+            form.scrollIntoView({ behavior: 'smooth' });
         }
 
         function clearAllReminders() {
@@ -723,6 +1435,213 @@
                 localStorage.removeItem('reminders');
                 loadReminders();
             }
+        }
+
+        // Timer Functions
+        const PRESET_LABELS = { focus: 'Focus', short: 'Short Break', long: 'Long Break' };
+        let timerPresets = { focus: 25, short: 5, long: 15 };
+        let timerDuration = 25 * 60;   // seconds for the current timer
+        let timerRemaining = 25 * 60;  // seconds left
+        let timerEndTime = null;       // timestamp when running timer finishes
+        let timerInterval = null;
+        let timerMode = 'focus';
+
+        function initTimer() {
+            timerPresets = { ...timerPresets, ...(JSON.parse(localStorage.getItem('timerPresets')) || {}) };
+            document.getElementById('presetFocus').value = timerPresets.focus;
+            document.getElementById('presetShort').value = timerPresets.short;
+            document.getElementById('presetLong').value = timerPresets.long;
+            renderPresetButtons();
+            selectPreset('focus');
+        }
+
+        function renderPresetButtons() {
+            document.getElementById('timerPresets').innerHTML = Object.keys(PRESET_LABELS).map(key => `
+                <button class="preset-btn ${timerMode === key ? 'active' : ''}" onclick="selectPreset('${key}')">
+                    ${PRESET_LABELS[key]} (${timerPresets[key]}m)
+                </button>
+            `).join('');
+        }
+
+        function updatePreset(key, value) {
+            const minutes = Math.max(1, Math.min(600, parseInt(value) || 1));
+            timerPresets[key] = minutes;
+            document.getElementById(`preset${key.charAt(0).toUpperCase() + key.slice(1)}`).value = minutes;
+            localStorage.setItem('timerPresets', JSON.stringify(timerPresets));
+            // Apply right away if this preset is loaded and not running
+            if (timerMode === key && !timerInterval) {
+                selectPreset(key);
+            } else {
+                renderPresetButtons();
+            }
+        }
+
+        function selectPreset(key) {
+            setTimer(timerPresets[key] * 60, key, PRESET_LABELS[key]);
+        }
+
+        function setCustomTimer() {
+            const minutes = parseInt(document.getElementById('customMinutes').value) || 0;
+            const seconds = parseInt(document.getElementById('customSeconds').value) || 0;
+            const total = minutes * 60 + Math.min(59, seconds);
+            if (total <= 0) return;
+            setTimer(total, 'custom', 'Custom');
+        }
+
+        function setTimer(seconds, mode, label) {
+            stopTimer();
+            timerDuration = seconds;
+            timerRemaining = seconds;
+            timerMode = mode;
+            document.getElementById('timerLabel').textContent = label;
+            renderPresetButtons();
+            renderTimer();
+        }
+
+        function toggleTimer() {
+            if (timerInterval) {
+                stopTimer();
+                timerRemaining = Math.max(0, Math.round((timerEndTime - Date.now()) / 1000));
+                renderTimer();
+                return;
+            }
+            if (timerRemaining <= 0) timerRemaining = timerDuration;
+            timerEndTime = Date.now() + timerRemaining * 1000;
+            timerInterval = setInterval(tickTimer, 250);
+            document.getElementById('timerStartBtn').textContent = 'Pause';
+            tickTimer();
+        }
+
+        function tickTimer() {
+            timerRemaining = Math.max(0, Math.ceil((timerEndTime - Date.now()) / 1000));
+            renderTimer();
+            if (timerRemaining <= 0) {
+                stopTimer();
+                timerFinished();
+            }
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            document.getElementById('timerStartBtn').textContent = 'Start';
+        }
+
+        function resetTimer() {
+            stopTimer();
+            timerRemaining = timerDuration;
+            renderTimer();
+        }
+
+        function formatTime(totalSeconds) {
+            const h = Math.floor(totalSeconds / 3600);
+            const m = Math.floor((totalSeconds % 3600) / 60);
+            const s = totalSeconds % 60;
+            const mm = String(m).padStart(2, '0');
+            const ss = String(s).padStart(2, '0');
+            return h > 0 ? `${h}:${mm}:${ss}` : `${mm}:${ss}`;
+        }
+
+        function renderTimer() {
+            const display = document.getElementById('timerDisplay');
+            display.textContent = formatTime(timerRemaining);
+            display.classList.toggle('done', timerRemaining <= 0);
+            document.title = timerInterval ? `${formatTime(timerRemaining)} · Boost` : 'Boost';
+        }
+
+        function timerFinished() {
+            document.title = "⏰ Time's up! · Boost";
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                [0, 0.4, 0.8].forEach(offset => {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.frequency.value = 880;
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    gain.gain.setValueAtTime(0.3, ctx.currentTime + offset);
+                    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + offset + 0.3);
+                    osc.start(ctx.currentTime + offset);
+                    osc.stop(ctx.currentTime + offset + 0.3);
+                });
+            } catch (e) {
+                // Sound is optional
+            }
+        }
+
+        // Scratchpad Functions
+        let scratchpadSaveTimeout = null;
+
+        function initScratchpad() {
+            const pad = document.getElementById('scratchpad');
+            pad.value = localStorage.getItem('scratchpad') || '';
+            pad.addEventListener('input', () => {
+                document.getElementById('scratchpadStatus').textContent = 'Saving...';
+                clearTimeout(scratchpadSaveTimeout);
+                scratchpadSaveTimeout = setTimeout(() => {
+                    localStorage.setItem('scratchpad', pad.value);
+                    document.getElementById('scratchpadStatus').textContent = `Saved ${new Date().toLocaleTimeString()}`;
+                }, 400);
+            });
+        }
+
+        function copyScratchpad() {
+            const pad = document.getElementById('scratchpad');
+            navigator.clipboard.writeText(pad.value).then(() => {
+                document.getElementById('scratchpadStatus').textContent = 'Copied to clipboard';
+            });
+        }
+
+        function clearScratchpad() {
+            if (!confirm('Clear the scratchpad?')) return;
+            document.getElementById('scratchpad').value = '';
+            localStorage.removeItem('scratchpad');
+            document.getElementById('scratchpadStatus').textContent = 'Cleared';
+        }
+
+        // Apps & Links Functions
+        const DEFAULT_LINKS = [
+            { name: 'Outlook Mail', url: 'https://outlook.live.com/mail/', color: '#0078D4' },
+            { name: 'Outlook Calendar', url: 'https://outlook.live.com/calendar/', color: '#106EBE' },
+            { name: 'OneNote', url: 'https://www.onenote.com/notebooks', color: '#7719AA' }
+        ];
+        const EXTRA_LINK_COLORS = ['#4CAF50', '#ff9800', '#2196F3', '#e91e63', '#009688', '#795548'];
+
+        document.getElementById('linkForm').onsubmit = function(e) {
+            e.preventDefault();
+            const name = document.getElementById('linkName').value.trim();
+            const url = document.getElementById('linkUrl').value.trim();
+            if (!name || !/^https?:\/\//i.test(url)) return;
+            const links = getLinks();
+            links.push({ name, url, color: EXTRA_LINK_COLORS[links.length % EXTRA_LINK_COLORS.length] });
+            setLinks(links);
+            this.reset();
+            loadLinks();
+        };
+
+        function getLinks() {
+            return JSON.parse(localStorage.getItem('appLinks')) || DEFAULT_LINKS;
+        }
+
+        function setLinks(links) {
+            localStorage.setItem('appLinks', JSON.stringify(links));
+        }
+
+        function loadLinks() {
+            document.getElementById('linkGrid').innerHTML = getLinks().map((link, index) => `
+                <div class="link-card">
+                    <a class="quick-link" style="background-color: ${escapeHtml(link.color)}" href="${escapeHtml(link.url)}" target="_blank" rel="noopener">${escapeHtml(link.name)}</a>
+                    <button class="link-remove" title="Remove" onclick="removeLink(${index})">✕</button>
+                </div>
+            `).join('');
+        }
+
+        function removeLink(index) {
+            const links = getLinks();
+            if (!confirm(`Remove ${links[index].name}?`)) return;
+            links.splice(index, 1);
+            setLinks(links);
+            loadLinks();
         }
     </script>
 </body>
