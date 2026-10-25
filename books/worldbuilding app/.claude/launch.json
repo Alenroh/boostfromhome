@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "worldbuilder", "runtimeExecutable": "node", "runtimeArgs": ["server.js", "--no-browser"], "port": 4747 }
+  ]
+}

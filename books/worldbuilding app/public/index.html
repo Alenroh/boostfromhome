@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My World</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='white' stroke='%23555' stroke-width='2'/><path d='M2 16h28M16 2c-6 6-6 22 0 28M16 2c6 6 6 22 0 28' fill='none' stroke='%23555' stroke-width='1.6'/></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="page">
+    <aside id="sidebar">
+      <a href="#/" class="logo" title="Visit the main page">
+        <svg viewBox="0 0 100 100" class="logo-globe" aria-hidden="true">
+          <defs><radialGradient id="lg" cx="38%" cy="32%" r="70%"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#cfd3d8"/></radialGradient></defs>
+          <circle cx="50" cy="50" r="44" fill="url(#lg)" stroke="#72777d" stroke-width="2"/>
+          <g fill="none" stroke="#72777d" stroke-width="1.6" opacity=".8">
+            <ellipse cx="50" cy="50" rx="18" ry="44"/><ellipse cx="50" cy="50" rx="36" ry="44"/>
+            <path d="M6 50h88M11 30h78M11 70h78"/>
+          </g>
+          <path d="M34 26c8-3 14 2 12 9s-10 6-12 12 5 11 1 16-11-2-12-9 3-24 11-28z" fill="#a2a9b1" opacity=".55"/>
+          <path d="M62 44c6-2 12 3 11 10s-7 14-12 12-4-8-3-12 0-9 4-10z" fill="#a2a9b1" opacity=".55"/>
+        </svg>
+        <span class="logo-name" id="logoName">My World</span>
+        <span class="logo-tag">The Story Encyclopedia</span>
+      </a>
+      <nav class="portal">
+        <a href="#/" data-nav="home">Main page</a>
+        <a href="#/characters" data-nav="characters">Characters</a>
+        <a href="#/locations" data-nav="locations">Locations</a>
+        <a href="#/articles" data-nav="articles">Story notes</a>
+        <a href="#/timeline" data-nav="timeline">The Year</a>
+        <a href="#/web" data-nav="web">Relationship web</a>
+        <a href="#/categories" data-nav="categories">Categories</a>
+        <a href="#" id="randomLink">Random article</a>
+      </nav>
+      <nav class="portal">
+        <h3>Create</h3>
+        <a href="#" id="newChar">New character</a>
+        <a href="#" id="newLoc">New location</a>
+        <a href="#" id="newArt">New story notes page</a>
+      </nav>
+      <nav class="portal">
+        <h3>Tools</h3>
+        <a href="#/settings" data-nav="settings">Settings</a>
+      </nav>
+    </aside>
+
+    <div id="head">
+      <button class="icon-btn menu-btn" id="openNav" title="Menu">☰</button>
+      <div id="personal"><span id="saveState">Loading…</span></div>
+      <div id="headRow">
+        <div id="tabsLeft" class="tabs"></div>
+        <div class="grow"></div>
+        <div id="tabsRight" class="tabs"></div>
+        <div class="search">
+          <input id="search" type="search" placeholder="Search My World" autocomplete="off">
+          <div id="suggest" hidden></div>
+        </div>
+      </div>
+    </div>
+
+    <main id="content">
+      <div id="view"></div>
+    </main>
+    <footer id="footer">
+      Your world is stored only on this computer. · <a href="#/settings">Settings</a> · <a href="#/categories">Categories</a>
+    </footer>
+  </div>
+  <div id="modalRoot"></div>
+  <div id="toast"></div>
+  <script src="app.js"></script>
+  <script src="web.js"></script>
+</body>
+</html>

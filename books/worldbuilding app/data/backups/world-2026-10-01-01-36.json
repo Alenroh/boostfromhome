@@ -1,0 +1,4693 @@
+{
+ "version": 3,
+ "name": "As the Moon Swallows the Stars",
+ "characters": [
+  {
+   "id": "m00tm9hg",
+   "name": "Anthony Messina",
+   "photos": [],
+   "tags": [
+    "Messina family",
+    "Protagonists"
+   ],
+   "frequents": [
+    "m006n0qk",
+    "m00glqsg",
+    "m00adnz9",
+    "m0094qhk"
+   ],
+   "created": 1790462577844,
+   "updated": 1790812005454,
+   "aliases": "Dr. Messina, A. M.",
+   "age": "48",
+   "pronouns": "he/him",
+   "occupation": "Forensic psychiatrist",
+   "affiliation": "State-contracted; own practice",
+   "homeId": "m00849qm",
+   "summary": "Anthony Messina is a 48-year-old forensic psychiatrist in [[Lake Cranesford]] and the man the whole book is built from. He is never described by the narrator: the reader knows him only through what he produced, kept and annotated across one year — until the form breaks in Part Two.",
+   "appearance": "Italian-American, working build going soft, glasses for reading. The reader builds him from his work, not from description.",
+   "voice": "Clinical default. Lapsed-Catholic syntax surfaces under stress (examination-of-conscience) — ''However.'' standing alone. Working-class Italian specificity flickers in the notebook. Drily funny when well. Brittle and irritable late, never drained — he stays a professional.",
+   "backstory": "Western PA. Penn State undergrad; OSU Wexner for med school and residency. Came home for practice.\n\nHis father is a carpenter — stable, nurturing. His mother was a military JAG investigator: forensic by training, principled and methodical. He is her son in a different forensic discipline. Both parents now live at [[Lake Arthur Retirement Village]].",
+   "wants": "He is still trying when she dies. That is what makes it tragedy.",
+   "secrets": "Has been at his edge for years and doesn’t know it. By the time the book opens he is running at 100% in his work and roughly 30% in his life, holding the imbalance by force of habit.",
+   "facts": [
+    {
+     "label": "Called",
+     "value": "Dr. Messina (work, patients, court) · Anthony (Theresa only — rare, private, lands like confession)"
+    },
+    {
+     "label": "Hand",
+     "value": "Typed clinical notes · marginalia (blue pen, dated) · pocket notebook (blue pen, ruled, sloppy)"
+    },
+    {
+     "label": "Assistant",
+     "value": "[[Raffaella Zanella]]"
+    },
+    {
+     "label": "Fate",
+     "value": "Ambiguous — tilted toward suicide, never stated"
+    }
+   ],
+   "sections": [
+    {
+     "title": "Caseload",
+     "text": "Sex-offender risk assessments, violent-offender parole evals, post-attempt mandates, competency to stand trial, NGRI. Not custody. See [[The case docket]]."
+    },
+    {
+     "title": "Condition",
+     "text": "Has been at the edge of his capacity for years. He doesn’t know it. He’s busy, he’s tired, he’s going to catch up next week — he’s been telling himself that for a decade. Holds work clean; life thins. The grenade reveals what was already true.\n\n== What thins, in absence ==\n* The vacation he doesn’t book (the email thread that ends without his reply)\n* Calls home to his parents, monthly to nothing\n* Grocery lists on the back of Theresa’s memos — early year, then gone\n* Mass: the family together early; Theresa alone late\n* Notebook entries: daily → weekly → monthly\n* Morning runs his Apple Watch logs in April, absent by August\n* Sunday brunches he attends becoming brunches he sends Theresa to alone\n* Theresa’s voicemails accumulating, some unlistened\n\nThe order it goes: family first, friends second, self third, work last."
+    },
+    {
+     "title": "Tics",
+     "text": "* Hates the small black pen; uses it anyway\n* Apple Watch heart-rate alert as silent witness\n* Reaches for objects and misses when distracted\n* Particular about candle scent\n* The cracking leather patient chair"
+    },
+    {
+     "title": "Religion",
+     "text": "Lapsed by attrition, not rupture. Twenty years whittling. The architecture remains; the practice ended quietly without a date."
+    },
+    {
+     "title": "The pocket notebook",
+     "text": "The honest mode: a pocket Moleskine, three days per page, bullets, blue pen, sloppy. It degrades by thinning — daily becomes weekly becomes monthly. The voice doesn’t degrade; the frequency does.\n\n== Early (week 8, April) ==\n<pre>\nMon 4/6   * leave @ 2 (Greystone reservation)\n          * prescription pickup\n          * Reeves f/u re: school records\nTue 4/7   * breakfast w/ T — eggs\n          * dictation: Cantwell\n          * T's mom — 4 ribs (??)\nWed 4/8   * milk\n          * G's permission slip (sign)\n          * Brandt review — stable\nThu 4/9   * court — Petrak 9 AM\n          * prep notes Cantwell\n          * \"Sopranos\" w/ T\nFri 4/10  * trash out\n          * Easter mass program (already?)\n          * call Dad\n</pre>\n\n== Late (week 43, January) ==\n<pre>\nMon 1/13  * Hartman — records pending\n          * V. won't look at me.\nTue 1/14\n\nWed 1/15  * picked up cleaning\nThu 1/16  * —\nFri 1/17\n</pre>"
+    },
+    {
+     "title": "Function",
+     "text": "The presence the documents build. The man who tried. The man who couldn’t see the stars when the moon was too bright."
+    }
+   ],
+   "talk": "== To decide ==\n* Clinical note typeface — Courier New (dictated and transcribed) or a clean sans (typed into an EHR)? See [[Style sheet]].",
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [
+      "m006n0qk",
+      "m00glqsg",
+      "m00adnz9"
+     ],
+     "events": "Weeks 1–4 — calibration. The March calendar spread opens the book.\n* [[Marcus Reeves]] intake (Mar 8) — competent, and then: ''However.'' Marginalia dated 3/14. Report issued wk 3–4; mitigation referral.\n* [[Cantwell]] SVP eval at [[SCI Mercer]] (standing case; the southbound GPS).\n* [[Brandt]] conditional-release review (wk 1).\n* Text to Vince: “good luck today” / “thx old man”.\n* Theresa’s voicemail, listened: “Picking up V’s stuff at 5. Gas in your truck. Love you.” 0:14\n* Save-the-date from [[Joey Messina|Joey]] arrives (wk 4). Sunday brunch.",
+     "notes": "Calendar: dense, clean, every weekday filled, planned in one sitting, clean fountain-pen hand. Grocery lists still appearing on the back of Theresa’s memos."
+    },
+    "apr": {
+     "base": "",
+     "visits": [
+      "m006n0qk",
+      "m0094qhk"
+     ],
+     "events": "Weeks 5–8 — Easter.\n* [[Petrak]] found incompetent (wk 5); sent for restoration.\n* Joey and [[Annabel Coster|Annabel]] home for Easter.\n* [[Sayles]] progress note (compliant).\n* Theresa’s study calendar thickens.",
+     "notes": "Notebook still full (week 8): Greystone reservation, “call Dad”, Easter mass program. Apple Watch logs morning runs."
+    },
+    "may": {
+     "base": "",
+     "visits": [
+      "m006n0qk",
+      "m00evwo9"
+     ],
+     "events": "Weeks 9–12 — anniversary.\n* Routine session layer.\n* Phone call with his parents at [[Lake Arthur Retirement Village|Lake Arthur]].\n* 25th anniversary dinner at [[The Greystone]] (wk 12) — receipt, photo, notebook entry. The marriage unguardedly visible. (Scored moment.)",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [
+      "m006n0qk"
+     ],
+     "events": "Weeks 13–17 — summer.\n* [[Kessler]] opens (~wk 14) — the malingerer; cat-and-mouse begins.\n* Brandt review #2 (wk 16).\n* Joey’s summer call — Anthony distracted, gives the wrong advice; Joey figures it out.\n* 4th of July (wk 17).",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [
+      "m006n0qk",
+      "m00glqsg"
+     ],
+     "events": "Weeks 18–21 — Theresa’s exam, her bad day.\n* Kessler caught (wk 19) — a clean, dry win.\n* Sayles progress note (~wk 18).\n* Cantwell eval #2 (wk 20).\n* Theresa takes the promotional exam. Her fatal-accident day (wk 20): “I’m OK.” Post-it in his lunch bag.",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [
+      "m006n0qk"
+     ],
+     "events": "Weeks 22–26 — Eva enters.\n* [[Hartman]] opens (wk 22) — capital mitigation, running underneath everything from here.\n* Theresa passes the exam.\n* [[Eva Miller]] intake (wk 26) — one more file in a busy drawer.",
+     "notes": "Calendar still dense and clean; it absorbs Eva’s standing appointment. By August the morning runs are no longer in the Watch data."
+    },
+    "sep": {
+     "base": "",
+     "visits": [
+      "m006n0qk"
+     ],
+     "events": "Weeks 27–30 — Eva builds.\n* Eva’s early sessions; her middle-of-bed sleep change (wk 30).\n* Petrak returns restored (~wk 30) — the case’s real turn.\n* Brandt review #3 (wk 30).\n* Wedding invitation arrives (wk 29).\n* The vacation not booked — the travel quote sits in the drawer; Theresa’s “Should I book it?” gets no reply.",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [
+      "m006n0qk"
+     ],
+     "events": "Weeks 31–34 — restoration certified, broken promise.\n* Petrak certified (wk 34).\n* [[Allbright]] opens (wk 33) — the longest notebook entries of the year run here.\n* Bachelor weekend (wk 33) — he misses Friday.\n* The broken promise: Gianna’s college-essay request — “tomorrow morning, promise.” The essay sits on his desk for months.",
+     "notes": "Calendar still planned ahead but with slight gaps. The first “?” appears, beside a Sunday brunch."
+    },
+    "nov": {
+     "base": "",
+     "visits": [
+      "m006n0qk",
+      "m00glqsg"
+     ],
+     "events": "Weeks 35–38 — concussion, finding, ghost.\n* [[Vincent Messina|Vince]]’s concussion (ER fax, wk 35).\n* Cantwell eval #3 (wk 36).\n* Allbright finding rendered (wk 38) — charged, personal.\n* [[The ghost case]] (wk 38): death notice of a former patient. He clips it. Writes nothing.\n* Thanksgiving.",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [
+      "m006n0qk",
+      "m0094qhk",
+      "m00evwo9"
+     ],
+     "events": "Weeks 39–42 — Vince home, the date, Christmas.\n* Vince medically withdrawn; moves home.\n* Cantwell hearing (~wk 40) — he testifies; commitment upheld.\n* The date — Theresa books the Greystone. “I had fun / me too” hours later.\n* Swearing-in invitation arrives via interoffice mail.\n* Christmas Eve: he stays home from mass; Theresa goes alone. The mass program reaches the drawer via her grocery list on the back. (Scored moment.)\n* One bourbon alone in the office. Hendersons dinner.\n* Hartman running long underneath.",
+     "notes": "Calendar: the swearing-in and the wedding date are on it, but the surrounding weeks have less filled in — visible gaps in the ink where he stopped and came back days later."
+    },
+    "jan": {
+     "base": "",
+     "visits": [
+      "m006n0qk",
+      "m00fti0s"
+     ],
+     "events": "Weeks 43–46 — swearing-in, Vince back, the letter.\n* Vince at the kitchen table. Notebook: “V. won’t look at me.” (Scored moment — two pages from a note of full professional competence.)\n* Theresa’s swearing-in (wk 44) — he’s not fully present.\n* Cantwell’s “letter from the facility” arrives (wk 44).\n* Gianna at breakfast: “Dad, are you sleeping?”\n* Brandt review (wk 45).\n* Theresa’s text (wk 45): “Made appointment for V. with Dr. Hahn. Wednesday.” He doesn’t reply.\n* Eva’s crescendo begins: physical alone (wk 44), a dated commitment (wk 45), mornings reclaimed (wk 46).",
+     "notes": "Calendar thinner — single-word entries: court, eval. Some crossed out without rescheduled dates. Notebook for week 43 nearly empty."
+    },
+    "feb": {
+     "base": "",
+     "visits": [
+      "m006n0qk",
+      "m00evwo9",
+      "m00pgft0"
+     ],
+     "events": "Weeks 47–50 — bathroom leak, final Eva, wedding, grenade.\n* Hartman trails off, handed to counsel, unresolved.\n* Eva fixes the bathroom leak herself (wk 47). Notebook: “V. laughed once.”\n* Eva wk 48 — calm, integrated; “Cautiously optimistic.” A true read.\n\n== Wedding week (week 49) ==\n* Mon–Tue: normal work; Sayles discharge note drafted.\n* Wed: Eva’s last session — an ordinary Wednesday. “See you next week.”\n* Thu: light work. Annabel arrives.\n* Fri: rehearsal dinner at the Greystone. Gianna knocks late — “Dad?” Deflection. 11:42 PM, “You okay?” — read, no reply. Eva dies that night.\n* Sat: the wedding. Toast draft on the back of the program.\n* Sun: quiet.\n\n== Week 50 — Monday, the grenade ==\nTheresa’s note in his lunch bag: “You did good Saturday. Love you.” At the office: the clipping, the obituary, [[Connie Howell|Connie]]’s voicemail, the Sayles discharge signed, the unfilable case-closure form, the dated blank page. Part One ends.\n\nPart Two: brittle days Tuesday–Friday. Some morning his hand reaches for the keys. The drive to [[Presque Isle State Park|Presque Isle]].",
+     "notes": "The load-bearing spread: wedding Saturday, Eva’s last Wednesday, the rehearsal Friday, the never-happened Eva slot the next week. The blank Monday of week 50 sits at the chapter’s opening. Part Two has no calendar."
+    }
+   },
+   "info": {
+    "title": "Dr.",
+    "gender": "Man",
+    "nationality": "American",
+    "ethnicity": "Italian-American (working-class)",
+    "religion": "Lapsed Catholic — by attrition, not rupture",
+    "build": "Working build going soft",
+    "vision": "Reading glasses",
+    "vehicle": "Ford F-150",
+    "vehicleYear": "2021",
+    "vehicleNotes": "Working, strong, neat, useful",
+    "education": "Penn State (undergrad) · OSU Wexner (med school and residency)",
+    "employer": "State-contracted; own practice",
+    "marital": "Married (25 years — anniversary wk 12)",
+    "children": "Four — [[Joey Messina|Joey]] (24), [[Claire Messina|Claire]] (22), [[Vincent Messina|Vince]] (20), [[Gianna Messina|Gianna]] (17)",
+    "phoneModel": "iPhone (Visual Voicemail) · Apple Watch — heart-rate alerts, logs morning runs until August",
+    "scent": "Particular about candle scent — the lavender candle in the office",
+    "habits": "Hates the small black pen, uses it anyway · reaches for objects and misses when distracted",
+    "routine": "Daily morning call from Theresa · morning runs (April; gone by August)",
+    "mentalHealth": "At his edge for years without knowing it — running 100% at work, ~30% in his life",
+    "substances": "One bourbon alone in the office (December)"
+   },
+   "places": [
+    {
+     "label": "Grew up in",
+     "name": "Western Pennsylvania",
+     "locId": "m001j873"
+    },
+    {
+     "label": "Works at",
+     "name": "Anthony’s office",
+     "locId": "m006n0qk"
+    },
+    {
+     "label": "Childhood escape",
+     "name": "Presque Isle State Park",
+     "locId": "m00pgft0"
+    }
+   ]
+  },
+  {
+   "id": "m00ugvgf",
+   "name": "Theresa Messina",
+   "photos": [],
+   "tags": [
+    "Messina family"
+   ],
+   "frequents": [
+    "m00fti0s",
+    "m004by68"
+   ],
+   "created": 1790462577844,
+   "updated": 1790812005454,
+   "age": "47",
+   "pronouns": "she/her",
+   "occupation": "PA State Police — Captain, then Major",
+   "affiliation": "[[PA State Police, Troop E|Troop E]]",
+   "homeId": "m00849qm",
+   "summary": "Theresa Messina is Anthony’s wife, a Pennsylvania State Police captain promoted to major mid-year. The strongest thing in his life, and the hand he can’t take.",
+   "appearance": "Gorgeous without working at it. Athletic from running, not the gym. The same hairstyle every morning — a ritual that says exactly who she is. Runs the lake most mornings.",
+   "personality": "Cool soda on a hot day. Funny, warm, loves to learn; not cynically brilliant. Reads, cooks, runs. Trained to assess the whole room. Suspicious but trusting — knows when something is off and when to wait. They have a pact of not bringing work home; she keeps her side without comment.",
+   "backstory": "Molly-and-Arthur-Weasley parents: a big, warm, food-and-chaos house. Brunch the last Sunday of every month at her parents’.",
+   "facts": [
+    {
+     "label": "Rank",
+     "value": "Captain → Major (sworn in wk 44)"
+    },
+    {
+     "label": "Hand",
+     "value": "Cursive, dramatic — distinct from his"
+    },
+    {
+     "label": "Access",
+     "value": "Strictly external"
+    }
+   ],
+   "sections": [
+    {
+     "title": "Narrative access",
+     "text": "Strictly external — and most powerful where it is almost broken. The reader meets her only through what she sends him: texts, voicemails, notes in his lunch bag, the speech draft, the grocery lists, the swearing-in invitation, the reservation, the birthday card. Her interior stays hers. The strongest moments are where it leaks through the surface (the speech draft; the photo of them looking at each other across the room). Guard those."
+    },
+    {
+     "title": "Arc",
+     "text": "Rises across the year while he runs at his edge. Promotion lands. She watches him fade. She reaches — text, call, the “Are you okay?”, the “?”. She doesn’t escalate because she trusts him as an adult. That trust is part of what makes his collapse cruel: she has given him room to come back, and he can’t."
+    },
+    {
+     "title": "The final day",
+     "text": "A morning call she places (unanswered). She tries to catch him at the house and misses by ten minutes. Texts as the day goes on. The missed calls at 19:30, 22:41 and 22:43 are hers.\n\nIn a private moment in Part Two she says his given name — ''Anthony'' — the first and only time the reader hears it. He registers it. He does not respond."
+    }
+   ],
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [],
+     "events": "Grocery list on the back of a PA State Police memo: eggs / bread / G’s lunch / coffee filters / call my mother.\nVoicemail: “Picking up V’s stuff at 5. Gas in your truck. Love you.”",
+     "notes": ""
+    },
+    "apr": {
+     "base": "",
+     "visits": [],
+     "events": "Her study calendar thickens.",
+     "notes": ""
+    },
+    "may": {
+     "base": "",
+     "visits": [
+      "m00evwo9"
+     ],
+     "events": "25th anniversary at [[The Greystone]].",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [],
+     "events": "Takes the promotional exam. Her fatal-accident day (wk 20): “I’m OK.” Post-it in his lunch bag.",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [],
+     "events": "Passes the exam.",
+     "notes": ""
+    },
+    "sep": {
+     "base": "",
+     "visits": [],
+     "events": "The vacation: “Should I book it?” — no reply.",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [
+      "m00evwo9"
+     ],
+     "events": "Books the Greystone for a date — “I had fun / me too.” Christmas Eve mass alone; her grocery list on the back of the program.",
+     "notes": ""
+    },
+    "jan": {
+     "base": "",
+     "visits": [
+      "m00fti0s"
+     ],
+     "events": "Sworn in as Major (wk 44). Makes the Dr. Hahn appointment for Vince: “Wednesday.” (wk 45) — no reply from him.",
+     "notes": ""
+    },
+    "feb": {
+     "base": "",
+     "visits": [
+      "m00evwo9"
+     ],
+     "events": "Rehearsal dinner and the wedding (wk 49). Monday wk 50: “You did good Saturday. Love you.” in his lunch bag. The final day: the unanswered morning call, missing him at the house by ten minutes, the calls at 19:30, 22:41, 22:43.",
+     "notes": ""
+    }
+   },
+   "info": {
+    "title": "Major (Captain until her swearing-in, wk 44)",
+    "gender": "Woman",
+    "build": "Athletic — from running, not the gym",
+    "hairStyle": "The same hairstyle every morning — a ritual that says exactly who she is",
+    "employer": "Pennsylvania State Police, Troop E",
+    "marital": "Married (25 years)",
+    "children": "Four — [[Joey Messina|Joey]] (24), [[Claire Messina|Claire]] (22), [[Vincent Messina|Vince]] (20), [[Gianna Messina|Gianna]] (17)",
+    "hobbies": "Reads, cooks, runs",
+    "routine": "Runs the lake most mornings · daily morning call to Anthony",
+    "food": "Brunch at her parents’ the last Sunday of every month"
+   },
+   "places": [
+    {
+     "label": "Works at",
+     "name": "PA State Police, Troop E",
+     "locId": "m00fti0s"
+    },
+    {
+     "label": "Runs around",
+     "name": "Lake Cranesford (lake)",
+     "locId": "m004by68"
+    },
+    {
+     "label": "Childhood escape",
+     "name": "Presque Isle State Park",
+     "locId": "m00pgft0"
+    }
+   ]
+  },
+  {
+   "id": "m00vnwoe",
+   "name": "Joey Messina",
+   "photos": [],
+   "tags": [
+    "Messina family"
+   ],
+   "frequents": [],
+   "created": 1790462577844,
+   "updated": 1790812005454,
+   "aliases": "Joseph Messina, Joey",
+   "age": "24",
+   "pronouns": "he/him",
+   "occupation": "Paralegal",
+   "homeId": "m00qvog3",
+   "summary": "Joseph “Joey” Messina is the eldest Messina child, a paralegal in [[Pittsburgh]] applying to law school, engaged to [[Annabel Coster]].",
+   "appearance": "Adrien Brody. Lean, taller than his dad, bearded.",
+   "personality": "Mommy’s boy. The Sunday-caller. The big brother the other three actually call.",
+   "voice": "Warm, dry-witted. Texts in full sentences.",
+   "facts": [
+    {
+     "label": "Hand",
+     "value": "Awful — looks like a doctor’s prescription"
+    },
+    {
+     "label": "Calls",
+     "value": "Weekend calls; voicemails when missed"
+    }
+   ],
+   "sections": [
+    {
+     "title": "Arc",
+     "text": "Save-the-date in spring. The summer call (Anthony distracted, gives wrong advice, Joey figures it out). Easter visit with Annabel. Engagement photos at Lake Cranesford. Bachelor weekend — Anthony misses Friday. Rehearsal dinner Friday of week 49; the wedding Saturday. Notices his father’s state at the wedding and does not ask."
+    }
+   ],
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [],
+     "events": "Sunday call confirmation with Dad; the save-the-date arrives (wk 4).",
+     "notes": ""
+    },
+    "apr": {
+     "base": "m00849qm",
+     "visits": [],
+     "events": "Home for Easter with Annabel.",
+     "notes": ""
+    },
+    "may": {
+     "base": "",
+     "visits": [
+      "m004by68"
+     ],
+     "events": "Engagement photos at [[Lake Cranesford (lake)|the lake]] (spring).",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [],
+     "events": "The summer call — Dad distracted, gives the wrong advice; Joey figures it out.",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "sep": {
+     "base": "",
+     "visits": [],
+     "events": "Wedding invitation goes out (arrives wk 29).",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [],
+     "events": "Bachelor weekend (wk 33) — Dad misses Friday.",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jan": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "feb": {
+     "base": "m003iqzf",
+     "visits": [
+      "m00evwo9"
+     ],
+     "events": "In town for the wedding. Rehearsal dinner at the Greystone (Fri wk 49). The wedding (Sat) — forehead-to-forehead with Dad on the dance floor; notices his father’s state and does not ask. Hugs Vince at the reception.",
+     "notes": ""
+    }
+   },
+   "info": {
+    "legalName": "Joseph Messina",
+    "gender": "Man",
+    "build": "Lean — taller than his dad",
+    "facialHair": "Beard",
+    "resemblance": "Adrien Brody",
+    "employer": "Paralegal, Pittsburgh",
+    "education": "Applying to law school across the year",
+    "marital": "Engaged to [[Annabel Coster|Annabel]]; married Saturday, wk 49"
+   },
+   "places": [
+    {
+     "label": "Works in",
+     "name": "Pittsburgh",
+     "locId": "m00qvog3"
+    }
+   ]
+  },
+  {
+   "id": "m00wb90s",
+   "name": "Claire Messina",
+   "photos": [],
+   "tags": [
+    "Messina family"
+   ],
+   "frequents": [],
+   "created": 1790462577844,
+   "updated": 1790812005454,
+   "age": "22",
+   "pronouns": "she/her",
+   "occupation": "Pre-med senior",
+   "affiliation": "[[Gannon University]]",
+   "homeId": "m00nv6oq",
+   "summary": "Claire Messina is the second Messina child, a pre-med senior at [[Gannon University]] in Erie, drifting quietly from the faith.",
+   "appearance": "Anne Hathaway. Warm, sharp-featured.",
+   "personality": "Mario Kart speedrunner. Optimisation-minded, quick, slightly obsessive. The faith drift is real but not dramatic; an agnostic boyfriend is pulling her quietly out of practice.",
+   "voice": "Quick. Dry. Affectionate but careful. Rare calls; one voicemail when something mattered.",
+   "facts": [
+    {
+     "label": "Hand",
+     "value": "Bubbly (hearts dotting her i’s) but structurally typed-clean"
+    }
+   ],
+   "sections": [
+    {
+     "title": "Arc",
+     "text": "Thin on purpose — the drifting daughter whose father didn’t engage with the drift. Missed Easter call. No cross at her throat (Theresa notices first). Med-school essay emailed to Anthony for review — he opens it nine days late. A visit home: mass without communion. Decides on a gap year before med school; Anthony supportive but distant on the call."
+    }
+   ],
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "apr": {
+     "base": "",
+     "visits": [],
+     "events": "Missed Easter call.",
+     "notes": ""
+    },
+    "may": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "sep": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jan": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "feb": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    }
+   },
+   "info": {
+    "gender": "Woman",
+    "resemblance": "Anne Hathaway",
+    "education": "[[Gannon University]] — senior, pre-med; decides on a gap year",
+    "religion": "Catholic, drifting — no cross at her throat; mass without communion",
+    "hobbies": "Mario Kart speedrunning",
+    "marital": "Dating (an agnostic boyfriend)"
+   },
+   "places": [
+    {
+     "label": "School",
+     "name": "Gannon University",
+     "locId": "m00nv6oq"
+    }
+   ]
+  },
+  {
+   "id": "m00xe2c4",
+   "name": "Vincent Messina",
+   "photos": [],
+   "tags": [
+    "Messina family"
+   ],
+   "frequents": [],
+   "created": 1790462577844,
+   "updated": 1790812005454,
+   "aliases": "Vince, Vinny, V.",
+   "age": "20",
+   "pronouns": "he/him",
+   "occupation": "Sophomore; Div III hockey",
+   "affiliation": "[[Penn State Behrend]]",
+   "homeId": "m00ol1dy",
+   "summary": "Vincent “Vinny” Messina is the third Messina child, a hockey-playing sophomore at [[Penn State Behrend]] — the son least like his father.",
+   "appearance": "Lean, mullet, backwards hat, kinda filthy.",
+   "personality": "Hands, not words. Takes after his grandfather (the carpenter). Loyal, slow-spoken, embarrassed by anything sincere.",
+   "voice": "One-word texts. Texts only, maybe one or two calls.",
+   "facts": [
+    {
+     "label": "Hand",
+     "value": "Unintelligible; prints when he has to"
+    }
+   ],
+   "sections": [
+    {
+     "title": "Arc",
+     "text": "Week 35 concussion. Week 37 not better. Week 39 medical withdrawal. Week 40 moves home. Weeks 41–46: kitchen table, old room, kitchen table. Theresa makes the Dr. Hahn appointment (week 45). Weeks 47–50 slowly comes back — eats, laughs once. By the wedding he’s functional: the suit fits, he hugs Joey at the reception, dances once with Gianna."
+    }
+   ],
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [],
+     "events": "Text from Dad: “good luck today” — “thx old man”.",
+     "notes": ""
+    },
+    "apr": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "may": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "sep": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [
+      "m00cd4wi"
+     ],
+     "events": "Concussion (wk 35; ER fax). Week 37: not better.",
+     "notes": ""
+    },
+    "dec": {
+     "base": "m00849qm",
+     "visits": [],
+     "events": "Medical withdrawal (wk 39). Moves home (wk 40). Kitchen table, old room, kitchen table.",
+     "notes": ""
+    },
+    "jan": {
+     "base": "m00849qm",
+     "visits": [],
+     "events": "Kitchen table. “V. won’t look at me.” Theresa makes the appointment with Dr. Hahn (wk 45).",
+     "notes": ""
+    },
+    "feb": {
+     "base": "m00849qm",
+     "visits": [
+      "m00evwo9"
+     ],
+     "events": "Slowly comes back. Eats. “V. laughed once.” The wedding: suit fits, hugs Joey, dances once with Gianna.",
+     "notes": ""
+    }
+   },
+   "info": {
+    "gender": "Man",
+    "build": "Lean",
+    "hairStyle": "Mullet, backwards hat",
+    "clothing": "Kinda filthy",
+    "sports": "Hockey (Division III)",
+    "education": "[[Penn State Behrend]] — sophomore; medical withdrawal wk 39",
+    "conditions": "Concussion (wk 35); still not better wk 37",
+    "doctor": "Dr. Hahn (appointment made by Theresa, wk 45)"
+   },
+   "places": [
+    {
+     "label": "School",
+     "name": "Penn State Behrend",
+     "locId": "m00ol1dy"
+    }
+   ]
+  },
+  {
+   "id": "m00yqj7o",
+   "name": "Gianna Messina",
+   "photos": [],
+   "tags": [
+    "Messina family"
+   ],
+   "frequents": [
+    "m00d1mkn"
+   ],
+   "created": 1790462577844,
+   "updated": 1790812005454,
+   "age": "17",
+   "pronouns": "she/her",
+   "occupation": "High-school senior",
+   "affiliation": "[[Our Lady of Immaculate Conception]]",
+   "homeId": "m00849qm",
+   "summary": "Gianna Messina is the youngest Messina child, a senior at [[Our Lady of Immaculate Conception]] — the witness.",
+   "appearance": "Alexandra Daddario type.",
+   "personality": "Neurodivergent — reads as autistic without anyone in the family making a thing of it. Pattern recognition that makes her see what no one else does. Misses some social cues, catches others sharper than anyone in the room. Keep her a full kid (prom, essays, the hurt of the broken promise) — a person who happens to notice, never a noticing-device with a backstory.",
+   "voice": "Direct. Asks questions without softening them.",
+   "facts": [
+    {
+     "label": "Hand",
+     "value": "Emoji-heavy texts; annotates everything"
+    }
+   ],
+   "sections": [
+    {
+     "title": "Arc",
+     "text": "College essays. Acceptance letters in spring. Prom in April. The broken promise (October — “tomorrow morning, promise”; the essay sits on his desk for months). Witness moments: “Vince hasn’t eaten. Going to bring him toast” (wk 38), “Dad, are you sleeping?” at breakfast (wk 44), “You okay?” at 11:42 PM, week 49 — read, no reply."
+    }
+   ],
+   "talk": "== Continuity check ==\n* Her “Vince hasn’t eaten. Going to bring him toast” is placed at week 38 (November), but Vince doesn’t move home until week 40 (December). Move the line, or have Vince home earlier on a visit?",
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [],
+     "events": "G’s permission slip to sign.",
+     "notes": ""
+    },
+    "apr": {
+     "base": "",
+     "visits": [],
+     "events": "Acceptance letters (spring). Prom.",
+     "notes": ""
+    },
+    "may": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "sep": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [],
+     "events": "Asks Dad for college-essay help — “tomorrow morning, promise.” It sits on his desk for months.",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [],
+     "events": "“Vince hasn’t eaten. Going to bring him toast.” (wk 38)",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jan": {
+     "base": "",
+     "visits": [],
+     "events": "At breakfast: “Dad, are you sleeping?” (wk 44)",
+     "notes": ""
+    },
+    "feb": {
+     "base": "",
+     "visits": [
+      "m00evwo9"
+     ],
+     "events": "Friday of wedding week: knocks late — “Dad?” Deflection. 11:42 PM: “You okay?” — read, no reply. Dances once with Vince at the wedding.",
+     "notes": ""
+    }
+   },
+   "info": {
+    "gender": "Woman",
+    "resemblance": "Alexandra Daddario",
+    "education": "[[Our Lady of Immaculate Conception]] — senior; college essays, acceptance letters in spring",
+    "mentalHealth": "Neurodivergent — reads as autistic, without anyone in the family making a thing of it"
+   },
+   "places": [
+    {
+     "label": "School",
+     "name": "Our Lady of Immaculate Conception",
+     "locId": "m00d1mkn"
+    }
+   ]
+  },
+  {
+   "id": "m00zow5f",
+   "name": "Eva Miller",
+   "photos": [],
+   "tags": [
+    "Patients"
+   ],
+   "frequents": [
+    "m0079iuu",
+    "m006n0qk"
+   ],
+   "created": 1790462577844,
+   "updated": 1790812005454,
+   "age": "38",
+   "pronouns": "she/her",
+   "status": "Deceased",
+   "occupation": "Waitress at [[Connie’s]] (eleven years)",
+   "homeId": "m00bxgsm",
+   "summary": "Eva Miller is a post-attempt mandate patient Anthony sees from week 26 until the Friday night of week 49. She was making it — until one morning she wasn’t. The grenade.",
+   "appearance": "Krysten Ritter in ''Jessica Jones''. Not a 10, not bad. Freckles. Hair always a wreck. The face of a woman who has worked twelve-hour shifts since seventeen.",
+   "backstory": "Hard childhood. Out at 23. Met [[Aubrey Schultz|Aubrey]] at 28; ten years together. Aubrey was diagnosed about ten months before the book opens and died three months later. Eva’s attempt came about five months before the book opens.",
+   "facts": [
+    {
+     "label": "Case",
+     "value": "Post-attempt mandate (wk 26 – wk 49)"
+    },
+    {
+     "label": "Hand",
+     "value": "None in the archive"
+    },
+    {
+     "label": "Access",
+     "value": "Opaque"
+    },
+    {
+     "label": "Died",
+     "value": "Friday night, week 49 (discovered Saturday)"
+    }
+   ],
+   "sections": [
+    {
+     "title": "Narrative access",
+     "text": "Opaque. She isn’t special — she’s a patient. The reader meets her only through Anthony’s clinical filter, the same instrument that couldn’t save her. No transcript moment, no document of her own. The reader fails to read her as he failed."
+    },
+    {
+     "title": "Death",
+     "text": "Friday night, week 49. Discovered Saturday morning; the obituary lists Friday. The same night Gianna’s “you okay?” text to Anthony goes unanswered at 11:42 PM. Two people reached for him that night. He answered neither. No causal link is drawn — they share only a clock.\n\nSee [[Eva’s locked arc]]."
+    },
+    {
+     "title": "Function",
+     "text": "The patient he could not save. The grenade. The win that was real. The book does not answer whether anything could have been seen, because there was nothing to see."
+    }
+   ],
+   "talk": "== To decide ==\n* Week 45 — pick ONE concrete, dated forward commitment: Connie putting her back on the Sunday rotation; the grief group continuing through summer; or a standing thing with a coworker.",
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "apr": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "may": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [
+      "m00cd4wi",
+      "m006n0qk"
+     ],
+     "events": "Intake (wk 26). Hospital-hold paperwork from UPMC; 72-hour hold documentation; mandated outpatient referral. Intake questionnaire in her handwriting. PHQ-9 (severe), PCL-5 (significant). First session note — 2–4 pages. Margin: ''guarded. compliant. flat affect appropriate to recent loss.''",
+     "notes": ""
+    },
+    "sep": {
+     "base": "",
+     "visits": [
+      "m006n0qk"
+     ],
+     "events": "Early sessions (wks 27–29): Aubrey’s story in pieces. The diner. Connie. Week 30 — the first positive marker: the middle-of-bed sleep change. “Pt. reports change in sleep arrangement. Affect appropriate.”",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [
+      "m006n0qk"
+     ],
+     "events": "Steady work. Grief group joined. Clothes donated in batches.",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [
+      "m006n0qk"
+     ],
+     "events": "Coffee for one. The cat. “Concrete grief work continuing.” By the late 30s she is unmistakably climbing; Anthony allows himself “cautiously optimistic” in a margin — and he is right to.",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [
+      "m006n0qk"
+     ],
+     "events": "Sessions continue.",
+     "notes": ""
+    },
+    "jan": {
+     "base": "",
+     "visits": [
+      "m006n0qk"
+     ],
+     "events": "* Wk 44 — annual physical, alone: the first time without Aubrey on speakerphone in eleven years. Bloodwork; a spring follow-up booked. Margin: “first independent medical. — milestone.”\n* Wk 45 — a forward commitment with a date (to decide). No margin.\n* Wk 46 — mornings reclaimed: waking earlier, walks before her shift. Margin: “sleep cycle adjusting. mornings tolerated.”",
+     "notes": ""
+    },
+    "feb": {
+     "base": "",
+     "visits": [
+      "m006n0qk"
+     ],
+     "events": "* Wk 47 — the apartment kept: calls the plumber herself about the bathroom leak; files her tax return alone.\n* Wk 48 — the plateau. “Pt. calm and integrated. Sleep stable. Affect appropriate. Cautiously optimistic.” A true read.\n* Wk 49, Wednesday — the last session. Ordinary in every direction. A diner customer who reminded her of someone; she laughed about it. “See you next week.”\n* Friday night, wk 49 — she dies.",
+     "notes": "Monday wk 50: the clipping, the obituary (a brother and a mother she barely spoke to; Aubrey absent), Connie’s voicemail, the unfilable case-closure form."
+    }
+   },
+   "info": {
+    "gender": "Woman",
+    "skin": "Freckles",
+    "hairStyle": "Always a wreck",
+    "resemblance": "Krysten Ritter (Jessica Jones)",
+    "employer": "Waitress, [[Connie’s]] (eleven years)",
+    "marital": "Partner of ten years, [[Aubrey Schultz|Aubrey]], died (unmarried)",
+    "pets": "A cat",
+    "mentalHealth": "Post-attempt mandate (attempt ~5 months before the book opens); at intake PHQ-9 severe, PCL-5 significant",
+    "doctor": "[[Anthony Messina]] (from wk 26)",
+    "routine": "Twelve-hour shifts since seventeen · late in the year, morning walks before her shift",
+    "sleep": "Sleeps in the middle of the bed (from wk 30)"
+   },
+   "places": [
+    {
+     "label": "Works at",
+     "name": "Connie’s",
+     "locId": "m0079iuu"
+    },
+    {
+     "label": "Died in",
+     "name": "Eva’s apartment",
+     "locId": "m00bxgsm"
+    }
+   ]
+  },
+  {
+   "id": "m01035kb",
+   "name": "Aubrey Schultz",
+   "photos": [],
+   "tags": [
+    "Patients’ lives"
+   ],
+   "frequents": [],
+   "created": 1790462577844,
+   "updated": 1790812005454,
+   "age": "~37 at death",
+   "pronouns": "she/her",
+   "status": "Deceased",
+   "occupation": "Paediatric / NICU nurse",
+   "affiliation": "[[UPMC Hamot]] (ten years)",
+   "summary": "Aubrey Schultz was [[Eva Miller]]’s partner of ten years, a NICU nurse at [[UPMC Hamot]] who died of pancreatic cancer three months after diagnosis. The reason; the whole loss.",
+   "appearance": "Quiet, gentle, soft. Lovely without vanity. (Keep description restrained — she is a holy absence; hyperbole sits wrong against the book’s reticence.)",
+   "backstory": "Beloved by families at Hamot. Unmarried partners with Eva; possibly excluded from Aubrey’s hospital room at the end by Aubrey’s family. Pancreatic cancer — three months from diagnosis to death, about seven months before the book opens.",
+   "facts": [
+    {
+     "label": "Diagnosis",
+     "value": "Pancreatic cancer — three months"
+    },
+    {
+     "label": "Partner",
+     "value": "[[Eva Miller]] (ten years)"
+    }
+   ],
+   "sections": [
+    {
+     "title": "In the archive",
+     "text": "Eva’s intake form lists Aubrey’s death as the precipitating loss. She appears in session notes by name and phrase. Possibly one photograph in the file. The coffee maker in Eva’s kitchen is one she bought."
+    }
+   ],
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "apr": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "may": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "sep": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jan": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "feb": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    }
+   },
+   "info": {
+    "gender": "Woman",
+    "employer": "[[UPMC Hamot]] — paediatric / NICU nurse, ten years",
+    "marital": "Partner of ten years, [[Eva Miller|Eva]] (unmarried)",
+    "conditions": "Pancreatic cancer — three months from diagnosis to death"
+   },
+   "places": [
+    {
+     "label": "Worked at",
+     "name": "UPMC Hamot",
+     "locId": "m00mnmiz"
+    },
+    {
+     "label": "Died in",
+     "name": "UPMC Hamot",
+     "locId": "m00mnmiz"
+    }
+   ]
+  },
+  {
+   "id": "m0111jhx",
+   "name": "Raffaella Zanella",
+   "photos": [],
+   "tags": [
+    "Office"
+   ],
+   "frequents": [
+    "m006n0qk"
+   ],
+   "created": 1790462577844,
+   "updated": 1790812005454,
+   "aliases": "Raffi",
+   "age": "32",
+   "pronouns": "she/her",
+   "occupation": "Office assistant (7 years)",
+   "affiliation": "[[Anthony’s office]]",
+   "homeId": "m003iqzf",
+   "summary": "Raffaella “Raffi” Zanella has run Anthony’s front desk for seven years — scheduling, billing, the door.",
+   "personality": "A pro. Holds her own. Takes shit about candle orders without flinching. Reads him too well to perform. Probably one of the first people to notice something is wrong — and says nothing for months, because it isn’t her place.",
+   "backstory": "Italian-American family from [[Lake Cranesford]].",
+   "facts": [
+    {
+     "label": "Hand",
+     "value": "Brisk handwritten Post-its on files; texts in efficient bursts"
+    },
+    {
+     "label": "Names",
+     "value": "“Raffaella” on documents · “Raffi” in his texts and Post-its"
+    }
+   ],
+   "sections": [
+    {
+     "title": "The two names",
+     "text": "“Raffaella” on documents (email signature, office letterhead, billing line); “Raffi” in his texts and on the Post-its he writes to her. The shift between the two registers across the record marks the distance between professional and familiar."
+    },
+    {
+     "title": "Role in the ending",
+     "text": "She transcribes incoming voicemails for the file — including [[Connie Howell|Connie]]’s after Eva’s death — and places the Monday clipping on his desk. In Part Two she reschedules silently."
+    }
+   ],
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "apr": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "may": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "sep": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jan": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "feb": {
+     "base": "",
+     "visits": [
+      "m006n0qk"
+     ],
+     "events": "Monday wk 50: places the clipping on his desk; transcribes Connie’s voicemail for the file. Then reschedules silently through the brittle days.",
+     "notes": ""
+    }
+   },
+   "info": {
+    "gender": "Woman",
+    "ethnicity": "Italian-American",
+    "employer": "[[Anthony’s office]] — front desk, seven years"
+   },
+   "places": [
+    {
+     "label": "Works at",
+     "name": "Anthony’s office",
+     "locId": "m006n0qk"
+    },
+    {
+     "label": "Family from",
+     "name": "Lake Cranesford",
+     "locId": "m003iqzf"
+    }
+   ]
+  },
+  {
+   "id": "m012kzdh",
+   "name": "Annabel Coster",
+   "photos": [],
+   "tags": [
+    "Messina family"
+   ],
+   "frequents": [],
+   "created": 1790462577844,
+   "updated": 1790812005454,
+   "age": "24",
+   "pronouns": "she/her",
+   "homeId": "m00suqrh",
+   "summary": "Annabel Coster is [[Joey Messina|Joey]]’s fiancée, the daughter of a wealthy Protestant farming family in Ohio.",
+   "appearance": "Kirsten Dunst. Blonde, wholesome.",
+   "personality": "Polite, careful, earnest. Quietly devout (Protestant — Lutheran or Methodist).",
+   "sections": [
+    {
+     "title": "In the archive",
+     "text": "A photo from Easter. Maybe a thank-you note at Christmas. References in Joey’s texts. The wedding invitation. Likely never sends Anthony anything directly."
+    }
+   ],
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "apr": {
+     "base": "m00849qm",
+     "visits": [],
+     "events": "Easter with the Messinas.",
+     "notes": ""
+    },
+    "may": {
+     "base": "",
+     "visits": [
+      "m004by68"
+     ],
+     "events": "Engagement photos at the lake.",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "sep": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jan": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "feb": {
+     "base": "m003iqzf",
+     "visits": [
+      "m00evwo9"
+     ],
+     "events": "Arrives Thursday of week 49. Rehearsal dinner Friday; the wedding Saturday.",
+     "notes": ""
+    }
+   },
+   "facts": [],
+   "info": {
+    "gender": "Woman",
+    "hairColor": "Blonde",
+    "resemblance": "Kirsten Dunst",
+    "religion": "Protestant (Lutheran or Methodist) — quietly devout",
+    "marital": "Engaged to [[Joey Messina|Joey]]; married Saturday, wk 49",
+    "income": "Wealthy farming family"
+   },
+   "places": [
+    {
+     "label": "Family home",
+     "name": "Coster family farm",
+     "locId": "m00suqrh"
+    }
+   ]
+  },
+  {
+   "id": "m013jkrm",
+   "name": "Connie Howell",
+   "photos": [],
+   "tags": [
+    "Connie’s"
+   ],
+   "frequents": [
+    "m0079iuu"
+   ],
+   "created": 1790462577844,
+   "updated": 1790812005454,
+   "age": "Late 50s / early 60s",
+   "pronouns": "she/her",
+   "occupation": "Diner owner (30+ years)",
+   "affiliation": "[[Connie’s]]",
+   "homeId": "m003iqzf",
+   "summary": "Connie Howell has owned [[Connie’s]] diner for more than thirty years and treats [[Eva Miller|Eva]] like a daughter.",
+   "appearance": "Marisa Tomei.",
+   "personality": "Soft-spoken, motherly without being saccharine.",
+   "sections": [
+    {
+     "title": "The voicemail",
+     "text": "Monday afternoon of week 50, transcribed by Raffaella for the file:\n\n''“It’s Connie. Just wanted to let you know about Eva. Thank you for what you tried to do. I’m here if you want to call.”''\n\nAnthony doesn’t."
+    }
+   ],
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "apr": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "may": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "sep": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jan": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "feb": {
+     "base": "",
+     "visits": [],
+     "events": "Monday of week 50: leaves Anthony a voicemail about Eva. He doesn’t call.",
+     "notes": ""
+    }
+   },
+   "facts": [],
+   "info": {
+    "gender": "Woman",
+    "resemblance": "Marisa Tomei",
+    "employer": "Owner, [[Connie’s]] (30+ years)"
+   },
+   "places": [
+    {
+     "label": "Owns",
+     "name": "Connie’s",
+     "locId": "m0079iuu"
+    }
+   ]
+  },
+  {
+   "id": "m014emfx",
+   "name": "Anthony’s father",
+   "photos": [],
+   "tags": [
+    "Messina family"
+   ],
+   "frequents": [],
+   "created": 1790462577844,
+   "updated": 1790812005454,
+   "aliases": "Dad",
+   "pronouns": "he/him",
+   "occupation": "Carpenter (retired)",
+   "homeId": "m00kwkc6",
+   "summary": "Anthony’s father is a carpenter — stable, nurturing — now at [[Lake Arthur Retirement Village]]. Vince takes after him.",
+   "sections": [
+    {
+     "title": "In the book",
+     "text": "1–2 calls from Lake Arthur. The calls home go from monthly to nothing. In Part Two, memory intrudes: his father’s hands at a wedding forty years ago."
+    }
+   ],
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "apr": {
+     "base": "",
+     "visits": [],
+     "events": "“call Dad” — in the notebook, week 8.",
+     "notes": ""
+    },
+    "may": {
+     "base": "",
+     "visits": [],
+     "events": "Phone call with Anthony.",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "sep": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jan": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "feb": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    }
+   },
+   "facts": [],
+   "info": {
+    "gender": "Man",
+    "pastJobs": "Carpenter",
+    "marital": "Married"
+   }
+  },
+  {
+   "id": "m015ggvx",
+   "name": "Anthony’s mother",
+   "photos": [],
+   "tags": [
+    "Messina family"
+   ],
+   "frequents": [],
+   "created": 1790462577844,
+   "updated": 1790812005454,
+   "aliases": "Mom",
+   "pronouns": "she/her",
+   "occupation": "Military JAG investigator (retired)",
+   "homeId": "m00kwkc6",
+   "summary": "Anthony’s mother was a military JAG investigator — forensic by training, principled and methodical. He is her son in a different forensic discipline.",
+   "sections": [
+    {
+     "title": "In the book",
+     "text": "One voicemail auto-transcript garbles her accent into nonsense; he saves the voicemail anyway."
+    }
+   ],
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "apr": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "may": {
+     "base": "",
+     "visits": [],
+     "events": "Phone call with Anthony.",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "sep": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jan": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "feb": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    }
+   },
+   "facts": [],
+   "info": {
+    "gender": "Woman",
+    "military": "Military JAG investigator",
+    "pastJobs": "Military JAG investigator",
+    "marital": "Married"
+   }
+  },
+  {
+   "id": "m016soi5",
+   "name": "Marcus Wayne Reeves",
+   "photos": [],
+   "tags": [
+    "Patients",
+    "Short cases"
+   ],
+   "frequents": [],
+   "created": 1790462577844,
+   "updated": 1790812023286,
+   "aliases": "Reeves",
+   "age": "19",
+   "pronouns": "he/him",
+   "homeId": "m00adnz9",
+   "summary": "Marcus Reeves is the opening case: a 19-year-old evaluated for competency to stand trial on a criminal-homicide charge. He reads competent on the surface; Anthony sees the concealed trauma underneath — and is right.",
+   "facts": [
+    {
+     "label": "Evaluation",
+     "value": "Competency to stand trial (Dusky)"
+    },
+    {
+     "label": "Charge",
+     "value": "Criminal homicide — stepfather, 47"
+    },
+    {
+     "label": "Span",
+     "value": "Opens wk 1 · report wk 3–4"
+    },
+    {
+     "label": "Outcome",
+     "value": "Affirmed-with-a-shadow (Q1)"
+    }
+   ],
+   "sections": [
+    {
+     "title": "Function",
+     "text": "Calibrates the reader to the form and to his eye — when this man says he sees something, he sees it. A structural opener, not a thematic one. Reeves never points at Eva."
+    },
+    {
+     "title": "Intake session note",
+     "text": "The sample note from the plan. Clinical default in the body; his real voice in the marginalia. The marginalia dated 3/14 — six days later — show him returning to the file.\n\n<pre>\nSESSION NOTE\nPatient:    Marcus Reeves\nDOB:        [redacted] (19 y/o)\nEval type:  Competency to stand trial — Dusky standard\nDate:       March 8, 2030\nSession:    1 (intake)\nExaminer:   A. Messina, MD\nDuration:   90 min.\n\nPRESENTING:\nPt. is a 19-y/o Cauc. male, jail-referred per court order\n[ref #] for CST eval. Index charge: criminal homicide,\nsingle victim (stepfather, age 47). Pt. presents oriented\nx3, jail-issued attire, calm, cooperative. Eye contact\nappropriate. Affect mildly constricted, appropriate to\nsetting. Speech normal rate and volume. Thought process\nlinear. No evidence of psychosis. No SI/HI reported.\nDenies prior MH treatment.\n\nHISTORY:\nPt. relates childhood across multiple states — Ohio,\nIndiana, Kentucky, returning to PA at age 11. On direct:\n\"we moved a lot.\" Asked re: reason, pt. shrugged. \"My\nmom worked different places.\" Asked re: schools, pt.\nnamed four elementary schools before age 11. After age\n11, one middle school, one high school.\n\n[Marginalia, blue pen, undated:\n 11 is the age the moves stopped.]\n\nFamily of origin: biological mother (alive, currently\nemployed as a hospital aide); biological father\n(estranged, last contact age 8); stepfather (decedent,\nmarried mother when pt. was 9 or 10 — pt. uncertain).\nOne younger half-sibling (age 14, currently with mother).\n\nOn the stepfather: pt. described relationship as \"around.\"\nAsked to elaborate, pt. paused. Eventually: \"He wasn't\ngone.\" Asked if relationship was good or bad, pt. said\n\"depends what day.\" Asked to give an example, pt. said\n\"every day was a different day.\" Asked re: physical\ndiscipline: pt. said \"regular stuff.\"\n\n[Marginalia, blue pen, dated 3/14:\n \"regular stuff\" — clarify, follow up if M-eval ordered.]\n\nAsked re: head trauma: pt. denied. On second pass: pt.\ndescribed a fall at age 13 \"from the porch.\" Asked if\nmedically treated: no. Asked re: duration of LOC: \"I\ndon't know, my mom said I was up.\" Asked re: residual\nsymptoms: denied. (ER records pending — requesting.)\n\n[Marginalia, blue pen, dated 3/14:\n \"from the porch\" — no further detail. He said it like\n someone reciting a date. Look at the records.]\n\nEDUCATION:\nInconsistent attendance pre-11; consistent post-11. Pt.\ngraduated regular diploma, no special ed. Pt. reports\nB-/C+ average. No detentions of note. One in-school\nsuspension (unspecified). No work history beyond seasonal\nlandscaping.\n\nSUBSTANCE USE:\nPt. denies regular use of alcohol or illicit substances.\nReports first alcohol at 15 (parent's house), occasional\nuse since. Marijuana: tried 2x. No nicotine.\n\nLEGAL HISTORY:\nNo prior arrests. No juvenile record. No civil involvement.\n\nEVENT (per pt.'s account, summarized):\nPt. relates the incident in a flat, sequential manner.\nPt. states he came home from work, found stepfather and\nmother in argument; pt. intervened verbally; stepfather\nstruck mother; pt. struck stepfather. Pt. does not\ndescribe the weapon or its use. When asked, pt. paused,\nthen: \"I'm not supposed to talk about that part.\"\n(Counsel's instruction appropriate; not pursued.)\n\nMENTAL STATUS — competency-relevant:\nPt. articulate; understands the nature of charges;\ndemonstrates familiarity with court roles. Can recite\nhis attorney's name. Demonstrates capacity to assist\ncounsel via concrete answers re: factual questions.\nAffect appropriate to gravity. Reality testing intact.\nNo malingering indicators (instrument results pending).\n\nCLINICAL IMPRESSION:\nPt. meets the Dusky standard for competency to stand\ntrial. He understands the nature and consequences of\nthe proceedings against him and is able to consult with\nhis attorney with a reasonable degree of rational\nunderstanding.\n\nHowever.\n\n[Marginalia, blue pen, dated 3/14:\n \"every day was a different day\"\n \"regular stuff\"\n \"from the porch\"\n He told me three things on intake. The moves stopped\n at 11. The fall at 13. The stepfather is dead. He told\n me these things in order. He told me without being\n asked. He has been thinking about this order for a\n long time.]\n\nRECOMMENDATION:\n1. Competency to stand trial — AFFIRMED.\n2. Strongly recommend mitigation evaluation prior to\n   disposition.\n3. Request: complete school, medical, child welfare\n   records.\n4. Defense counsel should be made aware of likely\n   significant childhood trauma history not captured\n   in original intake.\n\nDISPOSITION:\nReport to be issued to [court], [DA], [defense counsel]\nwithin 14 days. Follow-up: not required for competency.\nMitigation eval recommended (separate referral).\n\nA. Messina, MD\n[Signature]\n</pre>"
+    },
+    {
+     "title": "Opening-week documents",
+     "text": "* Court referral packet — letterhead, court order, charge summary, prior eval history (none)\n* Intake self-report questionnaire — his handwriting in boxes\n* PHQ-9 and GAD-7 scored sheets\n* The intake session note, with the “However.” moment and the 3/14 marginalia\n\nSee [[The opening week]]."
+    }
+   ],
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [
+      "m006n0qk"
+     ],
+     "events": "Intake, March 8 (90 min). Competency affirmed — ''However.'' Marginalia dated 3/14. Report issued wk 3–4; mitigation evaluation recommended as a separate referral.",
+     "notes": ""
+    },
+    "apr": {
+     "base": "",
+     "visits": [],
+     "events": "“Reeves f/u re: school records” in the notebook.",
+     "notes": ""
+    },
+    "may": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "sep": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jan": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "feb": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    }
+   },
+   "born": "09/17/2010",
+   "status": "Alive",
+   "info": {
+    "legalName": "Marcus Wayne Reeves",
+    "gender": "Man",
+    "race": "White (“Cauc.” in the note)",
+    "dob": "[redacted] — 19 at intake",
+    "education": "Regular diploma, no special ed; B−/C+; four elementary schools before age 11",
+    "pastJobs": "Seasonal landscaping",
+    "criminal": "Charged: criminal homicide (stepfather, 47). No prior arrests, no juvenile record",
+    "conditions": "Fall “from the porch” at 13 — not medically treated (ER records requested)",
+    "substances": "Occasional alcohol since 15; marijuana tried twice; no nicotine",
+    "mentalHealth": "No prior treatment"
+   }
+  },
+  {
+   "id": "m017r2ez",
+   "name": "Petrak",
+   "photos": [],
+   "tags": [
+    "Patients",
+    "Recurring cases"
+   ],
+   "frequents": [],
+   "created": 1790462577844,
+   "updated": 1790812005454,
+   "age": "~24",
+   "pronouns": "he/him",
+   "summary": "Petrak is a competency-restoration case: floridly psychotic at arrest and found incompetent, restored at a state hospital, and returned lucid for re-evaluation. The case with a real turn.",
+   "facts": [
+    {
+     "label": "Evaluation",
+     "value": "Competency restoration"
+    },
+    {
+     "label": "Span",
+     "value": "Incompetent ~wk 5 · returns ~wk 30 · certified ~wk 34"
+    },
+    {
+     "label": "Outcome",
+     "value": "Clean resolution with a real turn (Q3)"
+    }
+   ],
+   "sections": [
+    {
+     "title": "Footprint",
+     "text": "Initial eval (incompetent finding) + hospital correspondence + return re-eval note + restored finding."
+    },
+    {
+     "title": "Conscience",
+     "text": "The conscience lives entirely in the marginalia: the vertigo of certifying a man sane enough to be tried for what he did while insane."
+    },
+    {
+     "title": "Function",
+     "text": "An arc with a genuine reversal, in territory most readers have never seen. Gives the first half a spine that resolves."
+    }
+   ],
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "apr": {
+     "base": "m00jrz3o",
+     "visits": [
+      "m0094qhk"
+     ],
+     "events": "Found incompetent (wk 5). Court — Petrak 9 AM (Apr 9). Shipped to the state forensic hospital for restoration.",
+     "notes": ""
+    },
+    "may": {
+     "base": "m00jrz3o",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jun": {
+     "base": "m00jrz3o",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jul": {
+     "base": "m00jrz3o",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "aug": {
+     "base": "m00jrz3o",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "sep": {
+     "base": "m00jrz3o",
+     "visits": [],
+     "events": "Returns restored (~wk 30) — the reversal.",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [],
+     "events": "Certified competent (wk 34).",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jan": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "feb": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    }
+   },
+   "info": {
+    "gender": "Man",
+    "criminal": "Found incompetent at arrest (floridly psychotic); restored; certified wk 34"
+   }
+  },
+  {
+   "id": "m0182ma0",
+   "name": "Cantwell",
+   "photos": [],
+   "tags": [
+    "Patients",
+    "Recurring cases"
+   ],
+   "frequents": [],
+   "created": 1790462577844,
+   "updated": 1790812005454,
+   "age": "~50",
+   "pronouns": "he/him",
+   "homeId": "m00glqsg",
+   "summary": "Cantwell is a sexually violent predator (SVP) civil-commitment case — a man at the end of a long sentence, evaluated for indefinite detention on predicted future risk. The most repugnant work in the caseload, done with total care and zero cruelty.",
+   "facts": [
+    {
+     "label": "Evaluation",
+     "value": "SVP civil commitment"
+    },
+    {
+     "label": "Instruments",
+     "value": "HCR-20, others"
+    },
+    {
+     "label": "Span",
+     "value": "Evals ~wks 3, 20, 36 · hearing ~wk 40 · letter ~wk 44"
+    },
+    {
+     "label": "Outcome",
+     "value": "Commitment recommended and upheld"
+    }
+   ],
+   "sections": [
+    {
+     "title": "Footprint",
+     "text": "Multiple evals, instruments, records, a hearing transcript where he testifies, then “the letter from the facility.” A standing case at book open; the southbound SCI Mercer GPS recurs here. The Cantwell SVP eval letter is document 8 of the opening week — his clinical voice at sustained professional length."
+    },
+    {
+     "title": "Function",
+     "text": "Rule 7 made flesh — necessary, ugly, future-prediction work done without being corroded by it. Maximal moral pressure."
+    }
+   ],
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [],
+     "events": "Eval at SCI Mercer (~wk 3). The long SVP eval letter.",
+     "notes": ""
+    },
+    "apr": {
+     "base": "",
+     "visits": [],
+     "events": "Dictation: Cantwell; prep notes.",
+     "notes": ""
+    },
+    "may": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [],
+     "events": "Eval #2 (wk 20).",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "sep": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [],
+     "events": "Eval #3 (wk 36).",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [
+      "m0094qhk"
+     ],
+     "events": "Commitment hearing (~wk 40) — Anthony testifies; commitment upheld.",
+     "notes": ""
+    },
+    "jan": {
+     "base": "",
+     "visits": [],
+     "events": "“The letter from the facility” arrives (wk 44).",
+     "notes": ""
+    },
+    "feb": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    }
+   },
+   "info": {
+    "gender": "Man",
+    "criminal": "End of a long sex-offense sentence; SVP civil commitment upheld (~wk 40)"
+   }
+  },
+  {
+   "id": "m019p9xi",
+   "name": "Brandt",
+   "photos": [],
+   "tags": [
+    "Patients",
+    "Recurring cases"
+   ],
+   "frequents": [],
+   "created": 1790462577844,
+   "updated": 1790812005454,
+   "age": "~46",
+   "pronouns": "he/him",
+   "homeId": "m003iqzf",
+   "summary": "Brandt is an NGRI acquittee on conditional release: he killed in a psychotic break a decade ago and now lives a small, monitored, frightened, dutiful life. Quarterly check-ins.",
+   "personality": "A gentle, frightened man who takes his meds and knows what he becomes without them.",
+   "facts": [
+    {
+     "label": "Evaluation",
+     "value": "NGRI conditional-release reviews"
+    },
+    {
+     "label": "Span",
+     "value": "~wks 1, 16, 30, 45"
+    },
+    {
+     "label": "Outcome",
+     "value": "Never resolves — ongoing monitoring is the point"
+    }
+   ],
+   "sections": [
+    {
+     "title": "Footprint",
+     "text": "Four short check-in notes, plus a one-page status form in the opening week (compliance, meds, living situation). Anthony’s first in-book note on him: short, careful, humane."
+    },
+    {
+     "title": "Function",
+     "text": "Humane recurring counterweight: the texture of a watched life — its indignity and its grace. Keep it about the texture of being watched, never about anyone “doing everything right”; that framing would turn it into a foreshadow."
+    }
+   ],
+   "talk": "== Scheduling ==\n* Reviews fall ~wks 1, 16, 30, 45. Keep wk 45 for the January texture; a December review (wk 40) is optional.",
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [
+      "m006n0qk"
+     ],
+     "events": "Review #1 (wk 1).",
+     "notes": ""
+    },
+    "apr": {
+     "base": "",
+     "visits": [],
+     "events": "“Brandt review — stable” (notebook, wk 8).",
+     "notes": ""
+    },
+    "may": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [
+      "m006n0qk"
+     ],
+     "events": "Review #2 (wk 16).",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "sep": {
+     "base": "",
+     "visits": [
+      "m006n0qk"
+     ],
+     "events": "Review #3 (wk 30).",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jan": {
+     "base": "",
+     "visits": [
+      "m006n0qk"
+     ],
+     "events": "Review #4 (wk 45).",
+     "notes": ""
+    },
+    "feb": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    }
+   },
+   "info": {
+    "gender": "Man",
+    "criminal": "Not guilty by reason of insanity — killed in a psychotic break a decade ago",
+    "medications": "Takes his meds; knows what he becomes without them"
+   }
+  },
+  {
+   "id": "m01aco7m",
+   "name": "Kessler",
+   "photos": [],
+   "tags": [
+    "Patients",
+    "Short cases"
+   ],
+   "frequents": [],
+   "created": 1790462577844,
+   "updated": 1790812005454,
+   "age": "~35",
+   "pronouns": "he/him",
+   "summary": "Kessler is faking illness to dodge prosecution. The dry pleasure of the catch — validity scales, too-textbook symptoms, cat-and-mouse. The book’s wit.",
+   "facts": [
+    {
+     "label": "Evaluation",
+     "value": "Malingering"
+    },
+    {
+     "label": "Span",
+     "value": "~wks 14–19 · caught wk 19"
+    },
+    {
+     "label": "Outcome",
+     "value": "A clean, satisfying win (Q2)"
+    }
+   ],
+   "sections": [
+    {
+     "title": "Footprint",
+     "text": "Eval, instruments flagging invalidity, a tight unmasking note."
+    },
+    {
+     "title": "Function",
+     "text": "Tonal relief in a heavy book: his eye working in a comic key. A catch, not a recovery — a different species of win than Eva’s, on purpose."
+    }
+   ],
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "apr": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "may": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [
+      "m006n0qk"
+     ],
+     "events": "Opens (~wk 14). Cat-and-mouse begins.",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [
+      "m006n0qk"
+     ],
+     "events": "Caught (wk 19) — validity scales, too-textbook symptoms.",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "sep": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jan": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "feb": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    }
+   },
+   "info": {
+    "criminal": "Faking illness to dodge prosecution — caught wk 19"
+   }
+  },
+  {
+   "id": "m01bb4mu",
+   "name": "Hartman",
+   "photos": [],
+   "tags": [
+    "Patients",
+    "Short cases"
+   ],
+   "frequents": [],
+   "created": 1790462577844,
+   "updated": 1790812005454,
+   "age": "~40",
+   "pronouns": "he/him",
+   "summary": "Hartman is a defence-retained capital-mitigation case: building the life history that might keep a man off death row.",
+   "facts": [
+    {
+     "label": "Evaluation",
+     "value": "Capital mitigation"
+    },
+    {
+     "label": "Span",
+     "value": "~wk 22 → late"
+    },
+    {
+     "label": "Outcome",
+     "value": "Handed off, unresolved (Q4)"
+    }
+   ],
+   "sections": [
+    {
+     "title": "Footprint",
+     "text": "Records requests, interview notes, the long report — clinical voice at full extension; a man’s whole life inside the document."
+    },
+    {
+     "title": "Function",
+     "text": "The heaviest, longest of the five short cases; the showcase of sustained clinical voice. First to cut if Eva needs more room (swap for Krieger)."
+    }
+   ],
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "apr": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "may": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [],
+     "events": "Opens (wk 22).",
+     "notes": ""
+    },
+    "sep": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [],
+     "events": "Running long underneath.",
+     "notes": ""
+    },
+    "jan": {
+     "base": "",
+     "visits": [],
+     "events": "“Hartman — records pending” (notebook, wk 43).",
+     "notes": ""
+    },
+    "feb": {
+     "base": "",
+     "visits": [],
+     "events": "Trails off, handed to counsel, unresolved.",
+     "notes": ""
+    }
+   },
+   "info": {
+    "gender": "Man",
+    "criminal": "Capital case — defence-retained mitigation"
+   }
+  },
+  {
+   "id": "m01cj0dm",
+   "name": "Allbright",
+   "photos": [],
+   "tags": [
+    "Patients",
+    "Short cases"
+   ],
+   "frequents": [],
+   "created": 1790462577844,
+   "updated": 1790812005454,
+   "aliases": "Father Allbright",
+   "age": "~60",
+   "pronouns": "he/him",
+   "occupation": "Priest",
+   "summary": "Allbright is a priest referred by the diocese over abuse allegations. The lapsed Catholic evaluating the failed cleric.",
+   "facts": [
+    {
+     "label": "Evaluation",
+     "value": "Diocesan review — abuse allegations"
+    },
+    {
+     "label": "Span",
+     "value": "~wks 33–38 · finding wk 38"
+    },
+    {
+     "label": "Outcome",
+     "value": "A finding rendered (Q3)"
+    }
+   ],
+   "sections": [
+    {
+     "title": "Footprint",
+     "text": "Referral packet, eval, a finding. Examination-of-conscience syntax surfaces; the longest notebook entries of the year run here."
+    },
+    {
+     "title": "Function",
+     "text": "Charged for him personally. Keeps the Catholic vein — load-bearing elsewhere — live and active."
+    }
+   ],
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "apr": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "may": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "sep": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [
+      "m006n0qk"
+     ],
+     "events": "Opens (wk 33). Longest notebook entries of the year.",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [],
+     "events": "Finding rendered (wk 38).",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jan": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "feb": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    }
+   },
+   "info": {
+    "title": "Father",
+    "gender": "Man",
+    "religion": "Catholic priest",
+    "criminal": "Diocesan review — abuse allegations; finding rendered wk 38"
+   }
+  },
+  {
+   "id": "m01dlpyp",
+   "name": "Sayles",
+   "photos": [],
+   "tags": [
+    "Patients",
+    "Short cases"
+   ],
+   "frequents": [],
+   "created": 1790462577844,
+   "updated": 1790812005454,
+   "age": "28",
+   "pronouns": "he/him",
+   "summary": "Sayles is in a court-mandated 18-month program after a domestic-violence felony — compliant, working, completing. The only unqualified success.",
+   "facts": [
+    {
+     "label": "Evaluation",
+     "value": "DV felony — 18-month program"
+    },
+    {
+     "label": "Span",
+     "value": "Ongoing at open · progress ~wks 18, 30 · discharge wk 50"
+    },
+    {
+     "label": "Outcome",
+     "value": "Clean discharge"
+    }
+   ],
+   "sections": [
+    {
+     "title": "Footprint",
+     "text": "A couple of regular progress notes mid-year; the discharge note signed in week 50."
+    },
+    {
+     "title": "Function",
+     "text": "The one unqualified win, arriving the same hours as the Eva clipping. Not an Eva-mirror: behavioural program-completion is a different species from grief recovery, and it lands then by the calendar’s indifference — good news and catastrophe sharing one desk."
+    }
+   ],
+   "talk": "== Flag for the author ==\n* If the discharge-and-clipping juxtaposition reads as rhyme in draft, move the discharge a week and cut it.",
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "apr": {
+     "base": "",
+     "visits": [],
+     "events": "Progress note (compliant).",
+     "notes": ""
+    },
+    "may": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [],
+     "events": "Progress note (~wk 18).",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "sep": {
+     "base": "",
+     "visits": [],
+     "events": "Progress note (~wk 30).",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jan": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "feb": {
+     "base": "",
+     "visits": [],
+     "events": "Discharge drafted Mon–Tue of wk 49; signed Monday wk 50 (or Tue/Wed in Part Two).",
+     "notes": ""
+    }
+   },
+   "info": {
+    "criminal": "Domestic-violence felony; court-mandated 18-month program; discharged wk 50"
+   }
+  },
+  {
+   "id": "m01ez8lj",
+   "name": "The ghost case",
+   "photos": [],
+   "tags": [
+    "Patients"
+   ],
+   "frequents": [],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "status": "Deceased",
+   "summary": "The ghost case is a single document: the death notice of a former patient whose case closed two years earlier. Week 38. He clips it. Writes nothing.",
+   "sections": [
+    {
+     "title": "Function",
+     "text": "No marginalia, no notebook entry, no scored moment. The administrative flatness is the whole point: a caseload that contains a death and does not announce it. The anti-foreshadow. Writing nothing keeps it texture, not omen."
+    }
+   ],
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "apr": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "may": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "sep": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [],
+     "events": "Death notice clipped (wk 38). Nothing written.",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jan": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "feb": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    }
+   },
+   "facts": []
+  },
+  {
+   "id": "m01fvwcm",
+   "name": "Krieger",
+   "photos": [],
+   "tags": [
+    "Patients",
+    "Bench"
+   ],
+   "frequents": [],
+   "created": 1790462577844,
+   "updated": 1790812005454,
+   "pronouns": "he/him",
+   "occupation": "State trooper",
+   "summary": "Krieger is a bench case: a fitness-for-duty evaluation that clears. A trooper, an incident; the answer is just “fit.”",
+   "sections": [
+    {
+     "title": "Notes",
+     "text": "Undramatic, because most cases are. Keep incidental, never symbolic — Theresa-adjacent but not Theresa-resonant. Swap against [[Hartman]] for lean over showcase."
+    }
+   ],
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "apr": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "may": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "sep": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jan": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "feb": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    }
+   },
+   "facts": [],
+   "info": {
+    "employer": "Pennsylvania State Police (trooper)"
+   }
+  },
+  {
+   "id": "m01gw7a0",
+   "name": "The narrow question",
+   "photos": [],
+   "tags": [
+    "Patients",
+    "Bench"
+   ],
+   "frequents": [],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "A bench case: a man referred on dangerousness who isn’t dangerous — just poor and out of options, sad in a way the instrument has no box for.",
+   "sections": [
+    {
+     "title": "Notes",
+     "text": "Quiet, unresolved, true. The richest “limits of the work” case. Swap in for one more null note."
+    }
+   ],
+   "months": {
+    "mar": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "apr": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "may": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jun": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jul": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "aug": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "sep": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "oct": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "nov": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "dec": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "jan": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    },
+    "feb": {
+     "base": "",
+     "visits": [],
+     "events": "",
+     "notes": ""
+    }
+   },
+   "facts": []
+  }
+ ],
+ "locations": [
+  {
+   "id": "m000hn8s",
+   "name": "Pennsylvania",
+   "type": "State",
+   "parentId": "",
+   "photos": [],
+   "tags": [],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "facts": [],
+   "sections": []
+  },
+  {
+   "id": "m001j873",
+   "name": "Western Pennsylvania",
+   "type": "Region",
+   "parentId": "m000hn8s",
+   "photos": [],
+   "tags": [],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "Western Pennsylvania is the region of the Allegheny Plateau between [[Pittsburgh]] and [[Erie]] where the book takes place.",
+   "facts": [],
+   "sections": []
+  },
+  {
+   "id": "m002k7sl",
+   "name": "Cranesford County",
+   "type": "County",
+   "parentId": "m001j873",
+   "photos": [],
+   "tags": [],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "Cranesford County is a fictional county in [[Western Pennsylvania]]. Its county seat is [[Lake Cranesford]].",
+   "facts": [],
+   "sections": []
+  },
+  {
+   "id": "m003iqzf",
+   "name": "Lake Cranesford",
+   "type": "Town",
+   "parentId": "m002k7sl",
+   "photos": [],
+   "tags": [
+    "Lake Cranesford"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "population": "~35,000–40,000",
+   "summary": "Lake Cranesford is a fictional Western Pennsylvania mill town on the Allegheny Plateau, between [[Pittsburgh]] (~100 mi south) and [[Erie]] (~75 mi north). It is the county seat of [[Cranesford County]] and the centre of the book’s world.",
+   "culture": "Working-class Italian, Polish and Slovak heritage.",
+   "description": "The town is named for its small inland lake, [[Lake Cranesford (lake)]]. The main artery, [[Cranesford-Erie Road]], runs north through town toward Erie; the office, the diner and various businesses sit along it.",
+   "facts": [
+    {
+     "label": "County seat of",
+     "value": "[[Cranesford County]]"
+    },
+    {
+     "label": "Heritage",
+     "value": "Italian, Polish, Slovak"
+    },
+    {
+     "label": "To Pittsburgh",
+     "value": "~100 mi S · ~1 hr 45 min"
+    },
+    {
+     "label": "To Erie",
+     "value": "~75 mi N · ~1 hr 15 min"
+    }
+   ],
+   "sections": [
+    {
+     "title": "On the map",
+     "text": "A map sits on the back inside cover: Lake Cranesford at centre, [[Pittsburgh]] and [[Erie]] at the edges, the road north to the beach, and dots for [[SCI Mercer]], [[SCI Albion]], [[Lake Arthur Retirement Village|Lake Arthur]] and [[Coster family farm|Annabel’s farm]] at the margins."
+    }
+   ]
+  },
+  {
+   "id": "m004by68",
+   "name": "Lake Cranesford (lake)",
+   "type": "Lake",
+   "parentId": "m003iqzf",
+   "photos": [],
+   "tags": [
+    "Lake Cranesford"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "aliases": "the lake",
+   "summary": "The lake the town is named for: small, inland, a working-class waterfront, modest, half-frozen in winter.",
+   "description": "[[Theresa Messina|Theresa]] runs around it most mornings. [[Joey Messina|Joey]] and [[Annabel Coster|Annabel]] do engagement photos there in spring. It is the local body of water Anthony leaves at the end for Lake Erie.",
+   "facts": [],
+   "sections": []
+  },
+  {
+   "id": "m005spg6",
+   "name": "Cranesford-Erie Road",
+   "type": "Road / route",
+   "parentId": "m003iqzf",
+   "photos": [],
+   "tags": [
+    "Lake Cranesford"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "Cranesford-Erie Road is the main artery of [[Lake Cranesford]], running north through town toward [[Erie]].",
+   "description": "The office, the diner and various businesses sit along it. It is the road the GPS draws across the book.",
+   "facts": [],
+   "sections": []
+  },
+  {
+   "id": "m006n0qk",
+   "name": "Anthony’s office",
+   "type": "Office",
+   "parentId": "m005spg6",
+   "photos": [],
+   "tags": [
+    "Lake Cranesford",
+    "Office"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "aliases": "the office, Messina practice",
+   "summary": "Anthony’s office is on the second floor above the CVS on [[Cranesford-Erie Road]]. [[Raffaella Zanella|Raffaella]] is at the front desk.",
+   "sights": "* The cracking leather patient chair\n* The lavender candle (he is particular about candle scent)\n* The desk drawer — the book’s organising metaphor, never a literal container",
+   "facts": [
+    {
+     "label": "Floor",
+     "value": "Second, above the CVS"
+    },
+    {
+     "label": "Front desk",
+     "value": "[[Raffaella Zanella]]"
+    },
+    {
+     "label": "To county jail",
+     "value": "5 min"
+    }
+   ],
+   "sections": []
+  },
+  {
+   "id": "m0079iuu",
+   "name": "Connie’s",
+   "type": "Diner",
+   "parentId": "m005spg6",
+   "photos": [],
+   "tags": [
+    "Lake Cranesford",
+    "Connie’s"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "aliases": "Connie’s diner, the diner",
+   "summary": "Connie’s is a 24-hour, family-style diner on [[Cranesford-Erie Road]] just outside town, owned by [[Connie Howell]] for more than thirty years.",
+   "description": "[[Eva Miller]] has waitressed here for eleven years.",
+   "facts": [
+    {
+     "label": "Owner",
+     "value": "[[Connie Howell]] (30+ years)"
+    },
+    {
+     "label": "Hours",
+     "value": "24-hour"
+    }
+   ],
+   "sections": []
+  },
+  {
+   "id": "m00849qm",
+   "name": "Messina home",
+   "type": "House",
+   "parentId": "m003iqzf",
+   "photos": [],
+   "tags": [
+    "Lake Cranesford",
+    "Messina family"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "The Messina home is a 1970s/80s brick colonial in an established neighbourhood off [[Cranesford-Erie Road]], within walking distance of the lake.",
+   "description": "Five bedrooms, a yard, a finished basement. [[Vincent Messina|Vince]] moves back into his old room in December; the kitchen table becomes his place through January.",
+   "facts": [
+    {
+     "label": "Style",
+     "value": "1970s/80s brick colonial"
+    },
+    {
+     "label": "Bedrooms",
+     "value": "Five"
+    },
+    {
+     "label": "Near",
+     "value": "[[Lake Cranesford (lake)]] (walking distance)"
+    }
+   ],
+   "sections": []
+  },
+  {
+   "id": "m0094qhk",
+   "name": "Cranesford County Courthouse",
+   "type": "Courthouse",
+   "parentId": "m003iqzf",
+   "photos": [],
+   "tags": [
+    "Lake Cranesford"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "aliases": "the courthouse",
+   "summary": "The county courthouse is downtown.",
+   "facts": [],
+   "sections": []
+  },
+  {
+   "id": "m00adnz9",
+   "name": "Cranesford County Jail",
+   "type": "Jail",
+   "parentId": "m003iqzf",
+   "photos": [],
+   "tags": [
+    "Lake Cranesford",
+    "Correctional facilities"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "aliases": "the county jail",
+   "summary": "The county jail is downtown, 5 minutes from the office. Pre-conviction intakes happen here.",
+   "facts": [],
+   "sections": []
+  },
+  {
+   "id": "m00bxgsm",
+   "name": "Eva’s apartment",
+   "type": "Apartment",
+   "parentId": "m003iqzf",
+   "photos": [],
+   "tags": [
+    "Lake Cranesford"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "Eva’s apartment is in a modest neighbourhood on the working-class side of town.",
+   "sights": "* The bathroom leak (she fixes it herself, week 47)\n* The bed she sleeps in the middle of\n* The cat\n* The coffee maker [[Aubrey Schultz|Aubrey]] bought",
+   "facts": [],
+   "sections": []
+  },
+  {
+   "id": "m00cd4wi",
+   "name": "UPMC Lake Cranesford",
+   "type": "Hospital",
+   "parentId": "m003iqzf",
+   "photos": [],
+   "tags": [
+    "Lake Cranesford"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "aliases": "UPMC local branch",
+   "summary": "The local UPMC branch: site of [[Eva Miller|Eva]]’s 72-hour hold and [[Vincent Messina|Vince]]’s neurologist.",
+   "facts": [],
+   "sections": []
+  },
+  {
+   "id": "m00d1mkn",
+   "name": "Our Lady of Immaculate Conception",
+   "type": "School",
+   "parentId": "m003iqzf",
+   "photos": [],
+   "tags": [
+    "Lake Cranesford"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "Our Lady of Immaculate Conception is the Catholic high school where [[Gianna Messina|Gianna]] is a senior.",
+   "facts": [],
+   "sections": []
+  },
+  {
+   "id": "m00evwo9",
+   "name": "The Greystone",
+   "type": "Restaurant",
+   "parentId": "m003iqzf",
+   "photos": [],
+   "tags": [
+    "Lake Cranesford"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "aliases": "Greystone",
+   "summary": "The Greystone is the local fancy steakhouse.",
+   "history": "* 25th anniversary dinner (week 12, May) — receipt, photo, notebook entry\n* The date Theresa books (December) — “I had fun / me too” hours later\n* Joey and Annabel’s rehearsal dinner (Friday, week 49)",
+   "facts": [],
+   "sections": []
+  },
+  {
+   "id": "m00fti0s",
+   "name": "PA State Police, Troop E",
+   "type": "Police barracks",
+   "parentId": "m001j873",
+   "photos": [],
+   "tags": [],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "aliases": "Troop E",
+   "summary": "Theresa’s barracks in the Pennsylvania State Police.",
+   "facts": [],
+   "sections": []
+  },
+  {
+   "id": "m00glqsg",
+   "name": "SCI Mercer",
+   "type": "Prison",
+   "parentId": "m001j873",
+   "photos": [],
+   "tags": [
+    "Correctional facilities"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "SCI Mercer is the state correctional institution south of town, 30 minutes away — Anthony’s workhorse facility.",
+   "description": "He does the recurring [[Cantwell]] SVP evals here. The short drive lets him be back by lunch. A GPS screenshot of the southbound trip recurs across the book.",
+   "facts": [
+    {
+     "label": "From Lake Cranesford",
+     "value": "~30 min south"
+    }
+   ],
+   "sections": []
+  },
+  {
+   "id": "m00hm3w6",
+   "name": "SCI Albion",
+   "type": "Prison",
+   "parentId": "m001j873",
+   "photos": [],
+   "tags": [
+    "Correctional facilities"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "SCI Albion is north, near [[Erie]]. Longer drives there are reserved for occasional cases.",
+   "facts": [
+    {
+     "label": "From Lake Cranesford",
+     "value": "~1 hr 15 min north"
+    }
+   ],
+   "sections": []
+  },
+  {
+   "id": "m00iq3s3",
+   "name": "SCI Cambridge Springs",
+   "type": "Prison",
+   "parentId": "m001j873",
+   "photos": [],
+   "tags": [
+    "Correctional facilities"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "The women’s state correctional institution, to the north.",
+   "facts": [
+    {
+     "label": "From Lake Cranesford",
+     "value": "~1 hr north"
+    }
+   ],
+   "sections": []
+  },
+  {
+   "id": "m00jrz3o",
+   "name": "State forensic hospital",
+   "type": "Hospital",
+   "parentId": "m001j873",
+   "photos": [],
+   "tags": [],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "The state forensic hospital where [[Petrak]] is sent for competency restoration after being found incompetent in April.",
+   "facts": [],
+   "sections": []
+  },
+  {
+   "id": "m00kwkc6",
+   "name": "Lake Arthur Retirement Village",
+   "type": "Retirement home",
+   "parentId": "m001j873",
+   "photos": [],
+   "tags": [],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "aliases": "Lake Arthur",
+   "summary": "Lake Arthur Retirement Village is about 45 minutes south of town. Both of Anthony’s parents live here.",
+   "facts": [
+    {
+     "label": "From Lake Cranesford",
+     "value": "~45 min south"
+    }
+   ],
+   "sections": []
+  },
+  {
+   "id": "m00l73az",
+   "name": "Erie",
+   "type": "City",
+   "parentId": "m001j873",
+   "photos": [],
+   "tags": [
+    "Erie"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "Erie is the lakeshore city ~75 miles north of [[Lake Cranesford]].",
+   "facts": [
+    {
+     "label": "From Lake Cranesford",
+     "value": "~1 hr 15 min"
+    }
+   ],
+   "sections": []
+  },
+  {
+   "id": "m00mnmiz",
+   "name": "UPMC Hamot",
+   "type": "Hospital",
+   "parentId": "m00l73az",
+   "photos": [],
+   "tags": [
+    "Erie"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "UPMC Hamot is the larger hospital in Erie where [[Aubrey Schultz]] worked for ten years as a paediatric/NICU nurse, and where she was treated and died.",
+   "facts": [],
+   "sections": []
+  },
+  {
+   "id": "m00nv6oq",
+   "name": "Gannon University",
+   "type": "University",
+   "parentId": "m00l73az",
+   "photos": [],
+   "tags": [
+    "Erie"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "Gannon University is the Catholic university in Erie where [[Claire Messina|Claire]] is a pre-med senior.",
+   "facts": [],
+   "sections": []
+  },
+  {
+   "id": "m00ol1dy",
+   "name": "Penn State Behrend",
+   "type": "University",
+   "parentId": "m00l73az",
+   "photos": [],
+   "tags": [
+    "Erie"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "Penn State Behrend, in Erie, is where [[Vincent Messina|Vince]] is a sophomore and plays Division III hockey until his medical withdrawal.",
+   "facts": [],
+   "sections": []
+  },
+  {
+   "id": "m00pgft0",
+   "name": "Presque Isle State Park",
+   "type": "Beach",
+   "parentId": "m00l73az",
+   "photos": [],
+   "tags": [
+    "Erie",
+    "Part Two"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "aliases": "Presque Isle, the beach",
+   "summary": "Presque Isle State Park is on the Lake Erie shore. It is the place Anthony and Theresa each escaped to as kids, before they knew each other.",
+   "description": "Open sky; a real horizon for the stars. The GPS estimates 1 hr 26 min on the final day.",
+   "sections": [
+    {
+     "title": "In Part Two",
+     "text": "The beach, ~8–12 pages, adagio. He climbs on the truck and watches the sky. The cold. Theresa’s calls at 22:41 and 22:43. The pocket notebook, the pen he hates. He writes the line and initials it."
+    }
+   ],
+   "facts": [
+    {
+     "label": "From Lake Cranesford",
+     "value": "~1 hr 30 min (GPS: 1 hr 26 min)"
+    }
+   ]
+  },
+  {
+   "id": "m00qvog3",
+   "name": "Pittsburgh",
+   "type": "City",
+   "parentId": "m001j873",
+   "photos": [],
+   "tags": [],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "Pittsburgh is ~100 miles south, where [[Joey Messina|Joey]] works as a paralegal.",
+   "facts": [
+    {
+     "label": "From Lake Cranesford",
+     "value": "~1 hr 45 min"
+    }
+   ],
+   "sections": []
+  },
+  {
+   "id": "m00risyz",
+   "name": "Ohio",
+   "type": "State",
+   "parentId": "",
+   "photos": [],
+   "tags": [],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "facts": [],
+   "sections": []
+  },
+  {
+   "id": "m00suqrh",
+   "name": "Coster family farm",
+   "type": "Farm",
+   "parentId": "m00risyz",
+   "photos": [],
+   "tags": [],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "aliases": "Annabel’s farm",
+   "summary": "The Coster family farm is the wealthy Protestant farming family’s place in Ohio — [[Annabel Coster|Annabel]]’s home, about three hours west.",
+   "facts": [
+    {
+     "label": "From Lake Cranesford",
+     "value": "~3 hr"
+    }
+   ],
+   "sections": []
+  }
+ ],
+ "articles": [
+  {
+   "id": "m02j8mya",
+   "name": "As the Moon Swallows the Stars",
+   "photos": [],
+   "tags": [
+    "Book 1"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "''As the Moon Swallows the Stars'' is Book 1 of a trilogy: a literary tragedy (70,000+ words) told as the contents of forensic psychiatrist [[Anthony Messina]]’s working desk drawer across one year, March 2030 to February 2031 — until the man closes the drawer and the form breaks into prose.",
+   "facts": [
+    {
+     "label": "Genre",
+     "value": "Literary tragedy"
+    },
+    {
+     "label": "Length",
+     "value": "70,000+ words · ~350–400 pages"
+    },
+    {
+     "label": "Setting",
+     "value": "[[Lake Cranesford]], PA"
+    },
+    {
+     "label": "Span",
+     "value": "March 2030 – February 2031 (52 weeks)"
+    },
+    {
+     "label": "Form",
+     "value": "Facsimile archive → third-person prose"
+    },
+    {
+     "label": "Trim",
+     "value": "7 × 10 in (see [[Production spec]])"
+    },
+    {
+     "label": "Family",
+     "value": "Art-object book — the ''S.'' / ''Building Stories'' family"
+    }
+   ],
+   "sections": [
+    {
+     "title": "The seed line",
+     "text": "The book’s originating line, which becomes the closing line:\n\n''As the moon swallowed the stars, I realized — we were all alone.''\n— A. M.\n\nThe line is precise rather than Romantic. The moon doesn’t destroy the stars. It makes them invisible. They’re still there; the brightness of the moon outshines them. That’s what suicidal depression is — the lights of your life don’t go out; they’re outshone by the overwhelming pull. Theresa is still there. The kids are still there. The work is still there. You can’t see them. The moon is too bright.\n\nThe title is the present tense of the line. The reader holds the title for 350 pages, watching the swallowing happen slowly. The closing line is when Anthony sees it has happened."
+    },
+    {
+     "title": "Concept and form",
+     "text": "The book is the literal contents of Dr. Anthony Messina’s working desk drawer across a single year — typed case notes, handwritten annotations, Post-its, court orders, intake forms and questionnaires, standardised screening inventories, phone screenshots, voicemail transcripts, text exchanges, emails, calendar pages, GPS screenshots, his personal pocket notebook, newspaper clippings, an obituary, a few photos, receipts, permission slips, postcards, a grocery list, a swearing-in invitation.\n\nEach page is a discrete document, interleaved in roughly chronological order. The clinical work is the spine; life material is shuffled in around it.\n\n'''The drawer is metaphor.''' It is the organising frame, not a real container. (See [[The form contract]].)\n\nPart One ends with the news of Eva’s death reaching him — clipping, obituary, the unfilable case-closure form, a dated blank page. Part Two is third-person close, free indirect, ~30 pages of pure descent. The final page returns to facsimile: a piece of lined paper from his notebook, his handwriting, one line, his initial."
+    },
+    {
+     "title": "The shape",
+     "text": "Three movements, but the middle one is invisible until it isn’t.\n\n== The condition (weeks 1–49) ==\nAnthony has been at the edge of his capacity for years. He doesn’t know it. The work product stays excellent; the life product thins. The reader watches this and doesn’t quite know they’re watching. On page 100 they see grocery lists. By page 200 they don’t, and don’t notice the absence. By page 300 they vaguely remember Theresa used to write him grocery lists and aren’t sure when that stopped.\n\n== The grenade (week 50) ==\n[[Eva Miller|Eva]] dies. She was cautiously optimistic. She was doing the work. She was, in fact, making it — until one morning she wasn’t. The grenade ends his ability to hold the imbalance. He doesn’t crumble because Eva broke him. He crumbles because what was already true becomes visible.\n\n== The fall (weeks 50–51) ==\nQuiet emptying. He goes home. He returns to the office. He cannot pick up the work. Some morning his hand reaches for the keys. The drive. The beach.\n\nThe parallelism: both Eva and Anthony might have lived. Anthony failed to see Eva. The system failed to see Anthony. The book holds both questions open and answers neither."
+    },
+    {
+     "title": "Two parts",
+     "text": "== Part One: The Archive (weeks 1–50, ~320 pages) ==\nPage one through the news of Eva’s death. His condition is never narrated — it is inferred from absences in the documentary record. The wedding lands as a document cluster (week 49 Saturday). Eva dies Friday night, week 49; Anthony attends the wedding not knowing; Monday of week 50 the clipping arrives. Part One ends with:\n* News clipping\n* Obituary\n* Connie’s voicemail (transcribed by Raffaella)\n* The unfilable case-closure form\n* The dated blank page\n\n== Part Two: The Slide Bottoms (~30 pages) ==\nThird-person close, free indirect, set in a serif literary face (Garamond, Sabon, Caslon). Pure descent. The drive appears as one final document — an Apple Maps screenshot, home to [[Presque Isle State Park|Presque Isle]]: ''Now departing. 1 hr 26 min.'' The beach, ~8–12 pages, adagio.\n\nThe ending is ambiguous, tilted toward suicide but not stated. He could die of exposure on the truck. He could drive home at 4 AM. The book refuses to tell. See [[Part Two beat sheet]]."
+    },
+    {
+     "title": "The closing",
+     "text": "The book closes on the same hand it opened with — but unable to file itself. The last real thing is not furniture; it is a document that cannot complete itself. The recovery checkbox cannot be checked over a dead woman. The line is written in the wrong hand, outside the box. The page is dated, signed, unfilable. The form’s final act of containment is to record its own failure, and then the narrator stops watching.\n\nThe reader does the rest."
+    },
+    {
+     "title": "Deferred",
+     "text": "* Beach-scene gestures (write, don’t plan)\n* Production logistics (line up an artist after the draft is in good shape — but hold the art-object identity from the start)\n* Marketing positioning (comp titles in the ''S.'' / ''Building Stories'' family, jacket copy)\n* Sample documents in other modes (Brandt review note, Eva intake note, voicemails, Theresa text threads)\n* Final call on whether the Sayles juxtaposition reads as calendar-indifference or rhyme"
+    },
+    {
+     "title": "The trilogy",
+     "text": "A triptych of working lives; any connection between the three is coincidental and authorial, never in-world. Book 2, ''Across the Bridge'' (Bugatti — unmoved). Book 3, ''Captain Wynn'' (Wynn — sustained). “Salt and Glass,” once floated as the Book 3 title, is now the name of Wynn’s fifth case."
+    }
+   ]
+  },
+  {
+   "id": "m02khcwu",
+   "name": "The iron rules",
+   "photos": [],
+   "tags": [
+    "Structure"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "The iron rules are the seven philosophical commitments the book holds across every page. Rules 1, 2 and 6 are governed by [[The form contract]].",
+   "sections": [
+    {
+     "title": "The seven rules",
+     "text": "# '''Form is character — meaning the gap, not the surface.''' The form is his armoured, performed self: the part most rewarded, most practised, kept immaculate by will. Character lives in the distance between the clean surface and the absences around it.\n# '''Presence through artifact — until the artifact fails.''' Anthony is never directly described. He is built from what he produced, kept, annotated, chose to save. Part Two is the engineered exception: the access is the ''failure'' of this rule, not its suspension.\n# '''The slide is absence, not degradation.''' The work product stays him; the slide is in what he stops doing. Family goes first. Friends second. Self third. Work last.\n# '''The reader has equal access and equal blindness.''' Anthony logs every echo and connects none of them. The book’s deepest grief — ''was it catchable, or was there nothing to catch'' — must remain genuinely unanswered. There is no planted tell.\n# '''No villain. No mechanism. No turn.''' The case ends because grief is grief. The convergence is the only force.\n# '''One point of access — and the form breaks to grant it.''' Never inside anyone but Anthony, and inside Anthony only when the form has failed. Theresa stays external. Eva stays opaque.\n# '''Professionalism is not cynicism.''' Anthony is still trying when she dies. That is what makes it tragedy. The book is not satire."
+    }
+   ],
+   "facts": []
+  },
+  {
+   "id": "m02l9751",
+   "name": "The form contract",
+   "photos": [],
+   "tags": [
+    "Structure"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "The form contract states where the form is allowed to break, and why each break is an event rather than an error. The form is a containment: it holds the man the way his professionalism holds him — completely, until it doesn’t.",
+   "sections": [
+    {
+     "title": "The drawer is metaphor. Fully. Throughout.",
+     "text": "The drawer is never a literal container the reader is asked to picture. There is no scene of a physical drawer. Consequence for the close: the ending cannot rest on a physical drawer; it rests on a ''document'' that cannot file itself. The power is in the paper, never the furniture."
+    },
+    {
+     "title": "Part Two is a rupture of single-access. On purpose.",
+     "text": "For 320 pages the book never gets inside him. Part Two gets inside him for thirty. The documents could contain the man as long as the man held. When he comes apart, the containment fails. The reader should feel the floor drop."
+    },
+    {
+     "title": "What the Part Two narration is made of",
+     "text": "Not a new omniscience switched on at the end: the forensic gaze itself — the same external, clinical watching Anthony has aimed at other people for twenty-five years — finally turned on its operator. It observes him from outside, behaviourally, refusing interiority. It can watch him to the waterline and no further.\n\nThe single first-person utterance is the subject speaking back to the gaze — the only moment in the book the watched man says ''I''. The rupture has a rupture."
+    },
+    {
+     "title": "The seam between the parts",
+     "text": "The unfilable case-closure form is the hinge. It is the last thing the archive can hold — the form’s final successful act of containment is to record its own failure. Part One ends on it as document (then the dated blank page, the held breath). Part Two opens at the same desk, the same Monday, in prose: the pen just set down, the form already complete behind him. The repetition of the moment across two registers ''is'' the rupture."
+    },
+    {
+     "title": "What “form is character” actually claims",
+     "text": "It does not mean the surface decays with the self. The surface ''is'' the armoured, performed self, and character lives in the gap between that clean surface and the absences accumulating around it. The form doesn’t degrade because ''he'' wouldn’t let it. That refusal is the portrait."
+    }
+   ],
+   "facts": []
+  },
+  {
+   "id": "m02m23u9",
+   "name": "Physical form",
+   "photos": [],
+   "tags": [
+    "Structure"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "How the book is built as an object: the drawer, the document types, the calendar spreads, the handwriting registers and the date stamps.",
+   "sections": [
+    {
+     "title": "Document types",
+     "text": "== The clinical bulk ==\n* Typed case notes (clean sans-serif, 1–4 pages depending on session type)\n* Intake questionnaires (multi-page forms, patient’s handwriting in boxes)\n* Screening inventories — PHQ-9, GAD-7, PCL-5, HCR-20, MMPI-2-RF\n* Court referral packets (letterhead, court order, charge summary)\n* Records release forms; court filings; deposition transcripts\n* Recorded forensic interview transcripts (rare)\n* Full eval reports\n\n== Life detritus ==\n* Phone screenshots (call history, missed calls, voicemail rows)\n* Text messages; emails\n* Calendar pages (two-page spreads as chapter breaks)\n* GPS screenshots (commutes, court drives, the drive to the beach)\n* Voicemail auto-transcripts\n* Receipts, postcards, permission slips, grocery lists, prom photos, report cards, Christmas-card photos, mass programs, ticket stubs\n\n== The pocket Moleskine ==\nThree days per page, bullets, blue pen, ruled paper. Sloppy — the honest mode. Degrades by thinning: daily, weekly, monthly; some weeks no entries."
+    },
+    {
+     "title": "Voicemails",
+     "text": "The natural document form for missed calls, in iPhone Visual Voicemail layout: sender, date/time, duration, listened/unlistened, auto-transcribed text. Early in the year, two or three short ones, all listened. Late year, six or seven, several unlistened. The ''Unread'' indicator is its own document.\n* Theresa: daily morning call; voicemails when missed, increasingly often\n* Joey: weekend calls\n* Vince: texts only; maybe one or two calls\n* Claire: rare calls; one voicemail when something mattered\n* Gianna: in person\n* His parents: 1–2 calls from Lake Arthur; one transcript garbles his mother’s accent into nonsense and he saves it anyway"
+    },
+    {
+     "title": "The notes are alive",
+     "text": "Clinical notes are working documents — typed, then revised by hand across the year: crossed-out passages, dated marginal annotations in different inks, arrows, circles, asterisks. A March note read in March has no marginalia yet; when it becomes relevant in October, he adds an October-dated annotation and puts it back. What changes is which files he goes back to, and how often.\n\n* Intake notes: 2–4 pages, dense, direct quotes, marginalia accumulating\n* Follow-ups: one page or less — Since last session / Mental status / Themes / Plan"
+    },
+    {
+     "title": "Weekly rhythm",
+     "text": "Roughly per week: 3–4 session notes; 1 calendar page (the month’s chapter break); 1–3 life documents; 0–1 notebook entries; 0–2 voicemails; 1–3 questionnaires. Across 52 weeks, about 350–400 pages."
+    },
+    {
+     "title": "The calendar as chapter break",
+     "text": "Each chapter is a two-page spread of one month’s calendar — twelve across the book. The calendars are the planning self, not the executing self: he plans each month at the end of the prior one, and the gap between calendar-Anthony and document-Anthony is the slide.\n* '''March–July:''' dense, clean, every weekday filled, planned in one sitting, clean fountain-pen hand\n* '''August–September:''' dense, still clean; Eva’s standing appointment absorbed\n* '''October–November:''' slight gaps; the first ''?'' beside a Sunday brunch\n* '''December:''' swearing-in and wedding date on it; surrounding weeks thinner; visible gaps in the ink\n* '''January:''' thinner; single-word entries — ''court'', ''eval''; entries crossed out without new dates\n* '''February:''' the load-bearing spread — wedding Saturday, Eva’s last Wednesday, the rehearsal Friday, the never-happened Eva slot; the blank Monday of week 50\n\nThe deeper degradation is the visible loss of advance-planning capacity. '''Part Two has no calendar.''' See [[Calendar spread]]."
+    },
+    {
+     "title": "Visual hierarchy",
+     "text": "Three handwriting fonts minimum — Anthony (clinical, marginalia, notebook), Theresa, child/other. A few institutional fonts; typewriter or clean sans for case notes; a serif form font for legal documents; a newsprint face for clippings. Seven or eight registers. Every document carries a date in a small consistent typeface — the reader’s compass. See [[Style sheet]]."
+    },
+    {
+     "title": "Part Two — the visual collapse",
+     "text": "A single page with only the date of Eva’s death. Otherwise blank. The held breath. Then prose in serif type. No header. The reader simply turns the page and finds a novel. The last page returns to facsimile: lined notebook paper, his hand, one line, ''— A. M.''"
+    },
+    {
+     "title": "Production",
+     "text": "Twelve hand-rendered calendar spreads, multiple handwriting registers, photos, programs, receipts, voicemail screenshots. Achievable in B&W on standard literary stock; for an elevated edition, limited two-colour (blue ink for the notebook).\n\n'''Production is not deferrable.''' The production model ''is'' the artwork. Cost, price point, handwriting consistency across 350 pages and near-impossibility as an ebook are identity questions, not logistics."
+    }
+   ],
+   "facts": []
+  },
+  {
+   "id": "m02nvy6h",
+   "name": "Voice and register",
+   "photos": [],
+   "tags": [
+    "Structure"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "How Anthony sounds in each mode of Part One, the rules for Part Two’s prose, and the book’s few scored moments.",
+   "sections": [
+    {
+     "title": "Part One — the documents speak",
+     "text": "* '''Typed clinical notes''' — clean sans-serif, professional vocabulary, lapsed-Catholic syntax flickering under stress (''However.'' standing alone)\n* '''Marginal annotations''' — blue pen, dated, conservative\n* '''Pocket notebook''' — blue pen, ruled paper, sloppy, the honest mode\n\nClinical default in the body, his real voice in the marginalia. The gap between the typed line and the penciled line is the book. See the sample intake note on [[Marcus Reeves]] and the notebook samples on [[Anthony Messina]]."
+    },
+    {
+     "title": "Part Two — third-person close",
+     "text": "Adagio. Slow, patient, no quick beats. After 300 pages of dense documents, the prose is the silence after the noise.\n\n'''Rule:''' no sentence names what he is thinking or feeling. No ''he thought'', no ''he realized'', no ''he felt''. The interior verb arrives once, in the closing line.\n\nWhat carries the interior work:\n* Behaviour — what he does, what his hand reaches for\n* Dialogue — to Raffaella, to Theresa, to himself under his breath\n* Concrete objects — the phone buzzing, the cracking leather chair, the pen he hates, the cold\n* Memory as intrusion — a photo on the desk, a song, his father’s hands at a wedding forty years ago\n* Vocabulary leakage — ''The keyboard wouldn’t wake up. He smacked it. Fucking thing.''"
+    },
+    {
+     "title": "Theresa’s name lands once",
+     "text": "She says his given name — ''Anthony'' — once in Part Two. The book has held it back for three hundred pages. The release of the name is the release of his interior to her, and his inability to take her hand."
+    },
+    {
+     "title": "The scored moments",
+     "text": "# The 25th anniversary dinner (Greystone receipt + photo + notebook entry)\n# Christmas Eve mass — the absence; the program reaches the drawer via her grocery list\n# Vince at the kitchen table — ''V. won’t look at me'' two pages from a note of full professional competence\n# The toast draft on the back of the wedding program\n# Theresa’s note in the lunch bag: ''You did good Saturday. Love you.'' — beside the clipping\n# The beach. Adagio."
+    }
+   ],
+   "facts": []
+  },
+  {
+   "id": "m02oqx7d",
+   "name": "Eva’s locked arc",
+   "photos": [],
+   "tags": [
+    "Structure"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "Eva’s locked arc is the recovery crescendo from week 26 to week 49 (~24 sessions). The win is real. There is no planted tell. The reader must finish week 48 believing she is safe — because Anthony does, because she is.",
+   "sections": [
+    {
+     "title": "Design principle",
+     "text": "Each late marker is a future being built. Future-orientation is the clinical signature of recovery and the cruelest thing a death can take. The height of the fall is measured in how many next-weeks she is holding when the morning comes that she isn’t. Build the futures high.\n\nThis is where rules 4 and 5 are kept: a rereader finds only an ordinary Wednesday, which is exactly what was there."
+    },
+    {
+     "title": "Weeks 26–38",
+     "text": "* '''Wk 26 — intake.''' UPMC hospital-hold paperwork; mandated outpatient referral; intake questionnaire in her hand; PHQ-9 severe; PCL-5 significant. Margin: ''guarded. compliant. flat affect appropriate to recent loss.''\n* '''Wks 27–29.''' Aubrey’s story in pieces. The diner. Connie.\n* '''Wk 30 — first positive marker.''' Middle-of-bed sleep change.\n* '''Wks 31–38.''' Grief group; clothes donated in batches; coffee for one; the cat. ''Concrete grief work continuing.'' “Cautiously optimistic” in a margin — and he is right to."
+    },
+    {
+     "title": "The crescendo",
+     "text": "* '''Wk 44 — the body, forward.''' Annual physical alone; spring follow-up booked. Margin: “first independent medical. — milestone.”\n* '''Wk 45 — a commitment with a date.''' Pick ONE, concrete, dated. No margin — a person rejoining time.\n* '''Wk 46 — mornings reclaimed.''' Walks before her shift. Margin: “sleep cycle adjusting. mornings tolerated.” (“Tolerated” never gets the upgrade to “reclaimed.”)\n* '''Wk 47 — the apartment kept.''' The leak fixed herself; tax return filed alone.\n* '''Wk 48 — the plateau.''' “Pt. calm and integrated. Sleep stable. Affect appropriate. Cautiously optimistic.” A TRUE READ.\n* '''Wk 49, Wednesday — the last session: ordinary.''' The slightly hurried hand is his distraction, never a tell. “See you next week.” She has a next week. So does he."
+    },
+    {
+     "title": "After",
+     "text": "* '''Friday night, wk 49''' — she dies. Not shown. Gianna’s 11:42 PM text goes unanswered the same night.\n* '''Saturday''' — discovered. Anthony attends the wedding not knowing.\n* '''Monday, wk 50''' — the clipping (plain factual lede), placed by Raffaella. The obituary (a brother and a mother she barely spoke to; Aubrey absent). Connie’s voicemail.\n* '''The unfilable file''' — a draft case-closure form, the recovery checkbox hovered over and not completed, the line outside the box in the wrong hand: ''Eva Miller hanged herself in her room.'' Dated. (“Hanged” — locked. The form fails on its content, not its grammar.)\n* '''The dated blank page.''' End of Part One."
+    }
+   ],
+   "facts": []
+  },
+  {
+   "id": "m02ps1r0",
+   "name": "The case docket",
+   "photos": [],
+   "tags": [
+    "Structure"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "The case docket: nine foregrounded cases including Eva, plus one single-document ghost case. The organising logic is range, not theme — no case points at Eva.",
+   "sections": [
+    {
+     "title": "Recurring cases",
+     "text": "* [[Petrak]] — competency restoration; the real turn\n* [[Cantwell]] — SVP civil commitment; the grind\n* [[Brandt]] — NGRI conditional release; never resolves"
+    },
+    {
+     "title": "Short cases",
+     "text": "* [[Marcus Reeves|Reeves]] — competency to stand trial; the opener, affirmed-with-a-shadow\n* [[Kessler]] — malingering; the clean catch\n* [[Hartman]] — capital mitigation; trails off\n* [[Allbright]] — diocesan review; a finding\n* [[Sayles]] — DV program; the clean discharge"
+    },
+    {
+     "title": "Single document",
+     "text": "* [[The ghost case]] — death notice, week 38; he clips it, writes nothing\n* [[Eva Miller]] — the locked arc; see [[Eva’s locked arc]]"
+    },
+    {
+     "title": "Sequencing for non-pattern",
+     "text": "Scatter the resolutions so no two adjacent files end the same way: Reeves affirms-with-a-shadow (Q1), Brandt resolves into nothing (Q1, recurring), Kessler is a clean catch (Q2), Petrak turns and restores (Q3), Cantwell grinds toward a hearing (Q3), Allbright renders a finding (Q3), the ghost case ends in a death nobody annotates (wk 38), Hartman trails off (Q4), Sayles discharges clean (wk 50) — then Eva.\n\nAffirm, null, win, turn, grind, finding, quiet death, trail-off, clean win, then the body. The reader never finds a rhythm, so never learns to brace."
+    },
+    {
+     "title": "Cut",
+     "text": "Fairchild, Brennan, Reigns, Ostrov, Velazquez, Hoyt, Lozada, Volk, the psychological autopsy, and the prior outer/cut list. The psychological autopsy is cut on sight — reconstructing a dead mind from documents mirrors the book’s own method too exactly. The Ostrov line (a patient near-quoting the closing line) is cut: the least subtle device in the book."
+    },
+    {
+     "title": "Bench",
+     "text": "* [[Krieger]] — fitness-for-duty that clears\n* [[The narrow question]] — a man referred on dangerousness who isn’t dangerous, just poor and out of options"
+    }
+   ],
+   "facts": []
+  },
+  {
+   "id": "m02qe195",
+   "name": "The year skeleton",
+   "photos": [],
+   "tags": [
+    "Structure"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "The year skeleton: the book runs March → February, 52 weeks. Eva’s intake is week 26; her death is Friday night of week 49. Every character’s month-by-month detail is also on their own page, under “Whereabouts”, and all together on The Year.",
+   "sections": [
+    {
+     "title": "March (weeks 1–4) — calibration",
+     "text": "Calendar spread opens the book. [[Marcus Reeves|Reeves]] opens; report wk 3–4, affirmed-with-a-shadow, mitigation referral. Two standing cases glimpsed mid-stream: [[Cantwell]] (the southbound SCI Mercer drive) and a [[Brandt]] review. Save-the-date arrives wk 4. Sunday brunch."
+    },
+    {
+     "title": "April (weeks 5–8) — Easter",
+     "text": "[[Petrak]] found incompetent wk 5 and disappears into the hospital for months. Joey and Annabel home for Easter. [[Sayles]] progress note. Theresa’s study calendar thickens."
+    },
+    {
+     "title": "May (weeks 9–12) — anniversary",
+     "text": "Routine session layer. Lake Arthur phone call. 25th anniversary at [[The Greystone]] wk 12."
+    },
+    {
+     "title": "June (weeks 13–17) — summer",
+     "text": "[[Kessler]] opens ~wk 14. Brandt review #2 wk 16. Joey’s summer call. 4th of July wk 17."
+    },
+    {
+     "title": "July (weeks 18–21) — Theresa’s exam, her bad day",
+     "text": "Kessler caught wk 19. Sayles progress note ~wk 18. Cantwell eval #2 wk 20. Theresa takes the promotional exam; her fatal-accident day wk 20 — “I’m OK.” Post-it in his lunch bag."
+    },
+    {
+     "title": "August (weeks 22–26) — Eva enters",
+     "text": "[[Hartman]] opens wk 22. Theresa passes the exam. [[Eva Miller|Eva]] intake wk 26."
+    },
+    {
+     "title": "September (weeks 27–30) — Eva builds",
+     "text": "Eva’s early sessions. Petrak returns restored ~wk 30. Brandt review #3 wk 30. Wedding invitation wk 29. The vacation not booked. Eva’s middle-of-bed sleep change."
+    },
+    {
+     "title": "October (weeks 31–34) — restoration certified, broken promise",
+     "text": "Petrak certified wk 34. [[Allbright]] opens wk 33. Bachelor weekend wk 33. Gianna’s college-essay request — “tomorrow morning, promise.” First calendar “?”."
+    },
+    {
+     "title": "November (weeks 35–38) — concussion, finding, ghost",
+     "text": "Vince’s concussion (ER fax wk 35). Cantwell eval #3 wk 36. Allbright finding wk 38. [[The ghost case]] wk 38. Thanksgiving."
+    },
+    {
+     "title": "December (weeks 39–42) — Vince home, the date, Christmas",
+     "text": "Vince medically withdrawn; moves home. Cantwell hearing ~wk 40; commitment upheld. The date at the Greystone. Swearing-in invitation via interoffice mail. Christmas Eve — Theresa to mass alone; program via her grocery list. One bourbon alone in the office. Hendersons dinner. Hartman running long.\n\n(Brandt reviews fall ~wks 1, 16, 30, 45; keep wk 45 for January; a December review is optional.)"
+    },
+    {
+     "title": "January (weeks 43–46) — swearing-in, Vince back, the letter",
+     "text": "Vince at the kitchen table; “V. won’t look at me.” Theresa’s swearing-in wk 44. Cantwell’s letter from the facility wk 44. “Dad, are you sleeping?” Brandt review wk 45. “Made appointment for V. with Dr. Hahn. Wednesday.” — no reply. Eva’s crescendo begins."
+    },
+    {
+     "title": "February (weeks 47–50) — leak, final Eva, wedding, grenade",
+     "text": "Hartman trails off, unresolved. Eva fixes the leak (wk 47). “V. laughed once.” Eva wk 48 — cautiously optimistic, a true read.\n\n== Week 49 — wedding week ==\n* Mon–Tue: normal work; Sayles discharge drafted\n* Wed: Eva #24, her last — an ordinary Wednesday; “See you next week.”\n* Thu: light work; Annabel arrives\n* Fri: rehearsal dinner at the Greystone; Gianna knocks late — “Dad?”; 11:42 PM “You okay?” — read, no reply. Eva dies.\n* Sat: the wedding\n* Sun: quiet\n\n== Week 50 — Monday: the grenade ==\nTheresa’s lunch-bag note. The office. Clipping. Obituary. Connie’s voicemail. Sayles discharge signed. The unfilable case-closure form. The dated blank page. Part One ends."
+    },
+    {
+     "title": "The wedding — document cluster",
+     "text": "Week 49, Saturday.\n* Suit alterations receipt\n* Wedding program (Catholic mass, Father [name])\n* Toast draft on the back of the program, multiple versions struck through\n* Group-chat flood of photos that evening — Joey and Anthony forehead-to-forehead on the dance floor; Anthony looking across the room at Theresa, Theresa looking back\n* Reception bar tab\n\n<pre>\nVersion 1 (struck through):\n  \"From the moment Joey was born I knew this day\n  would —\"\n\nVersion 2 (struck through):\n  \"Twenty-four years ago Theresa handed me a baby\n  and said —\"\n\nVersion 3 (mostly struck through, one line saved):\n  \"I was twenty-three when I met Theresa. I'm\n  forty-eight now. The math says I've spent more of\n  my life with her than without her. That math is\n  the only good math I know. Joey, Annabel —\n  [strikethrough]\"\n\nFinal, clean:\n  \"My son was always going to find someone good.\n  I'm grateful she found him too. To Joey and\n  Annabel.\"\n</pre>"
+    }
+   ],
+   "facts": []
+  },
+  {
+   "id": "m02rd2tp",
+   "name": "The opening week",
+   "photos": [],
+   "tags": [
+    "Structure"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "The opening week is a sequence of 13 documents establishing form, family, work and voice. By page 12–15 the reader knows the form, the family, the marriage, the work, his voice and his clinical eye.",
+   "sections": [
+    {
+     "title": "The 13 documents",
+     "text": "# March calendar spread (dense, clean, every weekday filled, fountain pen)\n# Text exchange, Anthony to Vince: “good luck today” / “thx old man”\n# [[Marcus Reeves|Reeves]] court referral packet — letterhead, court order, charge summary, prior eval history (none)\n# Reeves intake self-report questionnaire — his handwriting in boxes\n# Reeves PHQ-9 and GAD-7 scored sheets\n# Reeves intake session note — the “However.” moment; marginalia dated 3/14\n# Anthony’s pocket notebook page: Mon * milk * leave @ 2 * Reeves f/u re: school records · Tue * breakfast w/ T * dictation · Wed * G’s permission slip * Cantwell dictation\n# [[Cantwell]] SVP eval letter — long expert document, a different register\n# Voicemail from Theresa, listened: “Picking up V’s stuff at 5. Gas in your truck. Love you.” 0:14\n# [[Brandt]] conditional-release review note — short, routine\n# Brandt status form (compliance, meds, living situation)\n# Grocery list in Theresa’s hand on the back of a PA State Police memo — ''eggs / bread / G’s lunch / coffee filters / call my mother''\n# Text exchange, Anthony and Joey — Sunday call confirmation; save-the-date implied"
+    }
+   ],
+   "facts": []
+  },
+  {
+   "id": "m02sfhwv",
+   "name": "Part Two beat sheet",
+   "photos": [],
+   "tags": [
+    "Structure"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "Part Two: ~30 pages of pure descent. Third-person close, free indirect, adagio — the forensic gaze turned on its operator.",
+   "sections": [
+    {
+     "title": "Opening — Monday morning at the office",
+     "text": "The prose picks up in the immediate aftermath of the unfilable form; it does not re-enact the writing. Voice: brittle, irritable. The obituary printed. The pen just set down. The recovery checkbox not completed. He gets up. Goes home."
+    },
+    {
+     "title": "The days — Tuesday through Friday",
+     "text": "Brittle days. The Sayles discharge note signed Tuesday or Wednesday. A few sessions. Raffaella rescheduling silently. By Thursday he can’t pick up the work. By Friday the office is effectively closed. In a private moment, Theresa says ''Anthony''. He registers it. He does not respond."
+    },
+    {
+     "title": "The drive — some morning",
+     "text": "His hand reaches for the keys. The GPS screenshot — ''Now departing. 1 hr 26 min.'' — the one document in the prose section. Time slips; memory and present share paragraphs. A toll booth and his father’s hands at a wedding forty years ago. The wipers. Theresa’s missed calls. Gianna’s college essay unopened on his desk for six months."
+    },
+    {
+     "title": "The beach — afternoon into night",
+     "text": "[[Presque Isle State Park|Presque Isle]]. Open sky. The lake. He climbs on the roof of the truck and lies down. Watches the stars. The phone buzzes: Theresa, 22:41. Again, 22:43. He pulls out the pocket notebook. The pen he hates. He writes the line. He initials it.\n\n== Tilt toward suicide ==\n* The phone buzzes and he doesn’t answer\n* The pen he hates is the pen he writes with\n* The line is in the register of a closing line\n* The initial is formal — A. M. with the period. Signed.\n* No forward-looking image — no thought of tomorrow, of Theresa waking\n* February. Lake Erie. He doesn’t move\n\n== Counter-weights ==\n* The keys are still in his pocket. The truck runs.\n* A long exhale after the line. A small release.\n* He doesn’t get off the truck. Doesn’t walk toward the water.\n\nCold is the mechanism. Inaction does it. The ambiguity is built into the situation."
+    },
+    {
+     "title": "The closing page — facsimile",
+     "text": "Lined paper from his pocket notebook. His handwriting.\n\n''As the moon swallowed the stars, I realized — we were all alone.''\n— A. M.\n\nThe only first-person utterance in the book — the watched man speaking back to the gaze."
+    }
+   ],
+   "facts": []
+  },
+  {
+   "id": "m02te0sr",
+   "name": "Production spec",
+   "photos": [],
+   "tags": [
+    "Production"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "The production spec (v1): everything decided in session one about how the book is physically made. See also [[Style sheet]], [[Calendar spread]], [[Word setup]] and [[Open items]].",
+   "facts": [
+    {
+     "label": "Trim",
+     "value": "7 × 10 in"
+    },
+    {
+     "label": "Binding",
+     "value": "Sewn signatures (must lie flat)"
+    },
+    {
+     "label": "Margins",
+     "value": "Mirrored — in 0.75″, out 0.375″, top 0.375″, bottom 0.5″"
+    },
+    {
+     "label": "Gutter field",
+     "value": "0"
+    },
+    {
+     "label": "Usable area",
+     "value": "5.875″ × 9.125″"
+    },
+    {
+     "label": "Bleed",
+     "value": "0.125″ (Affinity only)"
+    }
+   ],
+   "sections": [
+    {
+     "title": "The book",
+     "text": "Anthony Messina’s desk drawer across one year, told as discrete facsimile documents in chronological order. Twelve two-page calendar spreads as chapter breaks. Part One entirely facsimile; after Eva’s death and a nearly blank dated page, ~30 pages of third-person prose; the final page returns to facsimile. Seven or eight visual registers. Three handwriting modes for Anthony alone across 350+ pages."
+    },
+    {
+     "title": "Production method",
+     "text": "'''Never round-trip the typed layer.''' Rescanning printed type destroys it — soft edges, halftone artifacts, moiré. The typed layer stays native and vector forever.\n\n== The ink-only overlay workflow ==\n# Print the typed page as a ''guide'' at 15–20% grey, or light blue\n# Handwrite annotations on it\n# Scan at 600 dpi, greyscale, TIFF — auto-enhance and auto-crop OFF\n# Levels: pull the white point until the guide and paper vanish, leaving only ink\n# Place as a '''Multiply''' layer over the untouched digital page\n\nVariant: print only registration corners and a faint content box, write around it, same knockout.\n\n== Materials ==\nLaser prints, not inkjet. Pigment pens (Sakura Micron, Uni Pin) scan crisper than ballpoint. Fountain pen looks right but feathers on laser stock — test first. Flatbed scanner, never phone.\n\n== Handwriting consistency ==\nBuild custom fonts from your own hand via Calligraphr — one for clinical marginalia, one for the sloppy notebook, one for Theresa — with multiple alternates per letter. Reserve genuine pen-on-paper scans for scored moments: the anniversary receipt, the mass program, the final notebook page.\n\n== Order of operations ==\nWrite the entire manuscript as tagged plain text FIRST — [SESSION NOTE], [NOTEBOOK], [MARGINALIA — blue, dated]. Lock the text. Then one production pass. Every revision after a page is handwritten and scanned costs an hour."
+    },
+    {
+     "title": "Why 7 × 10",
+     "text": "In-world documents are US Letter. At 6 × 9 they reproduce at ~55%, turning 10pt clinical type into 5.5pt. At 7 × 10 they’re at ~70%. The calendar spreads also need the width. Design at trim, not at Letter."
+    },
+    {
+     "title": "The safety line",
+     "text": "An invisible boundary, not a drawn element — for trim drift (~1/16″, sometimes 1/8″), the gutter curve (~0.25″ each side of the fold) and thumbs on the bottom outer corner. '''Readable content never crosses it. Paper edges may.''' A document’s edge disappearing into the spine reads as a page under another page — what a real stack on a desk looks like.\n\nIn Word: View → Ruler; File → Options → Advanced → Show document content → Show text boundaries."
+    },
+    {
+     "title": "Collage logic",
+     "text": "Most pages combine several small documents — a journal page with a phone call and a text. Major documents (court orders, full case notes) get a page alone, centred and calm. Collage pages feel accumulating; single documents feel formal and isolated."
+    },
+    {
+     "title": "Previewing spreads",
+     "text": "Word can’t show facing pages correctly (it pairs 1–2, 3–4; a real book pairs 2–3, 4–5). Use '''Firefox''': save as PDF, open it, \">>\" → '''Even Spreads''', zoom Actual Size. Make it permanent in about:config: pdfjs.spreadModeOnLoad → 2; pdfjs.defaultZoomValue → 100. Do this after every spread — the only way to catch a Wednesday drifting toward the fold."
+    }
+   ]
+  },
+  {
+   "id": "m02uh2n7",
+   "name": "Word setup",
+   "photos": [],
+   "tags": [
+    "Production"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "Word setup for drafting and mocking up the typed layer, and the Word behaviours learned the hard way. Final assembly needs Affinity Publisher or InDesign.",
+   "sections": [
+    {
+     "title": "Document setup",
+     "text": "* Layout → Size → 7″ × 10″\n* Layout → Margins → Custom → Mirror margins, values per [[Production spec]]\n* Page break between documents\n* Turn OFF widow/orphan control (except Prose) and snap-to-grid\n* File → Options → Save → embed fonts\n* Kill autocorrect entirely (both tabs) — it capitalises “pt.”, curls quotes in typewriter documents, converts -- to em dashes, and autocapitalises after “x3.”"
+    },
+    {
+     "title": "Hyphenation",
+     "text": "* Automatically hyphenate — ON\n* Hyphenate words in CAPS — OFF\n* Limit consecutive hyphens — 2\n\nHyphenation Zone is permanently disabled in .docx (engine changed in Word 2013). Ignore it. Per-style ''Don’t hyphenate'' is ON for everything except Newsprint and Prose."
+    },
+    {
+     "title": "Word’s limits",
+     "text": "No bleed, no CMYK, no Multiply blending. Word handles drafting, register-tagging and mocking up the typed layer. Final assembly: '''Affinity Publisher''' (~$70) or InDesign, set at the same 7 × 10."
+    },
+    {
+     "title": "Behaviours learned the hard way",
+     "text": "* '''Paragraph borders merge.''' Consecutive paragraphs with identical borders draw as one block. Different styles, 0.01″ indents and 1-unit colour differences all fail. Use Split Cells instead.\n* '''Split Cells locks the Rows field''' with multiple cells selected and “Merge cells before split” unticked. Do cells one at a time.\n* '''“Automatically resize to fit contents” is greyed out on nested tables''' — set it on the outer table.\n* '''Column widths are stored per row.''' Rows drift after Insert Above; the ¤ markers reveal it. Fix: Fixed Column Width → Distribute Columns → preferred width in inches.\n* '''Split Cells produces “At least” row heights.''' Always reset to Exactly.\n* '''Ctrl+Enter pushes everything after the cursor.''' Ctrl+Home first.\n* '''The ruler reports the cursor’s location''', not the page you’re looking at. Alt+drag a margin marker for exact measurements; Esc before releasing.\n* '''Lock anchor blocks dragging the anchor.''' Untick, move, re-tick.\n* '''Text boxes carry 0.1″ internal margins''' and float wherever dropped."
+    }
+   ],
+   "facts": []
+  },
+  {
+   "id": "m02vwcz0",
+   "name": "Style sheet",
+   "photos": [],
+   "tags": [
+    "Production"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "The style sheet: every paragraph style Based on (no style), Automatically update OFF, Only in this document, line spacing always Exactly.",
+   "sections": [
+    {
+     "title": "Document registers",
+     "text": "* '''Clinical note''' (Ctrl+Alt+1) — Courier New 10, kerning off, left, right indent 0.65″ (a 62-character measure — don’t widen it), exactly 13pt, tabs 1.0″ L, 1.4″ L\n* '''Court document''' (Ctrl+Alt+2) — Times New Roman 11, justified, right 0.35″, first line 0.5″, exactly 15pt, tabs 0.5″ L, 1.0″ L, 5.4″ R dot leader\n* '''Institutional form''' (Ctrl+Alt+3) — Arial 8.5 condensed 0.1pt, right 0.5″, '''hanging 1.6″''' (what makes a form look like a form), after 3pt, exactly 12pt, tabs 1.6″ L, 5.35″ R underline leader\n* '''Newsprint''' (Ctrl+Alt+4) — Georgia 8 condensed 0.15pt, justified, first line 0.14″, exactly 10pt, hyphenation ON; two columns at 1.6″, 0.14″ gutter, hairline rule\n* '''Screen''' (Ctrl+Alt+5) — Segoe UI 9, L/R 0.15″, after 2pt, exactly 12pt. Texts, emails, voicemails. Sent bubbles right-aligned 8% grey; received left 3%\n* '''Date stamp''' (Ctrl+Alt+6) — Arial 7 all caps, expanded 0.4pt, after 6pt, exactly 9pt, keep with next, followed by Clinical note. Black, not grey — the reader’s compass\n* '''Prose''' (Ctrl+Alt+7, Part Two only) — Garamond 11.5, justified, first line 0.2″, exactly 15.5pt, widow/orphan ON, keep lines together ON, hyphenation ON\n* '''HAND''' (Ctrl+Alt+8, placeholder, deliberately ugly) — Consolas 10 italic, RGB 0/70/180, L/R 0.25″, before/after 3pt, exactly 12pt. Tag inline: [HAND-marginalia], [HAND-notebook], [HAND-Theresa]"
+    },
+    {
+     "title": "Character styles",
+     "text": "Set Style type: Character FIRST — switching after entering formatting discards it silently.\n* '''Redacted''' — Courier New 10, font colour white; Border → Shading → fill black, apply to Text. Select the word only. Exports reliably to PDF and stays searchable.\n* '''Stamp''' — Arial 9 bold, all caps, RGB 150/30/30, expanded 0.6pt. Rotate by putting it in a rotated text box."
+    },
+    {
+     "title": "Variants",
+     "text": "* '''Court caption''' — based on Court document; centred, special (none)\n* '''Newsprint hed''' — based on Newsprint; Franklin Gothic Demi 15 (Arial Bold fallback), spacing Normal, left, after 4pt, exactly 16pt, don’t hyphenate\n* '''Prose opening''' — based on Prose; special (none)"
+    },
+    {
+     "title": "Normal as a tripwire",
+     "text": "Set Normal to Comic Sans MS 14, magenta. All registers are Based on (no style), so they’re immune. Word’s built-ins turn magenta — harmless, but page numbers must be formatted directly. Anything in magenta is untagged text."
+    },
+    {
+     "title": "Template",
+     "text": "File → Save As → Browse → Word Template (*.dotx) → moon_v1, saved in the project folder, not Custom Office Templates."
+    }
+   ],
+   "talk": "== Open ==\n* Clinical note typeface — unresolved. Courier New says dictated and transcribed; a clean sans says typed into an EHR by a man with a modern practice. The year is 2030, so sans may be truer. Set the Reeves intake both ways and pick early.",
+   "facts": []
+  },
+  {
+   "id": "m02wlfor",
+   "name": "Calendar spread",
+   "photos": [],
+   "tags": [
+    "Production"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "The calendar spread: twelve identical two-page month grids that serve as chapter breaks. Eight columns across the spread; the fold falls between WED and THU.",
+   "sections": [
+    {
+     "title": "Structure",
+     "text": "<pre>\nVERSO                              RECTO\nSUN   MON   TUE   WED      |      THU   FRI   SAT   NOTES\n</pre>\n\nSunday start (the first ''?'' appears beside a Sunday brunch, so Sunday needs full weight). The NOTES column is the eighth column of a uniform grid, not a sidebar — six discrete weekly cells, not one tall box, so the degradation shows week by week."
+    },
+    {
+     "title": "Page parity",
+     "text": "Page 1 is always a recto. Verso = even; every spread runs even–odd. Leave page 1 blank (half-title) and start March on pp. 2–3. This parity requirement recurs eleven more times as Part One’s document count shifts."
+    },
+    {
+     "title": "Measurements",
+     "text": "* Month rule — absolute 0.58″ below Page, 1½pt black\n* Day-name row — 0.2″ exactly\n* Body rows — 1.38″ × 6 exactly\n* Columns — 1.47″ × 4\n* Table preferred width — 5.88″\n* Writing space per cell — ~1.16″ (3 comfortable lines, 4 cramped)\n* NOTES sub-rows — 0.34″ × 4 exactly"
+    },
+    {
+     "title": "Calendar styles",
+     "text": "* '''Calendar month''' — Arial, all caps, expanded 1.2pt, left, exactly 15pt, after 8pt (size raised from 13pt; final value not recorded)\n* '''Calendar year''' — based on month, right-aligned, recto only (select the last character → spacing Normal so the 0 doesn’t hang short)\n* '''Calendar dayname''' — Arial 7 all caps, expanded 0.5pt, centred, exactly 10pt\n* '''Calendar date''' — Arial 8, left, exactly 10pt, no leading zeros\n* '''Calendar date muted''' — RGB 153/153/153 for spill days"
+    },
+    {
+     "title": "Rule hierarchy",
+     "text": "# Month rule — 1½pt black, full page width\n# Day-name bottom rule — ¾pt black, apply to Cell\n# Grid — ½pt, RGB 102/102/102\n# Notes lines — ½pt, RGB 191/191/191"
+    },
+    {
+     "title": "Build order",
+     "text": "* '''Month line:''' a plain paragraph at the top of the page, NOT a text box. Confirm no empty paragraph above it.\n* '''Full-page rule:''' Insert → Shapes → Line (hold Shift). Position: horizontal absolute 0″ right of Page; vertical absolute 0.58″ below Page. Untick “Move object with text”, THEN tick “Lock anchor”. In Front of Text. Width 7″, height 0″. Black, 1½pt.\n* '''Table:''' insert 4 × 6; untick “Automatically resize to fit contents”; columns 1.47″; rows 1.38″ exactly; top-aligned; cell margins 0.04/0.05/0.05/0.04; borders ½pt RGB 102.\n* '''Day-name row:''' Insert Above (inherits column widths — must be in the same table). Sun Tab Mon Tab Tue Tab Wed — no Tab after the last cell. 0.2″ exactly; T/B 0.02″, L/R 0.05″; bottom border ¾pt, apply to Cell.\n* '''NOTES rules:''' split each cell individually into 1 × 4; all 24 sub-cells 0.34″ exactly, margins 0″, style Calendar date, interior horizontal borders ½pt RGB 191."
+    },
+    {
+     "title": "March 2030 grid",
+     "text": "March 1, 2030 falls on a Friday. Brackets = muted spill days. Row 6 is almost entirely April spill — correct; all twelve spreads must be dimensionally identical.\n\n<pre>\n     SUN   MON   TUE   WED  ‖  THU   FRI   SAT\n 1  (24)  (25)  (26)  (27)  ‖  (28)    1     2\n 2    3     4     5     6   ‖    7     8     9\n 3   10    11    12    13   ‖   14    15    16\n 4   17    18    19    20   ‖   21    22    23\n 5   24    25    26    27   ‖   28    29    30\n 6   31    (1)   (2)   (3)  ‖   (4)   (5)   (6)\n</pre>\n\nCells stay otherwise empty; handwriting goes on as a scanned overlay."
+    },
+    {
+     "title": "Quick Parts",
+     "text": "Select from the start of the month line, Shift-click after the table’s last cell, then Insert → Quick Parts → Save Selection to Quick Part Gallery. Name cal_verso / cal_recto; category Moon; save in moon_v1.dotx; “Insert content in its own page”. Recall by typing the name and pressing F3. Verify the anchored line survived at 0.58″; if not, draw it fresh (forty seconds)."
+    }
+   ],
+   "talk": "== Open ==\n* Confirm the year is 2030 — every weekday in all twelve grids depends on it, as does which day Eva’s standing appointment falls on.\n* Month size was raised from 13pt; re-check that the 0.58″ rule isn’t striking the type and six 1.38″ rows still fit.",
+   "facts": []
+  },
+  {
+   "id": "m02x3wms",
+   "name": "Open items",
+   "photos": [],
+   "tags": [
+    "Production"
+   ],
+   "created": 1790462577844,
+   "updated": 1790462577844,
+   "summary": "Open items and corrections from production session one.",
+   "sections": [
+    {
+     "title": "Open items",
+     "text": "* '''Clinical note typeface — unresolved.''' Courier New (dictated and transcribed) vs a clean sans (typed into an EHR). The year is 2030, so sans may be truer. Set the Reeves intake both ways and pick early — it’s the most-repeated register.\n* '''Confirm the year is 2030.''' Every weekday in all twelve grids depends on it, and which day Eva’s standing appointment falls on.\n* '''Month size.''' Raised from 13pt; final value not recorded. Check the 0.58″ rule and that six 1.38″ rows still fit.\n* '''Print test, not yet done.''' Print the March verso at actual size, tape the spread at the fold, write a real week into it. The 1.16″ per cell is the whole gamble. If your hand needs more, the answer is an 8 × 10 trim — not taller rows (six at 1.5″ needs 9.0″ against 8.325″).\n* '''Week-number column — optional, recommended.''' 0.22″ against the verso’s inside edge, Arial 6pt, 50% grey. A silent counter 1–52: when February shows weeks 49–52, the year is visibly running out.\n* '''Notes line count.''' Four lines at 0.34″ assumes you write smaller in the notes column. If not, go to three."
+    },
+    {
+     "title": "Corrections issued",
+     "text": "Kept so they don’t get re-introduced:\n* '''Verso margins:''' a verso is the LEFT page, so its spine is on the RIGHT. The month sits 0.375″ from the top and 0.375″ from the ''left'' (outer) edge.\n* '''Hyphenation zone:''' the instruction to set 0.25″ was wrong; the field is disabled in .docx.\n* '''Newsprint hed:''' unticking All caps was wrong — Newsprint has no All caps to inherit.\n* '''Border merge fixes:''' alternating styles, 0.01″ offsets and 1-unit colour differences all fail.\n* '''Month title in a text box:''' it was a paragraph border; the rule stopping short was correct behaviour; the actual cause was page parity."
+    }
+   ],
+   "facts": []
+  }
+ ],
+ "relationships": [
+  {
+   "id": "m01hnr3n",
+   "a": "m00tm9hg",
+   "b": "m00ugvgf",
+   "type": "romance",
+   "roles": {
+    "m00ugvgf": "wife",
+    "m00tm9hg": "husband"
+   },
+   "note": "Married 25 years (anniversary dinner wk 12). A pact of not bringing work home. Two people whose interiors the other can’t reach. She says “Anthony” once, in Part Two."
+  },
+  {
+   "id": "m01iusp3",
+   "a": "m00tm9hg",
+   "b": "m00vnwoe",
+   "type": "family",
+   "roles": {
+    "m00vnwoe": "son",
+    "m00tm9hg": "father"
+   },
+   "note": "The Sunday caller. Wrong advice on the summer call; misses the bachelor-party Friday; the toast."
+  },
+  {
+   "id": "m01jjcwk",
+   "a": "m00ugvgf",
+   "b": "m00vnwoe",
+   "type": "family",
+   "roles": {
+    "m00vnwoe": "son",
+    "m00ugvgf": "mother"
+   },
+   "note": ""
+  },
+  {
+   "id": "m01k4bg6",
+   "a": "m00tm9hg",
+   "b": "m00wb90s",
+   "type": "family",
+   "roles": {
+    "m00wb90s": "daughter",
+    "m00tm9hg": "father"
+   },
+   "note": "Med-school essay opened nine days late; supportive but distant about the gap year."
+  },
+  {
+   "id": "m01lowt9",
+   "a": "m00ugvgf",
+   "b": "m00wb90s",
+   "type": "family",
+   "roles": {
+    "m00wb90s": "daughter",
+    "m00ugvgf": "mother"
+   },
+   "note": ""
+  },
+  {
+   "id": "m01m1gvz",
+   "a": "m00tm9hg",
+   "b": "m00xe2c4",
+   "type": "family",
+   "roles": {
+    "m00xe2c4": "son",
+    "m00tm9hg": "father"
+   },
+   "note": "“good luck today” / “thx old man”. “V. won’t look at me.” “V. laughed once.”"
+  },
+  {
+   "id": "m01ns4i5",
+   "a": "m00ugvgf",
+   "b": "m00xe2c4",
+   "type": "family",
+   "roles": {
+    "m00xe2c4": "son",
+    "m00ugvgf": "mother"
+   },
+   "note": ""
+  },
+  {
+   "id": "m01o1bfv",
+   "a": "m00tm9hg",
+   "b": "m00yqj7o",
+   "type": "family",
+   "roles": {
+    "m00yqj7o": "daughter",
+    "m00tm9hg": "father"
+   },
+   "note": "The broken promise. “Dad, are you sleeping?” “You okay?” — read, no reply."
+  },
+  {
+   "id": "m01ppbb3",
+   "a": "m00ugvgf",
+   "b": "m00yqj7o",
+   "type": "family",
+   "roles": {
+    "m00yqj7o": "daughter",
+    "m00ugvgf": "mother"
+   },
+   "note": ""
+  },
+  {
+   "id": "m01qc8ot",
+   "a": "m00vnwoe",
+   "b": "m00wb90s",
+   "type": "family",
+   "roles": {
+    "m00wb90s": "younger sister",
+    "m00vnwoe": "big brother"
+   },
+   "note": "Joey is the big brother the other three actually call."
+  },
+  {
+   "id": "m01rhwnm",
+   "a": "m00vnwoe",
+   "b": "m00xe2c4",
+   "type": "family",
+   "roles": {
+    "m00xe2c4": "younger brother",
+    "m00vnwoe": "big brother"
+   },
+   "note": "Joey is the big brother the other three actually call."
+  },
+  {
+   "id": "m01sye46",
+   "a": "m00vnwoe",
+   "b": "m00yqj7o",
+   "type": "family",
+   "roles": {
+    "m00yqj7o": "younger sister",
+    "m00vnwoe": "big brother"
+   },
+   "note": "Joey is the big brother the other three actually call."
+  },
+  {
+   "id": "m01tgueh",
+   "a": "m00wb90s",
+   "b": "m00xe2c4",
+   "type": "family",
+   "roles": {
+    "m00xe2c4": "brother",
+    "m00wb90s": "sister"
+   },
+   "note": ""
+  },
+  {
+   "id": "m01uul6q",
+   "a": "m00wb90s",
+   "b": "m00yqj7o",
+   "type": "family",
+   "roles": {
+    "m00yqj7o": "sister",
+    "m00wb90s": "sister"
+   },
+   "note": ""
+  },
+  {
+   "id": "m01v8qjm",
+   "a": "m00xe2c4",
+   "b": "m00yqj7o",
+   "type": "family",
+   "roles": {
+    "m00yqj7o": "sister",
+    "m00xe2c4": "brother"
+   },
+   "note": "She brings him toast. They dance once at the wedding."
+  },
+  {
+   "id": "m01w463s",
+   "a": "m00vnwoe",
+   "b": "m012kzdh",
+   "type": "romance",
+   "roles": {
+    "m012kzdh": "fiancée, then wife",
+    "m00vnwoe": "fiancé, then husband"
+   },
+   "note": "Married Saturday of week 49."
+  },
+  {
+   "id": "m01xhovj",
+   "a": "m00tm9hg",
+   "b": "m012kzdh",
+   "type": "family",
+   "roles": {
+    "m012kzdh": "future daughter-in-law",
+    "m00tm9hg": "future father-in-law"
+   },
+   "note": ""
+  },
+  {
+   "id": "m01y2l50",
+   "a": "m00tm9hg",
+   "b": "m014emfx",
+   "type": "family",
+   "roles": {
+    "m014emfx": "father",
+    "m00tm9hg": "son"
+   },
+   "note": "The calls home go from monthly to nothing."
+  },
+  {
+   "id": "m01zhdmc",
+   "a": "m00tm9hg",
+   "b": "m015ggvx",
+   "type": "family",
+   "roles": {
+    "m015ggvx": "mother",
+    "m00tm9hg": "son"
+   },
+   "note": "He is her son in a different forensic discipline."
+  },
+  {
+   "id": "m0200z57",
+   "a": "m014emfx",
+   "b": "m015ggvx",
+   "type": "romance",
+   "roles": {
+    "m015ggvx": "wife",
+    "m014emfx": "husband"
+   },
+   "note": ""
+  },
+  {
+   "id": "m021kw4b",
+   "a": "m00xe2c4",
+   "b": "m014emfx",
+   "type": "family",
+   "roles": {
+    "m014emfx": "grandfather",
+    "m00xe2c4": "grandson"
+   },
+   "note": "Vince takes after him — hands, not words."
+  },
+  {
+   "id": "m02226v5",
+   "a": "m00tm9hg",
+   "b": "m0111jhx",
+   "type": "work",
+   "roles": {
+    "m0111jhx": "assistant",
+    "m00tm9hg": "boss"
+   },
+   "note": "Seven years. “Raffaella” on documents, “Raffi” in his texts."
+  },
+  {
+   "id": "m023awih",
+   "a": "m00tm9hg",
+   "b": "m00zow5f",
+   "type": "clinical",
+   "roles": {
+    "m00zow5f": "patient",
+    "m00tm9hg": "psychiatrist"
+   },
+   "note": "Post-attempt mandate, wk 26 – wk 49. “Cautiously optimistic.” He was right."
+  },
+  {
+   "id": "m0247ogo",
+   "a": "m00tm9hg",
+   "b": "m016soi5",
+   "type": "clinical",
+   "roles": {
+    "m016soi5": "patient",
+    "m00tm9hg": "psychiatrist"
+   },
+   "note": ""
+  },
+  {
+   "id": "m0258087",
+   "a": "m00tm9hg",
+   "b": "m017r2ez",
+   "type": "clinical",
+   "roles": {
+    "m017r2ez": "patient",
+    "m00tm9hg": "psychiatrist"
+   },
+   "note": ""
+  },
+  {
+   "id": "m026bs7b",
+   "a": "m00tm9hg",
+   "b": "m0182ma0",
+   "type": "clinical",
+   "roles": {
+    "m0182ma0": "patient",
+    "m00tm9hg": "psychiatrist"
+   },
+   "note": ""
+  },
+  {
+   "id": "m0279hn1",
+   "a": "m00tm9hg",
+   "b": "m019p9xi",
+   "type": "clinical",
+   "roles": {
+    "m019p9xi": "patient",
+    "m00tm9hg": "psychiatrist"
+   },
+   "note": ""
+  },
+  {
+   "id": "m0282s4w",
+   "a": "m00tm9hg",
+   "b": "m01aco7m",
+   "type": "clinical",
+   "roles": {
+    "m01aco7m": "patient",
+    "m00tm9hg": "psychiatrist"
+   },
+   "note": ""
+  },
+  {
+   "id": "m029v3r7",
+   "a": "m00tm9hg",
+   "b": "m01bb4mu",
+   "type": "clinical",
+   "roles": {
+    "m01bb4mu": "patient",
+    "m00tm9hg": "psychiatrist"
+   },
+   "note": ""
+  },
+  {
+   "id": "m02avbp5",
+   "a": "m00tm9hg",
+   "b": "m01cj0dm",
+   "type": "clinical",
+   "roles": {
+    "m01cj0dm": "patient",
+    "m00tm9hg": "psychiatrist"
+   },
+   "note": ""
+  },
+  {
+   "id": "m02bhttt",
+   "a": "m00tm9hg",
+   "b": "m01dlpyp",
+   "type": "clinical",
+   "roles": {
+    "m01dlpyp": "patient",
+    "m00tm9hg": "psychiatrist"
+   },
+   "note": ""
+  },
+  {
+   "id": "m02cx42d",
+   "a": "m00tm9hg",
+   "b": "m01ez8lj",
+   "type": "clinical",
+   "roles": {
+    "m01ez8lj": "patient",
+    "m00tm9hg": "psychiatrist"
+   },
+   "note": ""
+  },
+  {
+   "id": "m02ddiiz",
+   "a": "m00tm9hg",
+   "b": "m01fvwcm",
+   "type": "clinical",
+   "roles": {
+    "m01fvwcm": "patient",
+    "m00tm9hg": "psychiatrist"
+   },
+   "note": ""
+  },
+  {
+   "id": "m02e3sm7",
+   "a": "m00tm9hg",
+   "b": "m01gw7a0",
+   "type": "clinical",
+   "roles": {
+    "m01gw7a0": "patient",
+    "m00tm9hg": "psychiatrist"
+   },
+   "note": ""
+  },
+  {
+   "id": "m02fsfu5",
+   "a": "m00zow5f",
+   "b": "m01035kb",
+   "type": "romance",
+   "roles": {
+    "m01035kb": "partner",
+    "m00zow5f": "partner"
+   },
+   "note": "Ten years together, unmarried. Possibly kept out of Aubrey’s hospital room at the end by Aubrey’s family."
+  },
+  {
+   "id": "m02gflms",
+   "a": "m00zow5f",
+   "b": "m013jkrm",
+   "type": "work",
+   "roles": {
+    "m013jkrm": "boss",
+    "m00zow5f": "waitress"
+   },
+   "note": "Eleven years at the diner. Connie treats her like a daughter."
+  },
+  {
+   "id": "m02hk8gw",
+   "a": "m00tm9hg",
+   "b": "m013jkrm",
+   "type": "acquaint",
+   "roles": {
+    "m013jkrm": "",
+    "m00tm9hg": ""
+   },
+   "note": "Her voicemail after Eva’s death: “I’m here if you want to call.” He doesn’t."
+  },
+  {
+   "id": "m02ix8h9",
+   "a": "m0111jhx",
+   "b": "m013jkrm",
+   "type": "acquaint",
+   "roles": {
+    "m013jkrm": "",
+    "m0111jhx": ""
+   },
+   "note": "Raffaella transcribes Connie’s voicemail for the file."
+  }
+ ],
+ "layout": {
+  "m00tm9hg": [
+   33,
+   -79
+  ],
+  "m00ugvgf": [
+   54,
+   378
+  ],
+  "m00vnwoe": [
+   177,
+   196
+  ],
+  "m00wb90s": [
+   -165,
+   105
+  ],
+  "m00xe2c4": [
+   -13,
+   190
+  ],
+  "m00yqj7o": [
+   -152,
+   295
+  ],
+  "m00zow5f": [
+   -249,
+   415
+  ],
+  "m01035kb": [
+   -60,
+   643
+  ],
+  "m0111jhx": [
+   -435,
+   -243
+  ],
+  "m012kzdh": [
+   433,
+   -101
+  ],
+  "m013jkrm": [
+   -470,
+   21
+  ],
+  "m014emfx": [
+   -99,
+   -233
+  ],
+  "m015ggvx": [
+   -257,
+   -355
+  ],
+  "m016soi5": [
+   368,
+   256
+  ],
+  "m017r2ez": [
+   289,
+   -146
+  ],
+  "m0182ma0": [
+   121,
+   -484
+  ],
+  "m019p9xi": [
+   486,
+   41
+  ],
+  "m01aco7m": [
+   298,
+   67
+  ],
+  "m01bb4mu": [
+   337,
+   -367
+  ],
+  "m01cj0dm": [
+   -100,
+   -469
+  ],
+  "m01dlpyp": [
+   -370,
+   170
+  ],
+  "m01ez8lj": [
+   -24,
+   51
+  ],
+  "m01fvwcm": [
+   -309,
+   -79
+  ],
+  "m01gw7a0": [
+   159,
+   -322
+  ]
+ },
+ "created": 1790462577844,
+ "startYear": "2030",
+ "about": "Book 1 of three. A forensic psychiatrist’s working file across one year (March 2030 – February 2031), presented as a facsimile archive until the man closes the drawer and the form breaks into prose.",
+ "rev": "impmuor8oom"
+}

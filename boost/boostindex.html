@@ -1,0 +1,2820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boost · Jules Hub</title>
+    <script>
+        // Apply the saved theme before the page draws, so there's no white flash in dark mode
+        (function () {
+            var t = 'system';
+            try { t = localStorage.getItem('boostTheme') || 'system'; } catch (e) {}
+            var dark = t === 'dark' || (t === 'system' && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
+            document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+        })();
+    </script>
+    <style>
+        /* ===================== THEME ===================== */
+        :root, [data-theme="light"] {
+            --bg: #f5f5f5;
+            --card: #ffffff;
+            --text: #333333;
+            --heading: #333333;
+            --label: #555555;
+            --muted: #777777;
+            --faint: #999999;
+            --border: #dddddd;
+            --border-soft: #eeeeee;
+            --tile: #fafafa;
+            --tile-border: #e3e3e3;
+            --tile-hover: #ffffff;
+            --input: #ffffff;
+            --ghost: #eeeeee;
+            --ghost-hover: #dddddd;
+            --ghost-text: #333333;
+            --accent: #4CAF50;
+            --accent-hover: #45a049;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-hover: 0 4px 12px rgba(0,0,0,0.1);
+            --done-bg: #e8f5e8;
+            --item-bg: #fafafa;
+            --panel: #f8f8f8;
+            --kbd: #eeeeee;
+            --drop: #e8f5e9;
+            color-scheme: light;
+        }
+        [data-theme="dark"] {
+            --bg: #15171c;
+            --card: #1f2229;
+            --text: #e4e6ea;
+            --heading: #f2f3f5;
+            --label: #c4c8ce;
+            --muted: #a0a5ad;
+            --faint: #7f858e;
+            --border: #3a3f48;
+            --border-soft: #2c3038;
+            --tile: #262a32;
+            --tile-border: #333842;
+            --tile-hover: #2d323b;
+            --input: #171a1f;
+            --ghost: #2f343d;
+            --ghost-hover: #3a404a;
+            --ghost-text: #e4e6ea;
+            --accent: #4CAF50;
+            --accent-hover: #5cbf60;
+            --shadow: 0 2px 10px rgba(0,0,0,0.45);
+            --shadow-hover: 0 4px 14px rgba(0,0,0,0.5);
+            --done-bg: #1d3320;
+            --item-bg: #232730;
+            --panel: #232730;
+            --kbd: #2f343d;
+            --drop: #1d3320;
+            color-scheme: dark;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--bg);
+            color: var(--text);
+            transition: background-color .2s, color .2s;
+        }
+
+        .container {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+
+        h1, h2 {
+            color: var(--heading);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+        }
+        h2 { margin-top: 0; }
+        code { background: var(--kbd); padding: 1px 4px; border-radius: 3px; }
+
+        /* ===================== PAGE NAV ===================== */
+        .page-nav {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+        .page-nav .brand { font-weight: bold; font-size: 18px; color: var(--accent); margin-right: auto; }
+        .page-tab {
+            background: transparent;
+            color: var(--muted);
+            margin: 0;
+            padding: 8px 16px;
+            font-size: 15px;
+            border-radius: 20px;
+        }
+        .page-tab:hover { background: var(--ghost); color: var(--text); }
+        .page-tab.active { background: var(--accent); color: #fff; }
+        .page[hidden] { display: none; }
+
+        /* ===================== HUB ===================== */
+        .hub-hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .hub-hero h1 { border: none; margin: 0; padding: 0; font-size: 30px; }
+        .hub-hero .sub { color: var(--muted); margin-top: 4px; }
+        .clock { font-size: 34px; font-weight: bold; color: var(--accent); text-align: right; font-variant-numeric: tabular-nums; }
+        .clock-date { color: var(--muted); text-align: right; font-size: 14px; }
+
+        .hub-search { margin-bottom: 10px; }
+        .hub-search input {
+            font-size: 18px;
+            padding: 12px 14px;
+            border-radius: 8px;
+        }
+        .hub-hint { color: var(--faint); font-size: 12px; margin-bottom: 15px; }
+        .hub-hint kbd {
+            background: var(--kbd); border: 1px solid var(--border); border-radius: 3px;
+            padding: 1px 5px; font-size: 11px; color: var(--text);
+        }
+
+        .hub-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        .hub-toolbar button { font-size: 14px; padding: 8px 14px; margin: 0; }
+        .btn-ghost { background: var(--ghost); color: var(--ghost-text); }
+        .btn-ghost:hover { background: var(--ghost-hover); }
+        .btn-ghost.on { background: var(--accent); color: #fff; }
+
+        .hub-cat { margin-bottom: 18px; }
+        .hub-cat-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            user-select: none;
+            padding: 6px 0;
+            border-bottom: 1px solid var(--border-soft);
+            margin-bottom: 10px;
+        }
+        #hub .hub-cat-header { cursor: pointer; }
+        .hub-cat-header h3 { margin: 0; font-size: 16px; color: var(--text); flex: 1; }
+        .hub-cat-header .count { color: var(--faint); font-size: 13px; }
+        .hub-cat-header .chev { transition: transform .2s; color: var(--faint); }
+        .hub-cat.collapsed .chev { transform: rotate(-90deg); }
+        .hub-cat.collapsed .hub-grid { display: none; }
+
+        .hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+        }
+        .tile {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 8px;
+            border: 1px solid var(--tile-border);
+            border-radius: 10px;
+            background: var(--tile);
+            text-decoration: none;
+            color: var(--text);
+            font-size: 13px;
+            text-align: center;
+            transition: transform .12s, box-shadow .12s, border-color .12s;
+            min-height: 78px;
+        }
+        a.tile:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent);
+            background: var(--tile-hover);
+        }
+        .tile.hidden { display: none; }
+        .ico {
+            width: 32px; height: 32px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 24px;
+        }
+        .ico img { width: 32px; height: 32px; border-radius: 6px; object-fit: contain; }
+        .ico .letter {
+            width: 32px; height: 32px; border-radius: 8px;
+            background: var(--accent); color: #fff; font-weight: bold;
+            display: flex; align-items: center; justify-content: center; font-size: 16px;
+        }
+        .tile .name { line-height: 1.2; word-break: break-word; }
+        .tile .badge-app {
+            position: absolute; bottom: 4px; right: 6px;
+            font-size: 9px; color: var(--faint); text-transform: uppercase; letter-spacing: .5px;
+        }
+        .no-results { color: var(--faint); padding: 10px 0; display: none; }
+
+        /* ===================== SETTINGS ===================== */
+        .settings-hint { color: var(--muted); font-size: 14px; margin: -4px 0 15px; }
+
+        .seg { display: inline-flex; background: var(--ghost); border-radius: 8px; padding: 3px; flex-wrap: wrap; }
+        .seg button {
+            margin: 0; background: transparent; color: var(--ghost-text);
+            font-size: 14px; padding: 8px 14px; border-radius: 6px;
+        }
+        .seg button:hover { background: var(--ghost-hover); }
+        .seg button.active { background: var(--accent); color: #fff; }
+
+        .link-form .row {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 10px;
+        }
+        .icon-picker {
+            margin-top: 14px;
+            display: grid;
+            grid-template-columns: 1fr 90px;
+            gap: 14px;
+            align-items: start;
+        }
+        .icon-inputs > * { margin-top: 10px; }
+        .icon-inputs .hidden { display: none; }
+        .icon-preview {
+            display: flex; flex-direction: column; align-items: center; gap: 6px;
+            padding: 10px; border: 1px dashed var(--border); border-radius: 10px;
+            font-size: 11px; color: var(--faint);
+        }
+        .icon-preview .ico, .icon-preview .ico img, .icon-preview .ico .letter { width: 48px; height: 48px; font-size: 36px; }
+        .icon-preview .ico .letter { font-size: 22px; }
+        .form-help { font-size: 12px; color: var(--muted); margin-top: 10px; line-height: 1.5; }
+        .form-actions { margin-top: 14px; }
+
+        /* Editor */
+        .editor-toolbar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px; }
+        .editor-toolbar button { margin: 0; font-size: 14px; padding: 8px 14px; }
+        #editor .hub-grid {
+            min-height: 60px;
+            padding: 6px;
+            border-radius: 10px;
+            border: 2px dashed transparent;
+            transition: background .15s, border-color .15s;
+        }
+        #editor .hub-grid.drop-ok { border-color: var(--accent); background: var(--drop); }
+        #editor .hub-grid:empty::before {
+            content: 'Empty — drag tiles here';
+            color: var(--faint); font-size: 13px; align-self: center; padding: 14px 6px;
+        }
+        .edit-tile { cursor: grab; border-style: dashed; padding-top: 26px; }
+        .edit-tile:active { cursor: grabbing; }
+        .edit-tile.dragging { opacity: .35; }
+        .edit-tile .tile-actions {
+            position: absolute; top: 4px; right: 4px; display: flex; gap: 3px;
+        }
+        .edit-tile .tile-actions button, .cat-actions button {
+            width: 24px; height: 24px; padding: 0; margin: 0;
+            font-size: 12px; border-radius: 50%; line-height: 24px;
+            background: var(--ghost); color: var(--ghost-text);
+        }
+        .edit-tile .tile-actions button:hover, .cat-actions button:hover { background: var(--ghost-hover); }
+        .edit-tile .tile-actions .is-fav { background: #ff9800; color: #fff; }
+        .edit-tile .tile-actions .t-del:hover, .cat-actions .c-del:hover { background: #f44336; color: #fff; }
+        .cat-actions { display: flex; gap: 4px; }
+        .cat-actions button { border-radius: 6px; width: 28px; }
+        .cat-actions button:disabled { opacity: .3; cursor: default; }
+
+        .backup-row { display: flex; gap: 8px; flex-wrap: wrap; }
+        .backup-row button { margin: 0; font-size: 14px; }
+
+        /* ===================== WIDGETS ===================== */
+        .widgets {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .widgets .container { margin-bottom: 0; }
+        .timer-display {
+            font-size: 56px; font-weight: bold; text-align: center;
+            font-variant-numeric: tabular-nums; color: var(--heading); margin: 10px 0;
+        }
+        .timer-mode { text-align: center; color: var(--muted); margin-bottom: 10px; }
+        .timer-btns { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; }
+        .timer-btns button { margin: 0; font-size: 14px; }
+        .timer-stats { text-align: center; color: var(--faint); font-size: 13px; margin-top: 10px; }
+        #scratchpad { min-height: 190px; resize: vertical; font-family: Arial, sans-serif; }
+        .saved-note { font-size: 12px; color: var(--faint); margin-top: 6px; height: 14px; }
+
+        @media (max-width: 760px) {
+            .widgets { grid-template-columns: 1fr; }
+            .link-form .row { grid-template-columns: 1fr; }
+            .clock, .clock-date { text-align: left; }
+        }
+
+        /* ===================== FORMS & LISTS ===================== */
+        .form-group { margin-bottom: 15px; }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: var(--label);
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+            background: var(--input);
+            color: var(--text);
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: var(--accent);
+            outline: none;
+        }
+
+        button {
+            background-color: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        button:hover { background-color: var(--accent-hover); }
+
+        .delete-btn { background-color: #f44336; }
+        .delete-btn:hover { background-color: #da190b; }
+
+        .edit-btn { background-color: #4b21f3; }
+        .edit-btn:hover { background-color: #3a14c9; }
+
+        .clear-btn { background-color: #ff9800; }
+        .clear-btn:hover { background-color: #f57c00; }
+
+        .reminder-item {
+            border: 1px solid var(--border);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            background: var(--item-bg);
+        }
+
+        .reminder-item.high { border-left: 5px solid #f44336; }
+        .reminder-item.medium { border-left: 5px solid #ff9800; }
+        .reminder-item.low { border-left: 5px solid #4CAF50; }
+
+        .reminder-item h4 { margin: 0 0 10px 0; color: var(--heading); }
+        .reminder-item p { margin: 5px 0; color: var(--muted); }
+
+        .priority-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .priority-badge.high { background-color: #f44336; }
+        .priority-badge.medium { background-color: #ff9800; }
+        .priority-badge.low { background-color: #4CAF50; }
+
+        .small-btn { font-size: 13px; padding: 6px 12px; margin-right: 6px; }
+
+        /* ===================== REMINDER STEPS & DRAG ===================== */
+        .reminder-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .reminder-head h4 { margin: 0; flex: 1; }
+        .drag-handle { cursor: grab; color: var(--faint); font-size: 18px; user-select: none; padding: 0 2px; }
+        .drag-handle:active { cursor: grabbing; }
+        .reminder-item.dragging { opacity: .35; border-style: dashed; }
+        .step-progress { font-size: 13px; font-weight: bold; color: var(--accent); white-space: nowrap; }
+        .steps { margin: 10px 0; }
+        .step-item {
+            display: flex; align-items: center; gap: 8px;
+            padding: 6px 8px; margin-bottom: 5px;
+            border: 1px solid var(--border-soft); border-radius: 4px; background: var(--card);
+        }
+        .step-item input[type="checkbox"] { width: auto; margin: 0; }
+        .step-item span { flex: 1; }
+        label.step-item { font-weight: normal; color: var(--text); cursor: pointer; }
+        .step-item.completed span { text-decoration: line-through; color: var(--faint); }
+        .step-del { background: none; color: var(--faint); padding: 0 6px; margin: 0; font-size: 14px; }
+        .step-del:hover { background: none; color: #f44336; }
+        .add-step { display: flex; gap: 8px; }
+        .add-step input { padding: 6px 8px; font-size: 13px; }
+        .add-step button { margin: 0; white-space: nowrap; }
+        .list-hint { color: var(--faint); font-size: 13px; margin: 20px 0 10px; }
+
+        /* ===================== TIMER LENGTHS ===================== */
+        .timer-settings { border-top: 1px solid var(--border-soft); margin-top: 15px; padding-top: 12px; }
+        .timer-settings summary { cursor: pointer; color: var(--muted); font-size: 14px; }
+        .timer-lengths { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
+        .timer-lengths label, .custom-time label { font-size: 12px; font-weight: normal; color: var(--muted); }
+        .timer-lengths input, .custom-time input { padding: 6px 8px; }
+        .custom-time { display: flex; align-items: flex-end; gap: 8px; margin-top: 10px; }
+        .custom-time > div { flex: 1; }
+        .custom-time button { margin: 0; font-size: 14px; padding: 8px 14px; }
+
+        /* ===================== JOB APPLICATIONS ===================== */
+        .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0 15px; }
+        .status-filters { display: flex; flex-wrap: wrap; gap: 6px; margin: 20px 0 15px; }
+        .status-filters button { margin: 0; font-size: 13px; padding: 6px 12px; border-radius: 16px; }
+        .job-item {
+            border: 1px solid var(--border);
+            border-left: 5px solid #9e9e9e;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: var(--item-bg);
+        }
+        .job-item.applied { border-left-color: #2196F3; }
+        .job-item.interviewing { border-left-color: #ff9800; }
+        .job-item.offer { border-left-color: #4CAF50; }
+        .job-item.rejected { border-left-color: #f44336; opacity: .75; }
+        .job-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+        .job-head h4 { margin: 0; color: var(--heading); }
+        .job-head .position { font-weight: normal; color: var(--muted); }
+        .job-item p { margin: 8px 0; color: var(--muted); }
+        .job-item a { color: var(--accent); word-break: break-all; }
+        .status-select { width: auto; padding: 5px 8px; font-size: 13px; }
+
+        /* ===================== SIDE BY SIDE ===================== */
+        .side-toggle {
+            display: flex; align-items: center; gap: 6px;
+            margin: 0 0 0 8px; font-weight: normal; font-size: 14px; color: var(--muted); cursor: pointer;
+        }
+        .side-toggle input { width: auto; margin: 0; }
+        .workspace.side-by-side { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+        .workspace.side-by-side > .page { min-width: 0; }
+        .workspace.side-by-side .widgets,
+        .workspace.side-by-side .link-form .row,
+        .workspace.side-by-side .icon-picker { grid-template-columns: 1fr; }
+        .workspace.side-by-side .hub-hero h1 { font-size: 24px; }
+        .workspace.side-by-side .clock { font-size: 26px; }
+        .nav-icon-btn {
+            background: transparent; color: var(--muted);
+            margin: 0; padding: 6px 9px; font-size: 15px; border-radius: 50%;
+        }
+        .nav-icon-btn:hover { background: var(--ghost); color: var(--text); }
+        .nav-icon-btn.on { background: var(--ghost); color: var(--text); }
+        .nav-icon-btn[hidden] { display: none; }
+        #pinNav:not(.on) { opacity: .45; }   /* faded pin = unpinned */
+
+        /* ===================== FLOATING HEADER ===================== */
+        .page-nav.pinned {
+            position: sticky;
+            top: 8px;
+            z-index: 100;
+            background: var(--card);
+            box-shadow: var(--shadow);
+            border-radius: 14px;
+            padding: 8px 12px;
+        }
+        html.nav-pinned { scroll-padding-top: 90px; }   /* "scroll to form" jumps land below the header */
+
+        @media (max-width: 760px) {
+            .page-nav { flex-wrap: wrap; }
+            .page-nav .brand { width: 100%; }
+            .workspace.side-by-side { grid-template-columns: 1fr; }
+            .timer-lengths { grid-template-columns: 1fr; }
+        }
+
+        /* ===================== JULES APPS (SIE Study & Worldbuilder tabs) ===================== */
+        body.with-apps .page-nav { flex-wrap: wrap; }   /* with two more tabs the row can run out of room */
+        body.with-apps .page-tab { white-space: nowrap; }
+        @media (max-width: 1310px) {
+            body.with-apps .page-nav { gap: 4px; }
+            body.with-apps .page-tab { padding: 8px 9px; font-size: 14px; }
+            body.with-apps .side-toggle { margin-left: 4px; font-size: 13px; }
+        }
+        .page-tab[hidden] { display: none; }
+        html.nav-pinned { scroll-padding-top: var(--nav-pad, 90px); }
+        body.app-view { max-width: none; }   /* the apps get the whole window */
+        .app-page { min-width: 0; }
+        @media (min-width: 761px) {
+            .workspace.side-by-side > .app-page { position: sticky; top: var(--app-stick, 0px); }
+        }
+        /* A hidden app stays laid out, off screen: display:none would lose its scroll position */
+        .workspace > .app-page[hidden] {
+            display: block; visibility: hidden; pointer-events: none;
+            position: fixed; top: 0; left: -300vw; width: var(--app-w, 1160px);
+        }
+        .app-frame {
+            display: block;
+            width: 100%;
+            height: var(--app-h, calc(100vh - 110px));
+            min-height: 420px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--card);
+            box-shadow: var(--shadow);
+            box-sizing: border-box;
+        }
+        @media (max-width: 760px) {
+            /* phones: the app gets the full width (SIE needs about 360px) */
+            .app-page .app-frame { width: calc(100% + 40px); margin: 0 -20px; border-left: 0; border-right: 0; border-radius: 0; }
+        }
+        .app-note p { color: var(--muted); line-height: 1.5; }
+        #appsSettings code { overflow-wrap: anywhere; }
+        .app-results { margin-top: 18px; }
+        .app-results[hidden] { display: none; }
+        .app-results h3 {
+            margin: 0 0 8px; padding: 6px 0; font-size: 16px; color: var(--text);
+            border-bottom: 1px solid var(--border-soft);
+        }
+        .app-hits { display: flex; flex-direction: column; gap: 4px; margin-bottom: 14px; }
+        .app-hit {
+            display: flex; justify-content: space-between; align-items: baseline; gap: 10px;
+            padding: 8px 10px; border: 1px solid var(--tile-border); border-radius: 8px;
+            background: var(--tile); color: var(--text); text-decoration: none; font-size: 14px;
+        }
+        .app-hit:hover { border-color: var(--accent); background: var(--tile-hover); }
+        .app-hit .kind { color: var(--faint); font-size: 12px; white-space: nowrap; }
+    </style>
+</head>
+<body>
+
+    <nav class="page-nav">
+        <span class="brand">⚡ Boost</span>
+        <button class="page-tab" data-page="home" onclick="showPage('home')">🏠 Home</button>
+        <button class="page-tab" data-page="jobs" onclick="showPage('jobs')">💼 Job Apps</button>
+        <button class="page-tab" data-page="reminders" onclick="showPage('reminders')">✅ Reminders</button>
+        <button class="page-tab" data-page="focus" onclick="showPage('focus')">⏱ Timer &amp; Notes</button>
+        <button class="page-tab" data-page="sie" onclick="showPage('sie')" hidden>📚 SIE Study</button>
+        <button class="page-tab" data-page="world" onclick="showPage('world')" hidden>🌍 Worldbuilder</button>
+        <button class="page-tab" data-page="settings" onclick="showPage('settings')">⚙ Settings</button>
+        <label class="side-toggle" title="Show two tabs next to each other — the last two you open">
+            <input type="checkbox" id="sideBySide" onchange="setSideBySide(this.checked)"> Side by side
+        </label>
+        <button class="nav-icon-btn" id="swapSides" onclick="swapSides()" title="Swap left and right" hidden>⇄</button>
+        <button class="nav-icon-btn" id="popOut" onclick="popOutApp()" title="Open this app in its own browser tab" hidden>↗</button>
+        <button class="nav-icon-btn" id="pinNav" onclick="setNavPinned(!lsGet('boostNavPinned', true))">📌</button>
+    </nav>
+
+    <div class="workspace" id="workspace">
+
+    <!-- ============================================================ -->
+    <!-- ========================= HOME PAGE ======================== -->
+    <!-- ============================================================ -->
+    <main class="page" id="page-home">
+
+        <div class="container">
+            <div class="hub-hero">
+                <div>
+                    <h1 id="greeting">Hey Jules</h1>
+                    <div class="sub">Boost — everything in one place.</div>
+                </div>
+                <div>
+                    <div class="clock" id="clock">--:--</div>
+                    <div class="clock-date" id="clockDate"></div>
+                </div>
+            </div>
+
+            <div class="hub-search">
+                <input type="text" id="hubSearch" placeholder="Search your apps… or press Enter to search the web" autocomplete="off">
+            </div>
+            <div class="hub-hint">
+                <kbd>/</kbd> to search &nbsp;·&nbsp; <kbd>Enter</kbd> opens the top match (or Googles it) &nbsp;·&nbsp; <kbd>Esc</kbd> clears
+                &nbsp;·&nbsp; "App" tiles open the desktop app if it's installed
+            </div>
+
+            <div class="hub-toolbar">
+                <button class="btn-ghost" onclick="setAllCollapsed(false)">Expand All</button>
+                <button class="btn-ghost" onclick="setAllCollapsed(true)">Collapse All</button>
+            </div>
+
+            <div id="hub"></div>
+            <div class="no-results" id="noResults">No apps match — press Enter to search the web.</div>
+            <div class="app-results" id="appResults" hidden></div>
+        </div>
+    </main>
+
+    <!-- ============================================================ -->
+    <!-- ======================= JOB APPS PAGE ====================== -->
+    <!-- ============================================================ -->
+    <main class="page" id="page-jobs" hidden>
+        <div class="container">
+            <h2>Job Applications</h2>
+            <form id="jobForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="jobCompany">Company:</label>
+                        <input type="text" id="jobCompany" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobPosition">Position:</label>
+                        <input type="text" id="jobPosition" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="jobStatus">Status:</label>
+                        <select id="jobStatus">
+                            <option value="wishlist">Wishlist</option>
+                            <option value="applied" selected>Applied</option>
+                            <option value="interviewing">Interviewing</option>
+                            <option value="offer">Offer</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobDate">Date Applied:</label>
+                        <input type="date" id="jobDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="jobLink">Job Posting Link:</label>
+                        <input type="text" id="jobLink" placeholder="https://…">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="jobNotes">Notes:</label>
+                    <textarea id="jobNotes" rows="2" placeholder="Contacts, pay, next steps…"></textarea>
+                </div>
+                <button type="submit" id="jobSubmit">Add Application</button>
+                <button type="button" class="btn-ghost" onclick="clearJobForm()">Clear Form</button>
+            </form>
+
+            <div class="status-filters" id="jobFilters"></div>
+            <div id="jobList"></div>
+        </div>
+    </main>
+
+    <!-- ============================================================ -->
+    <!-- ====================== REMINDERS PAGE ====================== -->
+    <!-- ============================================================ -->
+    <main class="page" id="page-reminders" hidden>
+        <div class="container">
+            <h2>Reminders & Todo</h2>
+            <form id="reminderForm">
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="3" placeholder="Enter details..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="stepInput">Checklist (optional):</label>
+                    <div id="stepDraft"></div>
+                    <div class="add-step">
+                        <input type="text" id="stepInput" placeholder="Add a step… (Enter to add)">
+                        <button type="button" class="btn-ghost small-btn" onclick="addDraftStep()">+ Add Step</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="priority">Priority:</label>
+                    <select id="priority" name="priority">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="dueDate">Due Date:</label>
+                    <input type="date" id="dueDate" name="dueDate">
+                </div>
+
+                <button type="submit" id="reminderSubmit">Add Reminder</button>
+                <button type="button" onclick="clearReminderForm()">Clear Form</button>
+            </form>
+
+            <div class="list-hint">Drag the ⋮⋮ handle to put reminders in any order.</div>
+            <div id="reminders"></div>
+            <button class="clear-btn" onclick="sortRemindersByPriority()">Sort by Priority</button>
+            <button class="delete-btn" onclick="clearAllReminders()">Delete All Reminders</button>
+        </div>
+    </main>
+
+    <!-- ============================================================ -->
+    <!-- ===================== TIMER & NOTES PAGE =================== -->
+    <!-- ============================================================ -->
+    <main class="page" id="page-focus" hidden>
+        <div class="widgets">
+            <div class="container">
+                <h2>Focus Timer</h2>
+                <div class="timer-mode" id="timerMode">Focus</div>
+                <div class="timer-display" id="timerDisplay">25:00</div>
+                <div class="timer-btns">
+                    <button id="timerStartBtn" onclick="toggleTimer()">Start</button>
+                    <button class="btn-ghost" onclick="resetTimer()">Reset</button>
+                    <button class="btn-ghost" id="modeBtn-focus" onclick="setTimerMode('focus')">Focus 25</button>
+                    <button class="btn-ghost" id="modeBtn-short" onclick="setTimerMode('short')">Break 5</button>
+                    <button class="btn-ghost" id="modeBtn-long" onclick="setTimerMode('long')">Long 15</button>
+                </div>
+                <div class="timer-stats" id="timerStats"></div>
+
+                <details class="timer-settings">
+                    <summary>Change timer lengths</summary>
+                    <div class="timer-lengths">
+                        <div>
+                            <label for="len-focus">Focus (min)</label>
+                            <input type="number" id="len-focus" min="1" max="600" onchange="setTimerLength('focus', this.value)">
+                        </div>
+                        <div>
+                            <label for="len-short">Break (min)</label>
+                            <input type="number" id="len-short" min="1" max="600" onchange="setTimerLength('short', this.value)">
+                        </div>
+                        <div>
+                            <label for="len-long">Long break (min)</label>
+                            <input type="number" id="len-long" min="1" max="600" onchange="setTimerLength('long', this.value)">
+                        </div>
+                    </div>
+                    <div class="custom-time">
+                        <div>
+                            <label for="customMin">One-off timer: minutes</label>
+                            <input type="number" id="customMin" min="0" max="600" placeholder="0">
+                        </div>
+                        <div>
+                            <label for="customSec">seconds</label>
+                            <input type="number" id="customSec" min="0" max="59" placeholder="0">
+                        </div>
+                        <button onclick="setCustomTimer()">Set</button>
+                    </div>
+                </details>
+            </div>
+
+            <div class="container">
+                <h2>Scratchpad</h2>
+                <textarea id="scratchpad" placeholder="Quick notes, phone numbers, ideas… saves automatically."></textarea>
+                <div class="saved-note" id="savedNote"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ============================================================ -->
+    <!-- ============== SIE STUDY & WORLDBUILDER PAGES ============== -->
+    <!-- ============================================================ -->
+    <!-- Each app runs in its own frame, created the first time you open its tab -->
+    <main class="page app-page" id="page-sie" hidden></main>
+    <main class="page app-page" id="page-world" hidden></main>
+
+    <!-- ============================================================ -->
+    <!-- ======================= SETTINGS PAGE ====================== -->
+    <!-- ============================================================ -->
+    <main class="page" id="page-settings" hidden>
+
+        <!-- Appearance -->
+        <div class="container">
+            <h2>Appearance</h2>
+            <label>Theme</label>
+            <div class="seg" id="themeSeg">
+                <button data-theme-choice="light" onclick="setTheme('light')">☀ Light</button>
+                <button data-theme-choice="dark" onclick="setTheme('dark')">🌙 Dark</button>
+                <button data-theme-choice="system" onclick="setTheme('system')">💻 Match my computer</button>
+            </div>
+        </div>
+
+        <!-- Add / edit a link -->
+        <div class="container link-form" id="linkForm">
+            <h2 id="lfTitle">Add a Link</h2>
+            <div class="row">
+                <div>
+                    <label for="lfName">Name</label>
+                    <input type="text" id="lfName" placeholder="e.g. My Bank">
+                </div>
+                <div>
+                    <label for="lfUrl">Link</label>
+                    <input type="text" id="lfUrl" placeholder="https://… or an app link like spotify:">
+                </div>
+                <div>
+                    <label for="lfCat">Category</label>
+                    <input type="text" id="lfCat" list="catList" placeholder="Pick or type new">
+                    <datalist id="catList"></datalist>
+                </div>
+            </div>
+
+            <div class="icon-picker">
+                <div>
+                    <label>Icon</label>
+                    <div class="seg" id="iconSeg">
+                        <button data-icon-mode="auto" onclick="setIconMode('auto')">Auto</button>
+                        <button data-icon-mode="emoji" onclick="setIconMode('emoji')">Emoji</button>
+                        <button data-icon-mode="upload" onclick="setIconMode('upload')">Upload image</button>
+                        <button data-icon-mode="url" onclick="setIconMode('url')">Image link</button>
+                    </div>
+                    <div class="icon-inputs">
+                        <div data-for="auto" class="form-help">Uses the website's own icon, or the first letter for app links.</div>
+                        <input data-for="emoji" type="text" id="lfEmoji" placeholder="Paste an emoji, e.g. 🌍" maxlength="8">
+                        <div data-for="upload">
+                            <input type="file" id="lfFile" accept="image/*,.ico,.svg">
+                            <div class="form-help">PNG, JPG, SVG, ICO or GIF. It's shrunk to a small square and saved inside Boost.</div>
+                        </div>
+                        <input data-for="url" type="text" id="lfImgUrl" placeholder="https://…/icon.png">
+                    </div>
+                </div>
+                <div class="icon-preview">
+                    <div id="iconPreview"></div>
+                    Preview
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button onclick="saveLink()" id="lfSave">Save Link</button>
+                <button class="btn-ghost" onclick="resetLinkForm()" id="lfCancel">Clear</button>
+            </div>
+            <div class="form-help">
+                Website? Paste the address. Computer app? Use its app link (e.g. <code>spotify:</code>, <code>discord://</code>, <code>vscode://</code>, <code>steam://open/main</code>).
+            </div>
+        </div>
+
+        <!-- Arrange -->
+        <div class="container">
+            <h2>Arrange Your Hub</h2>
+            <p class="settings-hint">
+                Drag tiles to move them — even into a different category. ▲▼ moves a whole category.
+                ★ adds a tile to Favorites (drag inside Favorites to reorder them). ✎ edits, ✕ deletes.
+            </p>
+            <div class="editor-toolbar">
+                <button class="btn-ghost" onclick="newCategory()">+ New Category</button>
+            </div>
+            <div id="editor"></div>
+        </div>
+
+        <!-- Backup -->
+        <div class="container">
+            <h2>Backup</h2>
+            <p class="settings-hint">Boost saves everything in this browser. Export a backup now and then so nothing gets lost.</p>
+            <div class="backup-row">
+                <button class="btn-ghost" onclick="exportLinks()">⬇ Export Backup</button>
+                <button class="btn-ghost" onclick="document.getElementById('importFile').click()">⬆ Import Backup</button>
+                <button class="btn-ghost" onclick="resetLinks()">↺ Reset Links to Defaults</button>
+                <input type="file" id="importFile" accept=".json" style="display:none" onchange="importLinks(event)">
+            </div>
+        </div>
+
+        <!-- SIE Study & Worldbuilder -->
+        <div class="container" id="appsSettings" hidden></div>
+    </main>
+    </div>
+
+    <script>
+        // ===================== HUB DATA =====================
+        // url starting with http(s) = website (shows the site's icon)
+        // anything else (spotify:, discord://, ...) = desktop app link
+        const DEFAULT_LINKS = [
+            // AI
+            ['AI', 'Claude', 'https://claude.ai'],
+            ['AI', 'ChatGPT', 'https://chatgpt.com'],
+            ['AI', 'Gemini', 'https://gemini.google.com'],
+            ['AI', 'Perplexity', 'https://www.perplexity.ai'],
+            ['AI', 'Copilot', 'https://copilot.microsoft.com'],
+
+            // Work & Productivity
+            ['Work & Productivity', 'Gmail', 'https://mail.google.com'],
+            ['Work & Productivity', 'Google Calendar', 'https://calendar.google.com'],
+            ['Work & Productivity', 'Google Drive', 'https://drive.google.com'],
+            ['Work & Productivity', 'Google Docs', 'https://docs.google.com/document'],
+            ['Work & Productivity', 'Google Sheets', 'https://docs.google.com/spreadsheets'],
+            ['Work & Productivity', 'Google Slides', 'https://docs.google.com/presentation'],
+            ['Work & Productivity', 'Google Meet', 'https://meet.google.com'],
+            ['Work & Productivity', 'Outlook', 'https://outlook.live.com'],
+            ['Work & Productivity', 'Outlook Calendar', 'https://outlook.live.com/calendar/'],
+            ['Work & Productivity', 'OneNote', 'https://www.onenote.com/notebooks'],
+            ['Work & Productivity', 'Microsoft 365', 'https://www.office.com'],
+            ['Work & Productivity', 'OneDrive', 'https://onedrive.live.com'],
+            ['Work & Productivity', 'Teams', 'https://teams.microsoft.com'],
+            ['Work & Productivity', 'Zoom', 'https://zoom.us/signin'],
+            ['Work & Productivity', 'Slack', 'https://app.slack.com'],
+            ['Work & Productivity', 'Notion', 'https://www.notion.so'],
+            ['Work & Productivity', 'Trello', 'https://trello.com'],
+            ['Work & Productivity', 'Canva', 'https://www.canva.com'],
+            ['Work & Productivity', 'LinkedIn', 'https://www.linkedin.com'],
+
+            // Desktop Apps (open the installed program)
+            ['Desktop Apps', 'Claude (App)', 'claude://', '✳️'],
+            ['Desktop Apps', 'IntelliJ IDEA', 'intellij:', '🧠'],
+            ['Desktop Apps', 'Worldbuilder', 'worldbuilder:', '🌍'],
+            ['Desktop Apps', 'Spotify', 'spotify:', '🎧'],
+            ['Desktop Apps', 'Discord', 'discord://', '🎮'],
+            ['Desktop Apps', 'Slack', 'slack://open', '💬'],
+            ['Desktop Apps', 'Zoom', 'zoommtg://', '📹'],
+            ['Desktop Apps', 'Teams', 'msteams:', '👥'],
+            ['Desktop Apps', 'Word', 'ms-word:', '📝'],
+            ['Desktop Apps', 'Excel', 'ms-excel:', '📊'],
+            ['Desktop Apps', 'PowerPoint', 'ms-powerpoint:', '📽️'],
+            ['Desktop Apps', 'Outlook (App)', 'ms-outlook:', '📧'],
+            ['Desktop Apps', 'OneNote (App)', 'onenote:', '📒'],
+            ['Desktop Apps', 'VS Code', 'vscode://', '💻'],
+            ['Desktop Apps', 'Notion', 'notion://', '📓'],
+            ['Desktop Apps', 'Obsidian', 'obsidian://', '🪨'],
+            ['Desktop Apps', 'Steam', 'steam://open/main', '🕹️'],
+            ['Desktop Apps', 'Calculator (Win)', 'calculator:', '🧮'],
+            ['Desktop Apps', 'Settings (Win)', 'ms-settings:', '⚙️'],
+
+            // Watch & Listen
+            ['Watch & Listen', 'YouTube', 'https://www.youtube.com'],
+            ['Watch & Listen', 'Spotify Web', 'https://open.spotify.com'],
+            ['Watch & Listen', 'Netflix', 'https://www.netflix.com'],
+            ['Watch & Listen', 'Hulu', 'https://www.hulu.com'],
+            ['Watch & Listen', 'Disney+', 'https://www.disneyplus.com'],
+            ['Watch & Listen', 'Max', 'https://www.max.com'],
+            ['Watch & Listen', 'Prime Video', 'https://www.primevideo.com'],
+            ['Watch & Listen', 'Twitch', 'https://www.twitch.tv'],
+            ['Watch & Listen', 'Apple Music', 'https://music.apple.com'],
+            ['Watch & Listen', 'Pandora', 'https://www.pandora.com'],
+
+            // Social & Chat
+            ['Social & Chat', 'Discord Web', 'https://discord.com/app'],
+            ['Social & Chat', 'Instagram', 'https://www.instagram.com'],
+            ['Social & Chat', 'Facebook', 'https://www.facebook.com'],
+            ['Social & Chat', 'Messenger', 'https://www.messenger.com'],
+            ['Social & Chat', 'WhatsApp', 'https://web.whatsapp.com'],
+            ['Social & Chat', 'Reddit', 'https://www.reddit.com'],
+            ['Social & Chat', 'X', 'https://x.com'],
+            ['Social & Chat', 'TikTok', 'https://www.tiktok.com'],
+            ['Social & Chat', 'Pinterest', 'https://www.pinterest.com'],
+            ['Social & Chat', 'Threads', 'https://www.threads.net'],
+
+            // Money & Shopping
+            ['Money & Shopping', 'Amazon', 'https://www.amazon.com'],
+            ['Money & Shopping', 'Amazon Orders', 'https://www.amazon.com/gp/css/order-history'],
+            ['Money & Shopping', 'Target', 'https://www.target.com'],
+            ['Money & Shopping', 'Walmart', 'https://www.walmart.com'],
+            ['Money & Shopping', 'eBay', 'https://www.ebay.com'],
+            ['Money & Shopping', 'PayPal', 'https://www.paypal.com'],
+            ['Money & Shopping', 'Venmo', 'https://venmo.com'],
+            ['Money & Shopping', 'Credit Karma', 'https://www.creditkarma.com'],
+            ['Money & Shopping', 'DoorDash', 'https://www.doordash.com'],
+            ['Money & Shopping', 'Instacart', 'https://www.instacart.com'],
+
+            // Everyday Tools
+            ['Everyday Tools', 'Google Maps', 'https://maps.google.com'],
+            ['Everyday Tools', 'Weather', 'https://weather.com'],
+            ['Everyday Tools', 'Google Translate', 'https://translate.google.com'],
+            ['Everyday Tools', 'Google Photos', 'https://photos.google.com'],
+            ['Everyday Tools', 'Google Keep', 'https://keep.google.com'],
+            ['Everyday Tools', 'iCloud', 'https://www.icloud.com'],
+            ['Everyday Tools', 'GitHub', 'https://github.com'],
+            ['Everyday Tools', 'Speed Test', 'https://fast.com'],
+            ['Everyday Tools', 'Password Check', 'https://haveibeenpwned.com'],
+            ['Everyday Tools', 'PDF Tools', 'https://www.ilovepdf.com'],
+            ['Everyday Tools', 'Wikipedia', 'https://www.wikipedia.org'],
+            ['Everyday Tools', 'News', 'https://news.google.com'],
+        ];
+
+        // Links added in later versions get merged into an existing saved hub (skipped if you already have that link)
+        const DEFAULTS_VERSION = 3;
+        const ADDED_IN = {
+            2: [
+                ['Desktop Apps', 'Claude (App)', 'claude://', '✳️'],
+                ['Desktop Apps', 'IntelliJ IDEA', 'intellij:', '🧠'],
+                ['Desktop Apps', 'Worldbuilder', 'worldbuilder:', '🌍'],
+            ],
+            3: [
+                ['Work & Productivity', 'Outlook Calendar', 'https://outlook.live.com/calendar/'],
+                ['Work & Productivity', 'OneNote', 'https://www.onenote.com/notebooks'],
+                ['Desktop Apps', 'Outlook (App)', 'ms-outlook:', '📧'],
+                ['Desktop Apps', 'OneNote (App)', 'onenote:', '📒'],
+            ],
+        };
+
+        const PINNED_BY_DEFAULT = ['Claude', 'Gmail', 'Google Calendar', 'Google Drive', 'YouTube', 'Spotify Web'];
+        const FAV = '⭐ Favorites';
+        const CAT_ORDER = ['AI', 'Work & Productivity', 'Desktop Apps', 'Watch & Listen', 'Social & Chat', 'Money & Shopping', 'Everyday Tools'];
+
+        // ===================== STORAGE =====================
+        function lsGet(key, fallback) {
+            try {
+                const v = localStorage.getItem(key);
+                return v === null ? fallback : JSON.parse(v);
+            } catch (e) { return fallback; }
+        }
+        function lsSet(key, value) {
+            try {
+                localStorage.setItem(key, JSON.stringify(value));
+                return true;
+            } catch (e) {
+                alert('Boost couldn\'t save — browser storage may be full. Big custom icons take the most space.');
+                return false;
+            }
+        }
+
+        function makeDefaults() {
+            return DEFAULT_LINKS.map(([cat, name, url, icon], i) => ({
+                id: 'd' + i, cat, name, url, icon: icon || '', iconImg: ''
+            }));
+        }
+        function defaultFavs(links) {
+            return links.filter(l => PINNED_BY_DEFAULT.includes(l.name) && isWeb(l.url)).map(l => l.id);
+        }
+        function normUrl(u) { return String(u || '').toLowerCase().replace(/[:/]+$/, ''); }
+
+        function migrate() {
+            let links = lsGet('boostLinks', null);
+            if (!Array.isArray(links)) {
+                links = makeDefaults();
+                lsSet('boostLinks', links);
+                lsSet('boostFavs', defaultFavs(links));
+                lsSet('boostDefaultsVersion', DEFAULTS_VERSION);
+                return;
+            }
+            // v1 kept favourites as link.pinned
+            if (!Array.isArray(lsGet('boostFavs', null))) {
+                lsSet('boostFavs', links.filter(l => l.pinned).map(l => l.id));
+            }
+            const version = lsGet('boostDefaultsVersion', 1);
+            if (version < DEFAULTS_VERSION) {
+                const have = new Set(links.map(l => normUrl(l.url)));
+                for (let v = version + 1; v <= DEFAULTS_VERSION; v++) {
+                    (ADDED_IN[v] || []).forEach(([cat, name, url, icon], i) => {
+                        if (!have.has(normUrl(url))) links.push({ id: `v${v}_${i}`, cat, name, url, icon: icon || '', iconImg: '' });
+                    });
+                }
+                lsSet('boostLinks', links);
+                lsSet('boostDefaultsVersion', DEFAULTS_VERSION);
+            }
+        }
+
+        function getLinks() {
+            const saved = lsGet('boostLinks', null);
+            return Array.isArray(saved) ? saved : makeDefaults();
+        }
+        function saveLinks(links) { return lsSet('boostLinks', links); }
+
+        function getFavs() {
+            const ids = new Set(getLinks().map(l => l.id));
+            return lsGet('boostFavs', []).filter(id => ids.has(id));
+        }
+        function saveFavs(favs) { lsSet('boostFavs', favs); }
+
+        // All categories in display order, including empty ones you created
+        function getCats(links) {
+            links = links || getLinks();
+            const order = lsGet('boostCatOrder', CAT_ORDER).slice();
+            links.forEach(l => { if (!order.includes(l.cat)) order.push(l.cat); });
+            return order;
+        }
+        function saveCats(order) { lsSet('boostCatOrder', order); }
+
+        function getCollapsed() { return lsGet('boostCollapsed', {}); }
+        function saveCollapsed(c) { lsSet('boostCollapsed', c); }
+
+        // ===================== RENDER HELPERS =====================
+        function esc(s) {
+            return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+        }
+        function isWeb(url) { return /^https?:\/\//i.test(url); }
+        function isSafeImg(src) { return /^(https?:\/\/|data:image\/)/i.test(src || ''); }
+
+        function iconHTML(link) {
+            const letter = esc((link.name || '?').trim().charAt(0).toUpperCase() || '?');
+            const fallback = `onerror="this.outerHTML='<div class=&quot;letter&quot;>${letter}</div>'"`;
+            if (link.iconImg && isSafeImg(link.iconImg)) {
+                return `<div class="ico"><img src="${esc(link.iconImg)}" alt="" draggable="false" ${fallback}></div>`;
+            }
+            if (link.icon) return `<div class="ico">${esc(link.icon)}</div>`;
+            if (isWeb(link.url)) {
+                let host = '';
+                try { host = new URL(link.url).hostname; } catch (e) {}
+                return `<div class="ico"><img src="https://www.google.com/s2/favicons?domain=${esc(host)}&sz=64" alt="" draggable="false" ${fallback}></div>`;
+            }
+            return `<div class="ico"><div class="letter">${letter}</div></div>`;
+        }
+
+        // ===================== HOME HUB =====================
+        function tileHTML(link) {
+            const web = isWeb(link.url);
+            // inside Jules Apps the Worldbuilder tile, and an old tile for the SIE file, open their tabs
+            const href = !HUB ? link.url : /^worldbuilder:/i.test(link.url) ? '#world'
+                : /^file:.*\/SIE_Study_App\.html$/i.test(link.url) ? '#sie' : link.url;
+            return `
+                <a class="tile" href="${esc(href)}" ${web ? 'target="_blank" rel="noopener"' : ''}
+                   data-search="${esc((link.name + ' ' + link.cat + ' ' + link.url).toLowerCase())}"
+                   data-id="${esc(link.id)}" title="${esc(link.url)}">
+                    ${iconHTML(link)}
+                    <span class="name">${esc(link.name)}</span>
+                    ${web ? '' : '<span class="badge-app">App</span>'}
+                </a>`;
+        }
+
+        function renderHub() {
+            const links = getLinks();
+            const byId = Object.fromEntries(links.map(l => [l.id, l]));
+            const collapsed = getCollapsed();
+
+            const groups = [];
+            const favs = getFavs().map(id => byId[id]).filter(Boolean);
+            if (favs.length) groups.push([FAV, favs]);
+            getCats(links).forEach(c => {
+                const items = links.filter(l => l.cat === c);
+                if (items.length) groups.push([c, items]);
+            });
+
+            document.getElementById('hub').innerHTML = groups.map(([cat, items]) => `
+                <div class="hub-cat ${collapsed[cat] ? 'collapsed' : ''}" data-cat="${esc(cat)}">
+                    <div class="hub-cat-header" onclick="toggleCat(this.parentElement)">
+                        <span class="chev">▼</span>
+                        <h3>${esc(cat)}</h3>
+                        <span class="count">${items.length}</span>
+                    </div>
+                    <div class="hub-grid">${items.map(tileHTML).join('')}</div>
+                </div>`).join('');
+            filterHub();
+        }
+
+        function toggleCat(el) {
+            const c = getCollapsed();
+            c[el.dataset.cat] = !el.classList.contains('collapsed');
+            el.classList.toggle('collapsed');
+            saveCollapsed(c);
+        }
+
+        function setAllCollapsed(val) {
+            const c = getCollapsed();
+            document.querySelectorAll('#hub .hub-cat').forEach(el => {
+                c[el.dataset.cat] = val;
+                el.classList.toggle('collapsed', val);
+            });
+            saveCollapsed(c);
+        }
+
+        function filterHub() {
+            const q = document.getElementById('hubSearch').value.trim().toLowerCase();
+            let visible = 0;
+            const collapsed = getCollapsed();
+            document.querySelectorAll('#hub .hub-cat').forEach(cat => {
+                let catVisible = 0;
+                cat.querySelectorAll('.tile').forEach(t => {
+                    const match = !q || t.dataset.search.includes(q);
+                    t.classList.toggle('hidden', !match);
+                    if (match) catVisible++;
+                });
+                cat.style.display = catVisible ? '' : 'none';
+                // while searching, show results even in collapsed groups
+                cat.classList.toggle('collapsed', !q && !!collapsed[cat.dataset.cat]);
+                visible += catVisible;
+            });
+            document.getElementById('noResults').style.display = (q && !visible) ? 'block' : 'none';
+            renderAppResults(q);
+        }
+
+        function setupSearch() {
+            const box = document.getElementById('hubSearch');
+            box.addEventListener('input', filterHub);
+            box.addEventListener('keydown', e => {
+                if (e.key === 'Escape') { box.value = ''; filterHub(); box.blur(); }
+                if (e.key === 'Enter') {
+                    const q = box.value.trim();
+                    if (!q) return;
+                    const first = document.querySelector('#hub .tile:not(.hidden)');
+                    if (first) first.click();
+                    else window.open('https://www.google.com/search?q=' + encodeURIComponent(q), '_blank');
+                }
+            });
+            document.addEventListener('keydown', e => {
+                const tag = (document.activeElement.tagName || '').toLowerCase();
+                if (e.key === '/' && !document.getElementById('page-home').hidden && !['input', 'textarea', 'select'].includes(tag)) {
+                    e.preventDefault();
+                    box.focus();
+                }
+            });
+        }
+
+        // ===================== PAGES =====================
+        // SIE Study and Worldbuilder tabs exist when Boost runs inside Jules Apps (or is opened from the folder, to explain how)
+        const HUB = window.JULES_APPS || null;
+        const APPS_ON = !!HUB || location.protocol === 'file:';
+        const PAGES = ['home', 'jobs', 'reminders', 'focus', ...(APPS_ON ? ['sie', 'world'] : []), 'settings'];
+        let currentPage = 'home';
+
+        // Side by side shows two tabs: [left, right]. Opening a third tab replaces
+        // whichever of the two you weren't just using.
+        function getSidePages() {
+            const s = lsGet('boostSidePages', null);
+            return Array.isArray(s) && s.length === 2 && s.every(p => PAGES.includes(p)) && s[0] !== s[1]
+                ? s : ['home', 'reminders'];
+        }
+
+        function showPage(page, viaHash) {
+            page = PAGES.includes(page) ? page : 'home';
+            const prev = currentPage;
+            const appsBefore = HUB ? appPagesShown() : [];
+            // Back/Forward inside Jules Apps: put back exactly the tabs that were on screen then
+            const saved = HUB && viaHash && history.state && history.state.view;
+            if (saved && saved.page === page) restoreView(saved);
+            const side = !!lsGet('boostSideBySide', false);
+            if (HUB) {   // another Jules Apps tab may have changed the setting
+                document.getElementById('sideBySide').checked = side;
+                document.getElementById('workspace').classList.toggle('side-by-side', side);
+            }
+            let pair = getSidePages();
+            if (side && !pair.includes(page)) {
+                const keep = pair.includes(currentPage) ? currentPage : pair[0];
+                pair = pair[0] === keep ? [keep, page] : [page, keep];
+                lsSet('boostSidePages', pair);
+            }
+            currentPage = page;
+            const shown = side ? pair : [page];
+            if (APPS_ON) keepAppSizes(shown);
+            document.querySelectorAll('.page').forEach(p => {
+                const name = p.id.replace('page-', '');
+                p.hidden = !shown.includes(name);
+                p.style.order = shown.indexOf(name);
+            });
+            document.querySelectorAll('.page-tab').forEach(t => t.classList.toggle('active', shown.includes(t.dataset.page)));
+            document.getElementById('swapSides').hidden = !side;
+            const hash = '#' + currentPage;
+            if (HUB) {
+                // Inside Jules Apps every history entry remembers which tabs were on screen. Showing or hiding
+                // SIE Study or Worldbuilder starts a new entry, so Back puts that app back in view, and never
+                // quietly steps a hidden app back through its own pages (which would end an SIE exam).
+                const view = { page, side, pair: getSidePages() };
+                const appsNow = shown.filter(p => APPS[p]);
+                const changed = appsNow.length !== appsBefore.length || appsNow.some(a => !appsBefore.includes(a));
+                try {
+                    if (changed && !viaHash) history.pushState({ view }, '', hash);
+                    else history.replaceState({ view }, '', hash);
+                } catch (e) { location.hash = hash; }
+                lastHash = location.hash;
+            } else if (location.hash !== hash) {
+                try { history.replaceState(null, '', hash); } catch (e) { location.hash = hash; }
+            }
+            if (!side) window.scrollTo(0, 0);
+            showApps(shown, page !== prev);
+        }
+
+        function setSideBySide(on) {
+            if (APPS_ON) keepAppSizes([currentPage]);   // before the layout changes, so the other page keeps its size if it's an app
+            lsSet('boostSideBySide', on);
+            document.getElementById('sideBySide').checked = on;
+            document.getElementById('workspace').classList.toggle('side-by-side', on);
+            // the page you're on stays, next to the last tab it was paired with (or another one)
+            if (on && !getSidePages().includes(currentPage)) {
+                const partner = getSidePages().find(p => p !== currentPage) || 'reminders';
+                lsSet('boostSidePages', [currentPage, partner]);
+            }
+            showPage(currentPage);
+        }
+
+        function swapSides() {
+            lsSet('boostSidePages', getSidePages().reverse());
+            showPage(currentPage);
+        }
+
+        // ===================== FLOATING HEADER =====================
+        function setNavPinned(on) {
+            lsSet('boostNavPinned', on);
+            document.querySelector('.page-nav').classList.toggle('pinned', on);
+            document.documentElement.classList.toggle('nav-pinned', on);
+            const btn = document.getElementById('pinNav');
+            btn.classList.toggle('on', on);
+            btn.title = on ? 'Header is pinned to the top — click to unpin' : 'Pin the header to the top';
+            sizeAppFrames();
+        }
+
+        // ===================== THEME =====================
+        const darkQuery = window.matchMedia ? matchMedia('(prefers-color-scheme: dark)') : null;
+        function getTheme() {
+            try { return localStorage.getItem('boostTheme') || 'system'; } catch (e) { return 'system'; }
+        }
+        function applyTheme() {
+            const t = getTheme();
+            const dark = t === 'dark' || (t === 'system' && darkQuery && darkQuery.matches);
+            document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+            document.querySelectorAll('[data-theme-choice]').forEach(b => b.classList.toggle('active', b.dataset.themeChoice === t));
+        }
+        function setTheme(t) {
+            try { localStorage.setItem('boostTheme', t); } catch (e) {}
+            applyTheme();
+            Object.keys(APPS).forEach(applyThemeToApp);
+        }
+        if (darkQuery) {
+            const onChange = () => { if (getTheme() === 'system') applyTheme(); };
+            darkQuery.addEventListener ? darkQuery.addEventListener('change', onChange) : darkQuery.addListener(onChange);
+        }
+
+        // ===================== LINK FORM =====================
+        let editingLinkId = null;
+        let iconMode = 'auto';
+        let uploadedIcon = '';   // data URL from the file picker
+
+        function setIconMode(mode) {
+            iconMode = mode;
+            document.querySelectorAll('[data-icon-mode]').forEach(b => b.classList.toggle('active', b.dataset.iconMode === mode));
+            document.querySelectorAll('.icon-inputs [data-for]').forEach(el => el.classList.toggle('hidden', el.dataset.for !== mode));
+            updateIconPreview();
+        }
+
+        function formIcon() {
+            const emoji = document.getElementById('lfEmoji').value.trim();
+            const imgUrl = document.getElementById('lfImgUrl').value.trim();
+            if (iconMode === 'emoji') return { icon: emoji, iconImg: '' };
+            if (iconMode === 'upload') return { icon: '', iconImg: uploadedIcon };
+            if (iconMode === 'url') return { icon: '', iconImg: imgUrl };
+            return { icon: '', iconImg: '' };
+        }
+
+        function normalizeUrl(url) {
+            url = url.trim();
+            // "google.com" → "https://google.com"; app links like "spotify:" stay as they are
+            if (url && !/^[a-z][a-z0-9+.-]*:/i.test(url)) url = 'https://' + url;
+            return url;
+        }
+
+        function updateIconPreview() {
+            const link = {
+                name: document.getElementById('lfName').value || '?',
+                url: normalizeUrl(document.getElementById('lfUrl').value),
+                ...formIcon()
+            };
+            document.getElementById('iconPreview').innerHTML = iconHTML(link);
+        }
+
+        function resizeIcon(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onerror = reject;
+                reader.onload = () => {
+                    const img = new Image();
+                    img.onerror = reject;
+                    img.onload = () => {
+                        const S = 96;
+                        const w0 = img.naturalWidth || S, h0 = img.naturalHeight || S;
+                        const k = Math.min(S / w0, S / h0);
+                        const w = w0 * k, h = h0 * k;
+                        const canvas = document.createElement('canvas');
+                        canvas.width = canvas.height = S;
+                        canvas.getContext('2d').drawImage(img, (S - w) / 2, (S - h) / 2, w, h);
+                        resolve(canvas.toDataURL('image/png'));
+                    };
+                    img.src = reader.result;
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function setupLinkForm() {
+            ['lfName', 'lfUrl', 'lfEmoji', 'lfImgUrl'].forEach(id =>
+                document.getElementById(id).addEventListener('input', updateIconPreview));
+            document.getElementById('lfFile').addEventListener('change', async e => {
+                const file = e.target.files[0];
+                if (!file) return;
+                try {
+                    uploadedIcon = await resizeIcon(file);
+                } catch (err) {
+                    alert('Couldn\'t read that image. Try a PNG or JPG.');
+                    uploadedIcon = '';
+                }
+                updateIconPreview();
+            });
+            document.getElementById('lfUrl').addEventListener('keydown', e => { if (e.key === 'Enter') saveLink(); });
+            document.getElementById('lfName').addEventListener('keydown', e => { if (e.key === 'Enter') saveLink(); });
+            resetLinkForm();
+        }
+
+        function resetLinkForm() {
+            editingLinkId = null;
+            uploadedIcon = '';
+            ['lfName', 'lfUrl', 'lfCat', 'lfEmoji', 'lfImgUrl', 'lfFile'].forEach(id => document.getElementById(id).value = '');
+            document.getElementById('lfTitle').textContent = 'Add a Link';
+            document.getElementById('lfSave').textContent = 'Save Link';
+            document.getElementById('lfCancel').textContent = 'Clear';
+            setIconMode('auto');
+        }
+
+        function editLink(id) {
+            const link = getLinks().find(l => l.id === id);
+            if (!link) return;
+            resetLinkForm();
+            editingLinkId = id;
+            document.getElementById('lfName').value = link.name;
+            document.getElementById('lfUrl').value = link.url;
+            document.getElementById('lfCat').value = link.cat;
+            document.getElementById('lfTitle').textContent = `Edit “${link.name}”`;
+            document.getElementById('lfSave').textContent = 'Update Link';
+            document.getElementById('lfCancel').textContent = 'Cancel';
+            if (link.iconImg && link.iconImg.startsWith('data:')) {
+                uploadedIcon = link.iconImg;
+                setIconMode('upload');
+            } else if (link.iconImg) {
+                document.getElementById('lfImgUrl').value = link.iconImg;
+                setIconMode('url');
+            } else if (link.icon) {
+                document.getElementById('lfEmoji').value = link.icon;
+                setIconMode('emoji');
+            } else {
+                setIconMode('auto');
+            }
+            document.getElementById('linkForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            document.getElementById('lfName').focus({ preventScroll: true });
+        }
+
+        function saveLink() {
+            const name = document.getElementById('lfName').value.trim();
+            const url = normalizeUrl(document.getElementById('lfUrl').value);
+            const cat = document.getElementById('lfCat').value.trim() || 'My Links';
+            const { icon, iconImg } = formIcon();
+
+            if (!name || !url) { alert('Give it a name and a link.'); return; }
+            if (/^(javascript|data|vbscript):/i.test(url)) { alert('That kind of link isn\'t allowed.'); return; }
+            if (iconMode === 'emoji' && !icon) { alert('Type or paste an emoji, or pick a different icon option.'); return; }
+            if (iconMode === 'upload' && !iconImg) { alert('Choose an image file for the icon.'); return; }
+            if (iconMode === 'url' && !isSafeImg(iconImg)) { alert('The image link should start with https://'); return; }
+
+            const links = getLinks();
+            if (editingLinkId) {
+                const l = links.find(x => x.id === editingLinkId);
+                if (l) Object.assign(l, { name, url, cat, icon, iconImg });
+            } else {
+                links.push({ id: 'u' + Date.now(), name, url, cat, icon, iconImg });
+            }
+            const cats = getCats(links);
+            if (!saveLinks(links)) return;
+            saveCats(cats);
+            resetLinkForm();
+            renderAll();
+        }
+
+        // ===================== EDITOR (SETTINGS) =====================
+        function editTileHTML(link, favSet) {
+            const fav = favSet.has(link.id);
+            return `
+                <div class="tile edit-tile" draggable="true" data-id="${esc(link.id)}" title="${esc(link.url)}">
+                    <span class="tile-actions">
+                        <button data-act="fav" class="${fav ? 'is-fav' : ''}" title="${fav ? 'Remove from Favorites' : 'Add to Favorites'}">★</button>
+                        <button data-act="edit" title="Edit">✎</button>
+                        <button data-act="del" class="t-del" title="Delete">✕</button>
+                    </span>
+                    ${iconHTML(link)}
+                    <span class="name">${esc(link.name)}</span>
+                    ${isWeb(link.url) ? '' : '<span class="badge-app">App</span>'}
+                </div>`;
+        }
+
+        function renderEditor() {
+            const links = getLinks();
+            const byId = Object.fromEntries(links.map(l => [l.id, l]));
+            const favs = getFavs();
+            const favSet = new Set(favs);
+            const cats = getCats(links);
+
+            const favBlock = `
+                <div class="hub-cat" data-cat="${esc(FAV)}">
+                    <div class="hub-cat-header">
+                        <h3>${esc(FAV)}</h3>
+                        <span class="count">${favs.length}</span>
+                    </div>
+                    <div class="hub-grid" data-group="fav">${favs.map(id => editTileHTML(byId[id], favSet)).join('')}</div>
+                </div>`;
+
+            const catBlocks = cats.map((cat, i) => {
+                const items = links.filter(l => l.cat === cat);
+                return `
+                <div class="hub-cat" data-cat="${esc(cat)}">
+                    <div class="hub-cat-header">
+                        <h3>${esc(cat)}</h3>
+                        <span class="count">${items.length}</span>
+                        <span class="cat-actions">
+                            <button data-act="cat-up" title="Move category up" ${i === 0 ? 'disabled' : ''}>▲</button>
+                            <button data-act="cat-down" title="Move category down" ${i === cats.length - 1 ? 'disabled' : ''}>▼</button>
+                            <button data-act="cat-rename" title="Rename category">✎</button>
+                            <button data-act="cat-del" class="c-del" title="Delete category">✕</button>
+                        </span>
+                    </div>
+                    <div class="hub-grid" data-group="cat" data-cat="${esc(cat)}">${items.map(l => editTileHTML(l, favSet)).join('')}</div>
+                </div>`;
+            }).join('');
+
+            document.getElementById('editor').innerHTML = favBlock + catBlocks;
+            document.getElementById('catList').innerHTML = cats.map(c => `<option value="${esc(c)}">`).join('');
+        }
+
+        function renderAll() {
+            renderHub();
+            renderEditor();
+        }
+
+        // Drag and drop ----------------------------------------------------
+        let drag = null; // { el, group: 'fav' | 'cat' }
+
+        function groupOf(grid) { return grid && grid.dataset.group === 'fav' ? 'fav' : 'cat'; }
+
+        // The tile the dragged tile should go in front of (null = end of grid)
+        function tileAfterPointer(grid, x, y) {
+            const tiles = [...grid.querySelectorAll('.edit-tile:not(.dragging)')];
+            for (const t of tiles) {
+                const r = t.getBoundingClientRect();
+                if (y < r.top) return t;
+                if (y <= r.bottom && x < r.left + r.width / 2) return t;
+            }
+            return null;
+        }
+
+        function clearDropHighlights() {
+            document.querySelectorAll('#editor .drop-ok').forEach(g => g.classList.remove('drop-ok'));
+        }
+
+        function setupEditor() {
+            const editor = document.getElementById('editor');
+
+            editor.addEventListener('dragstart', e => {
+                const tile = e.target.closest && e.target.closest('.edit-tile');
+                if (!tile) return;
+                drag = { el: tile, group: groupOf(tile.parentElement) };
+                e.dataTransfer.effectAllowed = 'move';
+                try { e.dataTransfer.setData('text/plain', tile.dataset.id); } catch (err) {}
+                requestAnimationFrame(() => tile.classList.add('dragging'));
+            });
+
+            editor.addEventListener('dragover', e => {
+                if (!drag) return;
+                const grid = e.target.closest && e.target.closest('.hub-grid');
+                if (!grid || groupOf(grid) !== drag.group) return;
+                e.preventDefault();
+                e.dataTransfer.dropEffect = 'move';
+                if (!grid.classList.contains('drop-ok')) { clearDropHighlights(); grid.classList.add('drop-ok'); }
+                const before = tileAfterPointer(grid, e.clientX, e.clientY);
+                if (before === null) {
+                    if (grid.lastElementChild !== drag.el) grid.appendChild(drag.el);
+                } else if (before !== drag.el && before.previousElementSibling !== drag.el) {
+                    grid.insertBefore(drag.el, before);
+                }
+            });
+
+            editor.addEventListener('drop', e => { if (drag) e.preventDefault(); });
+
+            editor.addEventListener('dragend', () => {
+                if (!drag) return;
+                drag.el.classList.remove('dragging');
+                clearDropHighlights();
+                drag = null;
+                commitEditorOrder();
+            });
+
+            editor.addEventListener('click', e => {
+                const btn = e.target.closest('[data-act]');
+                if (!btn) return;
+                const act = btn.dataset.act;
+                const tile = btn.closest('.edit-tile');
+                const cat = btn.closest('.hub-cat') && btn.closest('.hub-cat').dataset.cat;
+                if (tile) tileAction(act, tile.dataset.id);
+                else categoryAction(act, cat);
+            });
+        }
+
+        // Read the order straight off the editor and save it
+        function commitEditorOrder() {
+            const links = getLinks();
+            const byId = Object.fromEntries(links.map(l => [l.id, l]));
+            const ordered = [];
+            const seen = new Set();
+            document.querySelectorAll('#editor .hub-grid[data-group="cat"]').forEach(grid => {
+                const cat = grid.dataset.cat;
+                grid.querySelectorAll('.edit-tile').forEach(t => {
+                    const l = byId[t.dataset.id];
+                    if (l && !seen.has(l.id)) { l.cat = cat; ordered.push(l); seen.add(l.id); }
+                });
+            });
+            links.forEach(l => { if (!seen.has(l.id)) ordered.push(l); });
+            const favs = [...document.querySelectorAll('#editor .hub-grid[data-group="fav"] .edit-tile')].map(t => t.dataset.id);
+            saveLinks(ordered);
+            saveFavs(favs);
+            renderAll();
+        }
+
+        function tileAction(act, id) {
+            if (act === 'edit') { editLink(id); return; }
+            if (act === 'fav') {
+                const favs = getFavs();
+                saveFavs(favs.includes(id) ? favs.filter(f => f !== id) : [...favs, id]);
+            } else if (act === 'del') {
+                const links = getLinks();
+                const link = links.find(l => l.id === id);
+                if (!link || !confirm(`Remove "${link.name}" from Boost?`)) return;
+                saveLinks(links.filter(l => l.id !== id));
+                saveFavs(getFavs().filter(f => f !== id));
+                if (editingLinkId === id) resetLinkForm();
+            }
+            renderAll();
+        }
+
+        function categoryAction(act, cat) {
+            const links = getLinks();
+            const cats = getCats(links);
+            const i = cats.indexOf(cat);
+            if (i < 0) return;
+
+            if (act === 'cat-up' || act === 'cat-down') {
+                const j = act === 'cat-up' ? i - 1 : i + 1;
+                if (j < 0 || j >= cats.length) return;
+                [cats[i], cats[j]] = [cats[j], cats[i]];
+                saveCats(cats);
+            } else if (act === 'cat-rename') {
+                const name = (prompt('Rename category:', cat) || '').trim();
+                if (!name || name === cat) return;
+                if (name === FAV) { alert('That name is taken by Favorites.'); return; }
+                links.forEach(l => { if (l.cat === cat) l.cat = name; });
+                // renaming onto an existing category merges them
+                const next = cats.includes(name) ? cats.filter(c => c !== cat) : cats.map(c => c === cat ? name : c);
+                const collapsed = getCollapsed();
+                if (cat in collapsed) { collapsed[name] = collapsed[cat]; delete collapsed[cat]; saveCollapsed(collapsed); }
+                saveLinks(links);
+                saveCats(next);
+            } else if (act === 'cat-del') {
+                const inCat = links.filter(l => l.cat === cat);
+                const msg = inCat.length
+                    ? `Delete "${cat}" and the ${inCat.length} link${inCat.length === 1 ? '' : 's'} in it?`
+                    : `Delete the empty category "${cat}"?`;
+                if (!confirm(msg)) return;
+                const gone = new Set(inCat.map(l => l.id));
+                saveLinks(links.filter(l => l.cat !== cat));
+                saveFavs(getFavs().filter(id => !gone.has(id)));
+                saveCats(cats.filter(c => c !== cat));
+            }
+            renderAll();
+        }
+
+        function newCategory() {
+            const name = (prompt('New category name:') || '').trim();
+            if (!name) return;
+            const cats = getCats();
+            if (name === FAV || cats.includes(name)) { alert('There\'s already a category with that name.'); return; }
+            cats.push(name);
+            saveCats(cats);
+            renderAll();
+        }
+
+        // ===================== BACKUP =====================
+        function exportLinks() {
+            const data = {
+                boostLinks: getLinks(),
+                boostFavs: getFavs(),
+                boostCatOrder: getCats(),
+                reminders: lsGet('reminders', []),
+                boostJobApps: getJobs(),
+                boostTimerLengths: getTimerLengths(),
+                scratchpad: (() => { try { return localStorage.getItem('boostScratchpad') || ''; } catch (e) { return ''; } })()
+            };
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = `boost-backup-${new Date().toISOString().slice(0, 10)}.json`;
+            a.click();
+            setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+        }
+
+        function importLinks(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = () => {
+                try {
+                    const data = JSON.parse(reader.result);
+                    const links = Array.isArray(data) ? data : data.boostLinks;
+                    if (!Array.isArray(links)) throw new Error('bad file');
+                    if (!confirm('Replace your Boost data with this backup?' + appsBusyNote())) return;
+                    saveLinks(links);
+                    saveFavs(Array.isArray(data.boostFavs) ? data.boostFavs : links.filter(l => l.pinned).map(l => l.id));
+                    if (Array.isArray(data.boostCatOrder)) saveCats(data.boostCatOrder);
+                    // older backups still carry checklists; they become reminders on the next load
+                    if (data.dailyChecklist) lsSet('dailyChecklist', data.dailyChecklist);
+                    if (data.permanentChecklist) lsSet('permanentChecklist', data.permanentChecklist);
+                    if (data.reminders) lsSet('reminders', data.reminders);
+                    if (Array.isArray(data.boostJobApps)) lsSet('boostJobApps', data.boostJobApps);
+                    if (data.boostTimerLengths) lsSet('boostTimerLengths', data.boostTimerLengths);
+                    if (typeof data.scratchpad === 'string') localStorage.setItem('boostScratchpad', data.scratchpad);
+                    // older backups saved these under their storage names
+                    else if (typeof data.boostScratchpad === 'string') localStorage.setItem('boostScratchpad', data.boostScratchpad);
+                    if (data.boostCollapsed && typeof data.boostCollapsed === 'object') saveCollapsed(data.boostCollapsed);
+                    lsSet('boostDefaultsVersion', 1); // lets newer default links merge in
+                    location.reload();
+                } catch (err) {
+                    alert('That file doesn\'t look like a Boost backup.');
+                }
+            };
+            reader.readAsText(file);
+            e.target.value = '';
+        }
+
+        function resetLinks() {
+            if (!confirm('Reset the hub to the default links? Your own links, icons and arrangement will be removed (reminders, job apps and notes are kept).')) return;
+            const links = makeDefaults();
+            saveLinks(links);
+            saveFavs(defaultFavs(links));
+            saveCats(CAT_ORDER.slice());
+            saveCollapsed({});
+            lsSet('boostDefaultsVersion', DEFAULTS_VERSION);
+            resetLinkForm();
+            renderAll();
+        }
+
+        // ===================== CLOCK & GREETING =====================
+        function tickClock() {
+            const now = new Date();
+            const h = now.getHours();
+            const part = h < 5 ? 'Up late' : h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening';
+            document.getElementById('greeting').textContent = `${part}, Jules`;
+            document.getElementById('clock').textContent = now.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+            document.getElementById('clockDate').textContent = now.toLocaleDateString([], { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+        }
+
+        // ===================== FOCUS TIMER =====================
+        const TIMER_MODES = { focus: ['Focus', 25], short: ['Short Break', 5], long: ['Long Break', 15], custom: ['Custom', 0] };
+        const MODE_BTN = { focus: 'Focus', short: 'Break', long: 'Long' };
+        let timerMode = 'focus';
+        let timerLeft = 25 * 60;
+        let timerEnd = null;
+        let timerInterval = null;
+        let customSeconds = 0;
+
+        // Minutes for each timer, changeable under "Change timer lengths"
+        function getTimerLengths() {
+            const defaults = { focus: TIMER_MODES.focus[1], short: TIMER_MODES.short[1], long: TIMER_MODES.long[1] };
+            return { ...defaults, ...(lsGet('boostTimerLengths', {}) || {}) };
+        }
+
+        function setTimerLength(mode, value) {
+            const lengths = getTimerLengths();
+            lengths[mode] = Math.max(1, Math.min(600, parseInt(value, 10) || lengths[mode]));
+            lsSet('boostTimerLengths', lengths);
+            setupTimerLengths();
+            if (timerMode === mode && !timerInterval) setTimerMode(mode);
+        }
+
+        function setupTimerLengths() {
+            const lengths = getTimerLengths();
+            Object.keys(MODE_BTN).forEach(mode => {
+                document.getElementById('len-' + mode).value = lengths[mode];
+                document.getElementById('modeBtn-' + mode).textContent = `${MODE_BTN[mode]} ${lengths[mode]}`;
+            });
+        }
+
+        function setCustomTimer() {
+            const min = parseInt(document.getElementById('customMin').value, 10) || 0;
+            const sec = Math.min(59, parseInt(document.getElementById('customSec').value, 10) || 0);
+            if (min * 60 + sec <= 0) { alert('Enter some minutes or seconds first.'); return; }
+            customSeconds = min * 60 + sec;
+            setTimerMode('custom');
+        }
+
+        function fmt(sec) {
+            const h = Math.floor(sec / 3600), m = Math.floor(sec % 3600 / 60), s = sec % 60;
+            const mmss = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+            return h ? `${h}:${mmss}` : mmss;
+        }
+
+        function drawTimer() {
+            document.getElementById('timerDisplay').textContent = fmt(timerLeft);
+            document.getElementById('timerMode').textContent = TIMER_MODES[timerMode][0];
+            document.getElementById('timerStartBtn').textContent = timerInterval ? 'Pause' : 'Start';
+            updateTitle();
+            const today = new Date().toDateString();
+            const stats = lsGet('boostFocus', {}) || {};
+            const n = stats.date === today ? stats.count : 0;
+            document.getElementById('timerStats').textContent = n
+                ? `${n} focus session${n === 1 ? '' : 's'} done today 🔥` : 'No focus sessions yet today';
+        }
+
+        function toggleTimer() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            } else {
+                if ('Notification' in window && Notification.permission === 'default') Notification.requestPermission();
+                timerEnd = Date.now() + timerLeft * 1000;
+                timerInterval = setInterval(() => {
+                    timerLeft = Math.max(0, Math.round((timerEnd - Date.now()) / 1000));
+                    if (timerLeft === 0) timerDone();
+                    drawTimer();
+                }, 250);
+            }
+            drawTimer();
+        }
+
+        function timerDone() {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            const finished = TIMER_MODES[timerMode][0];
+            if (timerMode === 'focus') {
+                const today = new Date().toDateString();
+                const stats = lsGet('boostFocus', {}) || {};
+                lsSet('boostFocus', { date: today, count: (stats.date === today ? stats.count : 0) + 1 });
+            }
+            beep();
+            const msg = timerMode === 'focus' ? 'Focus session done — take a break!'
+                : timerMode === 'custom' ? 'Time\'s up!' : 'Break over — back at it!';
+            if ('Notification' in window && Notification.permission === 'granted') new Notification('Boost', { body: msg });
+            setTimerMode(timerMode === 'focus' ? 'short' : timerMode === 'custom' ? 'custom' : 'focus');
+            setTimeout(() => alert(`${finished} finished. ${msg}`), 50);
+        }
+
+        function beep() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                [0, 0.3, 0.6].forEach(t => {
+                    const o = ctx.createOscillator(), g = ctx.createGain();
+                    o.frequency.value = 880;
+                    o.connect(g); g.connect(ctx.destination);
+                    g.gain.setValueAtTime(0.2, ctx.currentTime + t);
+                    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + t + 0.25);
+                    o.start(ctx.currentTime + t); o.stop(ctx.currentTime + t + 0.25);
+                });
+            } catch (e) {}
+        }
+
+        function setTimerMode(mode) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            timerMode = mode;
+            timerLeft = mode === 'custom' ? customSeconds : getTimerLengths()[mode] * 60;
+            drawTimer();
+        }
+
+        function resetTimer() { setTimerMode(timerMode); }
+
+        // ===================== SCRATCHPAD =====================
+        function setupScratchpad() {
+            const pad = document.getElementById('scratchpad');
+            const note = document.getElementById('savedNote');
+            try { pad.value = localStorage.getItem('boostScratchpad') || ''; } catch (e) {}
+            let t;
+            pad.addEventListener('input', () => {
+                clearTimeout(t);
+                note.textContent = 'Saving…';
+                t = setTimeout(() => {
+                    try { localStorage.setItem('boostScratchpad', pad.value); } catch (e) {}
+                    note.textContent = 'Saved';
+                    setTimeout(() => note.textContent = '', 1500);
+                }, 400);
+            });
+        }
+
+        // ===================== SIE STUDY & WORLDBUILDER =====================
+        // Inside Jules Apps (Start Jules Apps.bat) each app runs in its own frame on this page, exactly as
+        // it does on its own and with its own data. Boost adds one theme for everything, a search that
+        // reaches into both apps, and links like #world/c/<id> or #sie/glossary?q=<term>.
+        const APPS = {
+            sie: { name: 'SIE Study', icon: '📚', path: '/sie/' },
+            world: { name: 'Worldbuilder', icon: '🌍', path: '/world/' },
+        };
+        const SIE_KEY = 'sie-study-desk-v1';   // SIE Study Desk's own saved progress
+        const WB_THEME_KEY = 'wb-theme';        // Worldbuilder's own theme setting
+        const appReady = {};                    // app -> its frame has loaded and is hooked up
+        const appQueue = {};                    // app -> things to do once it is
+
+        function appFrame(app) { return document.querySelector(`#page-${app} .app-frame`); }
+        function appWindow(app) {
+            const f = appFrame(app);
+            try { return f && f.contentWindow && f.contentDocument ? f.contentWindow : null; } catch (e) { return null; }
+        }
+
+        // Where you were in each app, so a refresh puts you back there. SIE's #/quiz/3, #/review/3 and
+        // #/exercises/<id> start something new as soon as they open, so those come back as just the page.
+        function savedRoute(app) {
+            let hash = '';
+            try { hash = sessionStorage.getItem('hubRoute:' + app) || ''; } catch (e) {}
+            return app === 'sie' ? hash.replace(/^#\/(quiz|review|exercises)\/.*/, '#/$1') : hash;
+        }
+        function rememberRoute(app, hash) { try { sessionStorage.setItem('hubRoute:' + app, hash || ''); } catch (e) {} }
+
+        function setupApps(firstRun) {
+            if (!APPS_ON) return;
+            document.body.classList.add('with-apps');
+            Object.keys(APPS).forEach(app => { document.querySelector(`.page-tab[data-page="${app}"]`).hidden = false; });
+            renderAppsSettings();
+            window.addEventListener('resize', sizeAppFrames);
+            if (!HUB) return;
+            if (/^jules-/.test(window.name)) window.name = '';   // this tab was once an app's own tab (see popOutApp)
+            document.querySelector('.hub-hint').insertAdjacentHTML('beforeend', ' &nbsp;·&nbsp; it finds Worldbuilder pages and SIE terms too');
+            // Were you last working in a Boost page (side by side, next to an app)? Clicking or moving the keyboard
+            // anywhere else, or switching tabs, says no.
+            const inBoostPage = el => !!(el && el.closest && el.closest('.page:not(.app-page)'));
+            document.addEventListener('pointerdown', e => { inBoost = inBoostPage(e.target); }, true);
+            document.addEventListener('focusin', e => {
+                inBoost = inBoostPage(e.target);
+                const page = e.target.closest && e.target.closest('.app-page');
+                if (e.target.tagName === 'IFRAME' && page && page.hidden) setTimeout(giveBackKeyboard, 0);   // a hidden app grabbed it
+                else hubFocus = e.target;
+            });
+            // the keyboard went into an app (not just to another browser tab or window)
+            window.addEventListener('blur', () => setTimeout(() => {
+                if (document.activeElement && document.activeElement.tagName === 'IFRAME') inBoost = false;
+            }, 0));
+            // Back/Forward between entries with the same address still need their tabs put back
+            window.addEventListener('popstate', () => {
+                if (location.hash !== lastHash) return;   // a changed address is handled by hashchange
+                const v = history.state && history.state.view;
+                if (v) showPage(v.page, true); else stampView();
+            });
+            // An entry the browser added without telling the page gets what's on screen now
+            if (window.navigation && navigation.addEventListener) {
+                navigation.addEventListener('currententrychange', () => { if (!(history.state && history.state.view)) stampView(); });
+            }
+            // A link to an app that's already on screen just moves that app to the page (one Back press undoes it)
+            document.addEventListener('click', e => {
+                const a = e.target.closest && e.target.closest('a[href^="#"]');
+                if (!a || e.defaultPrevented || e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+                const target = hashTarget(a.getAttribute('href').slice(1));
+                if (!target.app || document.getElementById('page-' + target.app).hidden) return;
+                e.preventDefault();
+                followHash(target, false);
+            });
+            document.addEventListener('keydown', e => {
+                const w = APPS[currentPage] && appWindow(currentPage);
+                if (!w) return;
+                // Ctrl+P on an app's tab prints that app, unless you're working in a Boost page beside it
+                const ae = document.activeElement;
+                if (isPrintKey(e) && !inBoost && !inBoostPage(ae)) printApp(e, w);
+                // Ctrl+S saves Worldbuilder now, as it does when the keyboard is inside it
+                if ((e.ctrlKey || e.metaKey) && (e.key || '').toLowerCase() === 's' && currentPage === 'world' && typeof w.flush === 'function') {
+                    e.preventDefault();
+                    w.flush();
+                }
+            }, true);
+            // Browsers won't let a web page open files on the computer, so file:// tiles can't work here
+            document.getElementById('hub').addEventListener('click', e => {
+                const tile = e.target.closest('a.tile');
+                const href = tile && tile.getAttribute('href') || '';
+                if (!/^file:/i.test(href)) return;
+                e.preventDefault();
+                let where = href;
+                try { where = decodeURI(href.replace(/^file:\/+/i, '')).replace(/\//g, '\\'); } catch (err) {}
+                alert(`Browsers don't let a web page open files on your computer, so this link only works in Boost opened as a file.\n\nOpen it from File Explorer instead:\n${where}`);
+            });
+            // the search sees Worldbuilder pages and SIE cards you've just added
+            document.getElementById('hubSearch').addEventListener('focus', () => { appIndexAt = 0; });
+            if (firstRun) {
+                // first time here: keep the theme you'd already picked in Worldbuilder at this address
+                try {
+                    const wb = localStorage.getItem(WB_THEME_KEY);
+                    if (localStorage.getItem('boostTheme') === null && (wb === 'light' || wb === 'dark')) setTheme(wb);
+                } catch (e) {}
+            }
+            if (lsGet('hubWelcome', null) === null) lsSet('hubWelcome', firstRun ? 'show' : 'done');
+            renderWelcome();
+        }
+
+        function isPrintKey(e) { return (e.ctrlKey || e.metaKey) && !e.altKey && (e.key || '').toLowerCase() === 'p'; }
+        function printApp(e, w) {
+            e.preventDefault();
+            e.stopPropagation();
+            try { w.focus(); } catch (err) {}
+            w.print();
+        }
+
+        // App tabs on screen right now
+        function appPagesShown() {
+            return Object.keys(APPS).filter(a => !document.getElementById('page-' + a).hidden);
+        }
+
+        let lastHash = '';      // the address showPage last set
+        let inBoost = false;    // last click or keyboard move was in a Boost page
+        let hubFocus = null;    // what last had the keyboard on screen: a Boost control or an app's frame
+
+        function stampView() {
+            try { history.replaceState({ view: { page: currentPage, side: !!lsGet('boostSideBySide', false), pair: getSidePages() } }, '', location.hash); } catch (e) {}
+        }
+
+        // A hidden app took the keyboard (SIE puts focus on its page whenever it changes page, even while loading):
+        // give it back to whatever had it. Chrome only lets go once the focus change has finished, so this runs
+        // from a timeout.
+        function giveBackKeyboard() {
+            const f = document.activeElement;
+            const page = f && f.tagName === 'IFRAME' && f.closest('.app-page');
+            if (!page || !page.hidden) return;
+            f.blur();
+            window.focus();
+            const back = hubFocus && hubFocus.isConnected && !(hubFocus.closest('.app-page') || {}).hidden ? hubFocus : null;
+            try { if (back) back.tagName === 'IFRAME' ? back.contentWindow.focus() : back.focus({ preventScroll: true }); } catch (e) {}
+        }
+
+        // Put back the tabs a history entry was showing: side by side on or off, and which pair
+        function restoreView(v) {
+            const side = !!v.side;
+            if (side !== !!lsGet('boostSideBySide', false)) {
+                keepAppSizes([v.page]);
+                lsSet('boostSideBySide', side);
+                document.getElementById('sideBySide').checked = side;
+                document.getElementById('workspace').classList.toggle('side-by-side', side);
+            }
+            if (Array.isArray(v.pair) && v.pair.length === 2 && v.pair.every(p => PAGES.includes(p)) && v.pair[0] !== v.pair[1]) lsSet('boostSidePages', v.pair);
+        }
+
+        // An app going off screen keeps the exact width it had, so nothing inside it reflows or loses its place
+        function keepAppSizes(shown) {
+            Object.keys(APPS).forEach(a => {
+                const p = document.getElementById('page-' + a);
+                if (shown.includes(a)) p.style.width = '';
+                else if (!p.hidden && !p.style.width) p.style.width = p.getBoundingClientRect().width + 'px';
+            });
+        }
+
+        // showPage calls this with the page(s) now on screen; opened = you just switched to a different tab
+        function showApps(shown, opened) {
+            if (!APPS_ON) return;
+            const apps = shown.filter(p => APPS[p]);
+            inBoost = false;
+            // A hidden app can't take the keyboard at all (inert), so a key press can't answer a hidden quiz question
+            Object.keys(APPS).forEach(a => {
+                const page = document.getElementById('page-' + a);
+                const f = appFrame(a);
+                if (!apps.includes(a) && f && document.activeElement === f) f.blur();
+                page.inert = !apps.includes(a);
+            });
+            apps.forEach(openAppFrame);
+            document.body.classList.toggle('app-view', !!HUB && apps.length > 0);
+            document.getElementById('popOut').hidden = !(APPS[currentPage] && appFrame(currentPage));
+            sizeAppFrames();
+            apps.forEach(refreshApp);
+            updateTitle();
+            // the keyboard goes to the app you just opened, as if it were on its own
+            const w = opened && APPS[currentPage] && appReady[currentPage] && appWindow(currentPage);
+            if (w) setTimeout(() => { try { w.focus(); } catch (e) {} }, 0);
+        }
+
+        // Worldbuilder's relationship web measures its frame once, when it's drawn. If Boost changed the
+        // frame's size since (side by side on or off), redraw it so dragging lands under the pointer.
+        const appSize = {};
+        function refreshApp(app) {
+            const f = appFrame(app);
+            const w = app === 'world' && f && appReady[app] && appWindow(app);
+            if (!w) return;
+            const size = f.clientWidth + 'x' + f.clientHeight;
+            const resized = appSize[app] && appSize[app] !== size;
+            appSize[app] = size;
+            if (resized && /^#\/web/.test(w.location.hash) && typeof w.render === 'function') {
+                try {
+                    // keep the selected person or place (or none) selected through the redraw, and the scroll place
+                    const open = w.document.querySelector('.web-info a.btn[href^="#/c/"], .web-info a.btn[href^="#/l/"]');
+                    const ref = open ? open.getAttribute('href') : '';
+                    const focus = ref ? (ref.startsWith('#/l/') ? 'L' : '') + ref.slice(4) : '';
+                    const y = w.scrollY;
+                    w.history.replaceState(w.history.state, '', '#/web' + (focus ? '?focus=' + encodeURIComponent(focus) : ''));
+                    rememberRoute(app, w.location.hash);
+                    w.render(true);
+                    w.requestAnimationFrame(() => w.requestAnimationFrame(() => w.scrollTo(0, y)));   // the web itself is drawn a frame later
+                } catch (e) {}
+            }
+        }
+
+        const appRoute = {};    // app -> a page asked for (link, search hit) before its frame exists
+        const appLoaded = {};   // app -> its current frame has loaded at least once
+
+        // After ↗, the app stays "away" (in its own browser tab) until you open it here again
+        function isAway(app) { try { return sessionStorage.getItem('hubAway:' + app) === '1'; } catch (e) { return false; } }
+        function setAway(app, on) { try { on ? sessionStorage.setItem('hubAway:' + app, '1') : sessionStorage.removeItem('hubAway:' + app); } catch (e) {} }
+
+        function openAppFrame(app) {
+            const page = document.getElementById('page-' + app);
+            if (page.firstElementChild) return;   // already open, or showing a note
+            if (!HUB) { page.innerHTML = appNoteHTML(app, 'missing'); return; }
+            if (isAway(app)) { page.innerHTML = appNoteHTML(app, 'away'); return; }
+            prepAppTheme(app);
+            appReady[app] = appLoaded[app] = false;
+            const f = document.createElement('iframe');
+            f.className = 'app-frame';
+            f.title = APPS[app].name;
+            f.addEventListener('load', () => wireAppFrame(app, f));
+            f.src = APPS[app].path + (app in appRoute ? appRoute[app] : savedRoute(app));
+            delete appRoute[app];
+            page.appendChild(f);
+        }
+
+        // Runs each time the app's page loads in its frame (it can reload itself)
+        function wireAppFrame(app, f) {
+            let w, d;
+            try { w = f.contentWindow; d = f.contentDocument; } catch (e) { return; }
+            if (!w || !d || !d.documentElement || !w.location.pathname.startsWith(APPS[app].path)) return;
+            appReady[app] = true;
+            // First load: Boost's theme applies. When the app reloads itself (e.g. SIE restoring a backup) and comes
+            // back with a light or dark theme of its own, that wins instead.
+            const own = d.documentElement.getAttribute('data-theme');
+            if (appLoaded[app] && (own === 'light' || own === 'dark')) themeFromApp(app); else applyThemeToApp(app);
+            appLoaded[app] = true;
+            // A hidden app must never take the keyboard, including focus it took while it was still loading
+            const guard = () => setTimeout(giveBackKeyboard, 0);
+            w.addEventListener('focus', guard);
+            d.addEventListener('focusin', guard);
+            guard();
+            new MutationObserver(() => themeFromApp(app)).observe(d.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+            const title = d.querySelector('title');
+            if (title) new MutationObserver(updateTitle).observe(title, { childList: true, characterData: true, subtree: true });
+            const track = () => { rememberRoute(app, w.location.hash); updateTitle(); };
+            w.addEventListener('hashchange', track);
+            track();
+            appSize[app] = f.clientWidth + 'x' + f.clientHeight;
+            // Ctrl+P prints the app with its own print layout, like when it ran on its own
+            w.addEventListener('keydown', e => { if (isPrintKey(e)) printApp(e, w); }, true);
+            // Dropping a file outside an app's drop area would replace the app in its frame; ignore those drops
+            const stray = e => {
+                if (e.defaultPrevented || !e.dataTransfer || ![...e.dataTransfer.types].includes('Files')) return;
+                e.preventDefault();
+                if (e.type === 'dragover') e.dataTransfer.dropEffect = 'none';
+            };
+            d.addEventListener('dragover', stray);
+            d.addEventListener('drop', stray);
+            document.getElementById('popOut').hidden = !(APPS[currentPage] && appFrame(currentPage));
+            if (currentPage === app) { try { w.focus(); } catch (e) {} }
+            const queued = appQueue[app] || [];
+            appQueue[app] = [];
+            queued.forEach(fn => setTimeout(fn, 60));
+        }
+
+        function whenAppReady(app, fn) {
+            if (appReady[app] && appWindow(app)) setTimeout(fn, 60);
+            else (appQueue[app] = appQueue[app] || []).push(fn);
+        }
+
+        // Send an app to one of its own pages, e.g. setAppRoute('world', '#/c/abc123')
+        function setAppRoute(app, hash) {
+            rememberRoute(app, hash);
+            if (!appFrame(app)) { appRoute[app] = hash; return; }   // it opens there when its frame is made
+            whenAppReady(app, () => {
+                const w = appWindow(app);
+                // a new page in the app's own history (the app is on screen by now), so Back returns to the page it was on
+                if (w && w.location.hash !== hash) w.location.hash = hash;
+            });
+        }
+
+        // SIE's "Search terms" page, already searching for a term
+        function openSieSearch(term, viaHash) {
+            setAppRoute('sie', '#/glossary');
+            showPage('sie', viaHash);
+            whenAppReady('sie', () => {
+                let tries = 30;
+                (function fill() {
+                    const w = appWindow('sie');
+                    const box = w && w.location.hash === '#/glossary' && w.document.getElementById('gq');
+                    if (!box) { if (tries-- > 0) setTimeout(fill, 50); return; }
+                    box.value = term;
+                    box.dispatchEvent(new w.Event('input', { bubbles: true }));
+                    box.focus();
+                })();
+            });
+        }
+
+        // #sie, #world, #world/c/<id>, #sie/glossary?q=<term> — and old Worldbuilder links like #/c/<id>
+        function openFromHash() { followHash(hashTarget(location.hash.slice(1)), true); }
+
+        // '#world/c/<id>' -> { page: 'world', sub: '/c/<id>', app: 'world' }
+        function hashTarget(h) {
+            let page = h, sub = '';
+            if (HUB && h.startsWith('/')) { page = 'world'; sub = h; }
+            else if (HUB && h.includes('/')) { page = h.slice(0, h.indexOf('/')); sub = h.slice(h.indexOf('/')); }
+            return { page, sub, app: HUB && APPS[page] ? page : null };
+        }
+
+        function followHash({ page, sub, app }, viaHash) {
+            if (app && sub) {
+                const m = page === 'sie' && sub.match(/^\/glossary\?q=(.*)$/);
+                if (m) {
+                    let term = m[1];
+                    try { term = decodeURIComponent(term); } catch (e) {}
+                    openSieSearch(term, viaHash);
+                    return;
+                }
+                setAppRoute(page, '#' + sub);
+            }
+            showPage(page, viaHash);
+        }
+
+        // ---- one theme for everything ----
+        // Boost's theme ("Match my computer" too) sets SIE Study's and Worldbuilder's, and switching
+        // the theme inside either app switches Boost and the other app as well.
+        function appTheme() { const t = getTheme(); return t === 'system' ? null : t; }
+
+        // Write it into the app's own saved setting, so it also opens in that theme
+        function prepAppTheme(app) {
+            const t = appTheme();
+            try {
+                if (app === 'sie') {
+                    const s = JSON.parse(localStorage.getItem(SIE_KEY) || 'null');
+                    if ((s ? s.theme || null : null) === t) return;
+                    localStorage.setItem(SIE_KEY, JSON.stringify({ ...(s || {}), theme: t }));
+                } else if (app === 'world') {
+                    if ((localStorage.getItem(WB_THEME_KEY) || 'auto') !== (t || 'auto')) localStorage.setItem(WB_THEME_KEY, t || 'auto');
+                }
+            } catch (e) {}
+        }
+
+        function applyThemeToApp(app) {
+            const w = appReady[app] && appWindow(app);
+            if (!w) return;
+            const t = appTheme();
+            prepAppTheme(app);
+            const root = w.document.documentElement;
+            try {
+                // use the app's own theme code, so its saved setting and its buttons agree
+                if (app === 'sie' && w.eval('typeof S === "object" && !!S && typeof applyTheme === "function" && typeof save === "function"')) {
+                    w.eval(`S.theme = ${JSON.stringify(t)}; applyTheme(); save();`);
+                    return;
+                }
+                if (app === 'world' && typeof w.applyTheme === 'function') {
+                    w.applyTheme();
+                    // keep its Settings › Appearance box in step if that page is open
+                    const sel = [...w.document.querySelectorAll('select')].find(s => [...s.options].map(o => o.value).join() === 'auto,light,dark');
+                    if (sel) sel.value = t || 'auto';
+                    return;
+                }
+                // a future SIE without those names: press its own theme button if the colours are wrong
+                const btn = app === 'sie' && w.document.getElementById('themeBtn');
+                const dark = root.getAttribute('data-theme') ? root.getAttribute('data-theme') === 'dark' : w.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (btn && t && (t === 'dark') !== dark) { btn.click(); return; }
+            } catch (e) {}
+            if (t) root.setAttribute('data-theme', t); else root.removeAttribute('data-theme');
+        }
+
+        function themeFromApp(app) {
+            const w = appWindow(app);
+            if (!w) return;
+            const t = w.document.documentElement.getAttribute('data-theme') || 'system';
+            if (['light', 'dark', 'system'].includes(t) && t !== getTheme()) setTheme(t);
+        }
+
+        // ---- tab title & frame size ----
+        function updateTitle() {
+            if (timerInterval) { document.title = `${fmt(timerLeft)} · ${TIMER_MODES[timerMode][0]}`; return; }
+            const app = APPS[currentPage];
+            const w = app && appReady[currentPage] && appWindow(currentPage);
+            document.title = app ? `${(w && w.document.title) || app.name} · Jules Hub` : 'Boost · Jules Hub';
+        }
+
+        // An app fills the window below the header
+        function sizeAppFrames() {
+            if (!APPS_ON) return;
+            const nav = document.querySelector('.page-nav');
+            const ws = document.getElementById('workspace');
+            const top = ws.getBoundingClientRect().top + window.scrollY;
+            const root = document.documentElement.style;
+            root.setProperty('--app-h', Math.max(420, Math.round(window.innerHeight - top - 20)) + 'px');
+            root.setProperty('--app-w', ws.clientWidth + 'px');   // hidden apps keep this size off screen
+            root.setProperty('--app-stick', nav.classList.contains('pinned') ? (nav.offsetHeight + 24) + 'px' : '0px');
+            root.setProperty('--nav-pad', (nav.offsetHeight + 38) + 'px');   // "scroll to form" lands below a taller header
+        }
+
+        // ---- open an app in its own browser tab ----
+        // Only one copy of an app should be open at once (each saves everything it has in memory and would
+        // overwrite the other), so the copy here closes once its changes are safely saved.
+        async function popOutApp(app = currentPage) {
+            if (!HUB || !APPS[app]) return;
+            const f = appFrame(app);
+            let hash = savedRoute(app);
+            if (f) {
+                try { hash = f.contentWindow.location.hash; } catch (e) {}
+                if (app === 'sie' && appsBusyNote() && !confirm('SIE Study has a quiz or exam in progress. Opening SIE in its own tab ends it here. Go ahead?')) return;
+                if (app === 'world' && !(await worldSaved(f.contentWindow))) {
+                    alert('Worldbuilder has changes it hasn\'t saved yet. Check the message at the top of Worldbuilder, then try again.');
+                    return;
+                }
+            }
+            // A named tab: if the app is already open in its own tab, that tab is reused instead of opening a second copy
+            const url = APPS[app].path + (hash || '#/');
+            let win = window.open('', 'jules-' + app);
+            let where = null;
+            try { where = win && win.location.pathname; } catch (e) {}   // null if it moved to another site
+            // that tab is running Jules Apps itself: leave it alone and use a new one
+            if (win && (win === window || where === '/' || where === '/index.html')) win = window.open(url, '_blank');
+            else if (win && !(where || '').startsWith(APPS[app].path)) win.location.href = url;   // a new tab, or one that moved on
+            // the copy in Boost was the one in use: reload the old tab so it starts from today's data, not what it had
+            // in memory (unless it still has an unsaved Worldbuilder change; its own save checks take care of that)
+            else if (win && f && !tabHasUnsaved(app, win)) { win.location.replace(url); win.location.reload(); }
+            if (!win) {
+                alert('Your browser blocked the new tab. Allow pop-ups for this page and try again.');
+                return;
+            }
+            try { win.focus(); } catch (e) {}
+            setAway(app, true);
+            if (f) f.remove();
+            appReady[app] = false;
+            document.getElementById('page-' + app).innerHTML = appNoteHTML(app, 'away');
+            document.getElementById('popOut').hidden = true;
+            updateTitle();
+        }
+
+        function tabHasUnsaved(app, win) {
+            try { return app === 'world' && !!win.eval('S.dirty || S.saving || S.conflict'); } catch (e) { return false; }
+        }
+
+        // Worldbuilder saves a moment after you stop typing; wait for that (a few seconds at most)
+        async function worldSaved(w) {
+            const state = () => {
+                try {
+                    const err = (w.document.getElementById('saveState') || {}).className === 'err';
+                    return w.eval('S.conflict') || err ? 'stuck' : w.eval('S.dirty || S.saving') ? 'busy' : 'saved';
+                } catch (e) { return 'saved'; }
+            };
+            if (state() !== 'busy') return state() === 'saved';
+            try { if (typeof w.flush === 'function') w.flush(); } catch (e) {}
+            const end = Date.now() + 3000;
+            while (Date.now() < end) {
+                await new Promise(r => setTimeout(r, 100));
+                const s = state();
+                if (s !== 'busy') return s === 'saved';
+            }
+            return false;
+        }
+
+        // Boost's Import reloads the page, which ends whatever SIE Study has in progress
+        function appsBusyNote() {
+            try {
+                const w = appReady.sie && appWindow('sie');
+                if (w && w.document.querySelector('#exClock, #qClock, #qArea .q-stem')) return '\n\nSIE Study has a quiz or exam in progress. It will end when Boost reloads.';
+            } catch (e) {}
+            return '';
+        }
+
+        function reopenApp(app) {
+            setAway(app, false);
+            document.getElementById('page-' + app).innerHTML = '';
+            showPage(app);
+        }
+
+        function appNoteHTML(app, why) {
+            const a = APPS[app];
+            const body = why === 'away' ? `
+                <p>${a.name} is open in its own browser tab.</p>
+                <p>Close that tab before opening it here again, so the two copies don't overwrite each other's changes.</p>
+                <button onclick="reopenApp('${app}')">Open it here again</button>` : `
+                <p>${a.name} opens right here when Boost is started through <b>Jules Apps</b>.</p>
+                <p>Double-click <code>Start Jules Apps.bat</code> in your Jules Apps folder — Boost opens with SIE Study and Worldbuilder as tabs.</p>
+                <p><a href="http://localhost:4747/#${app}">Already running? Open Jules Apps</a></p>`;
+            return `<div class="container app-note"><h2>${a.icon} ${a.name}</h2>${body}</div>`;
+        }
+
+        // ---- Boost's search box also searches inside the apps ----
+        let appIndex = null, appIndexAt = 0, appIndexJob = null;
+
+        function loadAppIndex() {
+            if (appIndexJob && Date.now() - appIndexAt < 20000) return appIndexJob;
+            appIndexAt = Date.now();
+            appIndexJob = Promise.all([
+                fetch('/api/world', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null),
+                fetch('/api/sie-index').then(r => r.ok ? r.json() : null).catch(() => null),
+            ]).then(([world, sie]) => (appIndex = buildAppIndex(world, sie)));
+            return appIndexJob;
+        }
+
+        function buildAppIndex(world, sie) {
+            const pages = [];
+            const add = (list, kind, label) => (Array.isArray(list) ? list : []).forEach(e => {
+                if (e && e.id && e.name) pages.push({ name: String(e.name), also: String(e.aliases || ''), kind: label(e), href: `#world/${kind}/${encodeURIComponent(e.id)}` });
+            });
+            if (world) {
+                add(world.characters, 'c', () => 'Character');
+                add(world.locations, 'l', e => e.type ? String(e.type) : 'Location');
+                add(world.articles, 'a', () => 'Story notes');
+            }
+            let mine = [];
+            try { mine = JSON.parse(localStorage.getItem(SIE_KEY) || '{}').mine || []; } catch (e) {}
+            const cards = ((sie && sie.cards) || []).concat(
+                (Array.isArray(mine) ? mine : []).filter(m => m && m.term).map(m => ({ term: String(m.term), chapter: m.chapter, mine: true })));
+            return { pages, cards };
+        }
+
+        function renderAppResults(q) {
+            const box = document.getElementById('appResults');
+            if (!HUB || !box) return;
+            q = (q || '').trim().toLowerCase();
+            if (q.length < 2) { box.hidden = true; box.innerHTML = ''; return; }
+            if (!appIndex || Date.now() - appIndexAt > 20000) {
+                loadAppIndex().then(() => {   // redraw for whatever is in the box by the time it arrives
+                    const now = document.getElementById('hubSearch').value.trim().toLowerCase();
+                    if (now.length >= 2) drawAppResults(now);
+                });
+            }
+            if (appIndex) drawAppResults(q);
+        }
+
+        function drawAppResults(q) {
+            const box = document.getElementById('appResults');
+            const score = (text, extra = '') => {
+                const t = text.toLowerCase();
+                return t.startsWith(q) ? 0 : t.includes(q) ? 1 : extra.toLowerCase().includes(q) ? 2 : -1;
+            };
+            const best = (list, fn) => list.map(x => [fn(x), x]).filter(([s]) => s >= 0)
+                .sort((a, b) => a[0] - b[0]).map(([, x]) => x);
+            const pages = best(appIndex.pages, p => score(p.name, p.also)).slice(0, 6);
+            const seen = new Set();
+            const cards = best(appIndex.cards, c => score(c.term))
+                .filter(c => { const k = c.term.toLowerCase(); return !seen.has(k) && seen.add(k); }).slice(0, 6);
+            const group = (title, hits) => hits.length ? `<h3>${title}</h3><div class="app-hits">${hits.join('')}</div>` : '';
+            box.innerHTML =
+                group('🌍 In Worldbuilder', pages.map(p =>
+                    `<a class="app-hit" href="${esc(p.href)}"><span>${esc(p.name)}</span><span class="kind">${esc(p.kind)}</span></a>`)) +
+                group('📚 In SIE Study', cards.map(c =>
+                    `<a class="app-hit" href="#sie/glossary?q=${esc(encodeURIComponent(c.term))}"><span>${esc(c.term)}</span>` +
+                    `<span class="kind">${c.mine ? 'My card' : c.chapter === 0 ? 'Intro' : 'Ch ' + esc(c.chapter)}</span></a>`));
+            box.hidden = !box.innerHTML;
+        }
+
+        // ---- settings & first-run help ----
+        function renderAppsSettings() {
+            const box = document.getElementById('appsSettings');
+            box.hidden = false;
+            box.innerHTML = `<h2>SIE Study &amp; Worldbuilder</h2>` + (HUB ? `
+                <p class="settings-hint">Both open as tabs here and work just as they do on their own. Switching the theme in either one switches everything.</p>
+                <p class="settings-hint">Worldbuilder saves to <code>${esc(HUB.worldData)}</code>, with a snapshot in its backups folder every ten minutes.
+                    Boost and SIE Study save in this browser, so export a backup now and then (Backup above, and SIE Study's Progress page).</p>
+                <div class="backup-row">
+                    <button class="btn-ghost" onclick="popOutApp('sie')">↗ SIE Study in its own tab</button>
+                    <button class="btn-ghost" onclick="popOutApp('world')">↗ Worldbuilder in its own tab</button>
+                    <button class="btn-ghost" onclick="showWelcome()">Bring data over from the old apps…</button>
+                </div>` : `
+                <p class="settings-hint">To use SIE Study and Worldbuilder as tabs here, start Boost through Jules Apps: double-click
+                    <code>Start Jules Apps.bat</code> in your Jules Apps folder.</p>
+                <div class="backup-row"><button class="btn-ghost" onclick="location.href = 'http://localhost:4747/'">Open Jules Apps</button></div>`);
+        }
+
+        function renderWelcome() {
+            const old = document.getElementById('hubWelcome');
+            if (old) old.remove();
+            if (!HUB || lsGet('hubWelcome', 'done') !== 'show') return;
+            const div = document.createElement('div');
+            div.className = 'container';
+            div.id = 'hubWelcome';
+            div.innerHTML = `
+                <h2>👋 Welcome to Jules Apps</h2>
+                <p class="settings-hint">Boost, SIE Study and Worldbuilder now open together in this one window. Your Worldbuilder world is already here.</p>
+                <p class="settings-hint">Boost and SIE Study keep their data inside the browser, so bring it over once from a backup.
+                    In the old Boost: <b>Settings → Backup → Export Backup</b>. In the old SIE Study Desk: <b>Progress → Download a backup</b>.</p>
+                <div class="backup-row">
+                    <button class="btn-ghost" onclick="document.getElementById('importFile').click()">⬆ Import a Boost backup</button>
+                    <button class="btn-ghost" onclick="openSieProgress()">📚 Restore SIE progress</button>
+                    <button onclick="dismissWelcome()">Done</button>
+                </div>`;
+            const home = document.getElementById('page-home');
+            home.insertBefore(div, home.firstElementChild);
+        }
+        function showWelcome() { lsSet('hubWelcome', 'show'); renderWelcome(); showPage('home'); }
+        function dismissWelcome() { lsSet('hubWelcome', 'done'); renderWelcome(); }
+        function openSieProgress() { setAppRoute('sie', '#/progress'); showPage('sie'); }
+
+        // ===================== INIT =====================
+        window.onload = function() {
+            const firstRun = lsGet('boostLinks', null) === null;
+            migrate();
+            applyTheme();
+            setupSearch();
+            setupEditor();
+            setupLinkForm();
+            setupApps(firstRun);
+            renderAll();
+            setNavPinned(!!lsGet('boostNavPinned', true));
+            const side = !!lsGet('boostSideBySide', false);
+            document.getElementById('sideBySide').checked = side;
+            document.getElementById('workspace').classList.toggle('side-by-side', side);
+            openFromHash();
+            window.addEventListener('hashchange', openFromHash);
+            tickClock();
+            setInterval(tickClock, 1000 * 15);
+            setupTimerLengths();
+            setTimerMode('focus');
+            setupScratchpad();
+            migrateChecklists();
+            setupStepDraft();
+            setupReminderDrop();
+            loadReminders();
+            loadJobs();
+        };
+
+        // The old Daily/Permanent checklists become reminders with a checklist, so nothing is lost
+        function migrateChecklists() {
+            const reminders = lsGet('reminders', []) || [];
+            let changed = false;
+            [['daily', 'Daily Checklist'], ['permanent', 'Permanent Checklist']].forEach(([type, title], n) => {
+                const items = lsGet(`${type}Checklist`, null);
+                if (!Array.isArray(items)) return;
+                if (items.length) {
+                    reminders.push({
+                        title, description: '', priority: 'low', dueDate: '',
+                        timestamp: new Date().toLocaleString(), id: Date.now() + n,
+                        steps: items.map((it, i) => ({ text: it.text, completed: !!it.completed, id: Date.now() + n * 1000 + i }))
+                    });
+                    changed = true;
+                }
+                try { localStorage.removeItem(`${type}Checklist`); } catch (e) {}
+            });
+            if (changed) lsSet('reminders', reminders);
+        }
+
+        // ===================== JOB APPLICATIONS =====================
+        const JOB_STATUS = { wishlist: 'Wishlist', applied: 'Applied', interviewing: 'Interviewing', offer: 'Offer', rejected: 'Rejected' };
+        let jobFilter = 'all';
+
+        function getJobs() { return lsGet('boostJobApps', []) || []; }
+        function saveJobs(jobs) { lsSet('boostJobApps', jobs); }
+
+        document.getElementById('jobForm').onsubmit = function(e) {
+            e.preventDefault();
+            saveJob();
+        };
+
+        function saveJob() {
+            const form = document.getElementById('jobForm');
+            const link = document.getElementById('jobLink').value.trim();
+            const data = {
+                company: document.getElementById('jobCompany').value.trim(),
+                position: document.getElementById('jobPosition').value.trim(),
+                status: document.getElementById('jobStatus').value,
+                dateApplied: document.getElementById('jobDate').value,
+                link: link ? normalizeUrl(link) : '',
+                notes: document.getElementById('jobNotes').value.trim()
+            };
+            let jobs = getJobs();
+            if (form.hasAttribute('data-editing-id')) {
+                const editingId = parseInt(form.getAttribute('data-editing-id'));
+                jobs = jobs.map(j => j.id === editingId ? { ...j, ...data } : j);
+            } else {
+                jobs.unshift({ ...data, id: Date.now() });
+            }
+            saveJobs(jobs);
+            clearJobForm();
+            loadJobs();
+        }
+
+        function clearJobForm() {
+            const form = document.getElementById('jobForm');
+            form.reset();
+            form.removeAttribute('data-editing-id');
+            document.getElementById('jobSubmit').textContent = 'Add Application';
+        }
+
+        function loadJobs() {
+            const jobs = getJobs();
+            const counts = { all: jobs.length };
+            Object.keys(JOB_STATUS).forEach(s => counts[s] = jobs.filter(j => j.status === s).length);
+            document.getElementById('jobFilters').innerHTML = ['all', ...Object.keys(JOB_STATUS)].map(s => `
+                <button class="btn-ghost ${jobFilter === s ? 'on' : ''}" onclick="setJobFilter('${s}')">
+                    ${s === 'all' ? 'All' : JOB_STATUS[s]} (${counts[s]})
+                </button>`).join('');
+
+            const shown = jobFilter === 'all' ? jobs : jobs.filter(j => j.status === jobFilter);
+            const list = document.getElementById('jobList');
+            if (!shown.length) {
+                list.innerHTML = `<p>${jobs.length ? 'None with this status.' : 'No applications yet — add your first one above.'}</p>`;
+                return;
+            }
+            list.innerHTML = shown.map(j => {
+                const options = Object.entries(JOB_STATUS).map(([v, label]) =>
+                    `<option value="${v}" ${j.status === v ? 'selected' : ''}>${label}</option>`).join('');
+                return `
+                <div class="job-item ${esc(j.status)}">
+                    <div class="job-head">
+                        <h4>${esc(j.company)} <span class="position">— ${esc(j.position)}</span></h4>
+                        <select class="status-select" onchange="setJobStatus(${j.id}, this.value)">${options}</select>
+                    </div>
+                    <p><strong>Date Applied:</strong> ${esc(j.dateApplied) || 'Not set'}</p>
+                    ${isWeb(j.link) ? `<p><strong>Posting:</strong> <a href="${esc(j.link)}" target="_blank" rel="noopener">${esc(j.link)}</a></p>` : ''}
+                    ${j.notes ? `<p><strong>Notes:</strong> ${esc(j.notes)}</p>` : ''}
+                    <button class="edit-btn small-btn" onclick="editJob(${j.id})">Edit</button>
+                    <button class="delete-btn small-btn" onclick="deleteJob(${j.id})">Delete</button>
+                </div>`;
+            }).join('');
+        }
+
+        function setJobFilter(status) {
+            jobFilter = status;
+            loadJobs();
+        }
+
+        function setJobStatus(id, status) {
+            saveJobs(getJobs().map(j => j.id === id ? { ...j, status } : j));
+            loadJobs();
+        }
+
+        function editJob(id) {
+            const j = getJobs().find(x => x.id === id);
+            if (!j) return;
+            document.getElementById('jobCompany').value = j.company;
+            document.getElementById('jobPosition').value = j.position;
+            document.getElementById('jobStatus').value = j.status;
+            document.getElementById('jobDate').value = j.dateApplied || '';
+            document.getElementById('jobLink').value = j.link || '';
+            document.getElementById('jobNotes').value = j.notes || '';
+            const form = document.getElementById('jobForm');
+            form.setAttribute('data-editing-id', id);
+            document.getElementById('jobSubmit').textContent = 'Update Application';
+            form.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function deleteJob(id) {
+            const j = getJobs().find(x => x.id === id);
+            if (!j || !confirm(`Delete the ${j.company} application?`)) return;
+            saveJobs(getJobs().filter(x => x.id !== id));
+            loadJobs();
+        }
+
+        // ===================== REMINDERS =====================
+        document.getElementById('reminderForm').onsubmit = function(e) {
+            e.preventDefault();
+            saveReminder();
+        };
+
+        function getReminders() { return lsGet('reminders', []) || []; }
+        function saveReminders(reminders) { lsSet('reminders', reminders); }
+
+        // Checklist steps being built in the form (added only while creating or editing a reminder)
+        let draftSteps = [];
+
+        function setupStepDraft() {
+            document.getElementById('stepInput').addEventListener('keydown', e => {
+                if (e.key === 'Enter') { e.preventDefault(); addDraftStep(); }
+            });
+            renderDraftSteps();
+        }
+
+        function addDraftStep() {
+            const input = document.getElementById('stepInput');
+            const text = input.value.trim();
+            if (!text) return;
+            draftSteps.push({ text, completed: false, id: Date.now() + draftSteps.length });
+            input.value = '';
+            input.focus();
+            renderDraftSteps();
+        }
+
+        function removeDraftStep(id) {
+            draftSteps = draftSteps.filter(s => s.id !== id);
+            renderDraftSteps();
+        }
+
+        function renderDraftSteps() {
+            document.getElementById('stepDraft').innerHTML = draftSteps.map(s => `
+                <div class="step-item">
+                    <span>☐ ${esc(s.text)}</span>
+                    <button type="button" class="step-del" title="Remove step" onclick="removeDraftStep(${s.id})">✕</button>
+                </div>`).join('');
+        }
+
+        function saveReminder() {
+            // a step typed but not added yet still counts
+            if (document.getElementById('stepInput').value.trim()) addDraftStep();
+            const reminderData = {
+                title: document.getElementById('title').value,
+                description: document.getElementById('description').value,
+                priority: document.getElementById('priority').value,
+                dueDate: document.getElementById('dueDate').value,
+                steps: draftSteps
+            };
+
+            let reminders = getReminders();
+            const form = document.getElementById('reminderForm');
+            if (form.hasAttribute('data-editing-id')) {
+                const editingId = parseInt(form.getAttribute('data-editing-id'));
+                // keep the original id and timestamp so the reminder stays in its place
+                reminders = reminders.map(r => r.id === editingId ? { ...r, ...reminderData } : r);
+            } else {
+                reminders.push({ ...reminderData, timestamp: new Date().toLocaleString(), id: Date.now() });
+            }
+            saveReminders(reminders);
+
+            clearReminderForm();
+            loadReminders();
+        }
+
+        function clearReminderForm() {
+            const form = document.getElementById('reminderForm');
+            form.reset();
+            form.removeAttribute('data-editing-id');
+            document.getElementById('reminderSubmit').textContent = 'Add Reminder';
+            draftSteps = [];
+            renderDraftSteps();
+        }
+
+        function loadReminders() {
+            const reminders = getReminders();
+            const container = document.getElementById('reminders');
+
+            if (reminders.length === 0) {
+                container.innerHTML = '<p>No reminders yet.</p>';
+                return;
+            }
+
+            container.innerHTML = '';
+            reminders.forEach(reminder => {
+                const steps = reminder.steps || [];
+                const done = steps.filter(s => s.completed).length;
+                const reminderDiv = document.createElement('div');
+                reminderDiv.className = `reminder-item ${esc(reminder.priority)}`;
+                reminderDiv.dataset.id = reminder.id;
+                reminderDiv.innerHTML = `
+                    <div class="reminder-head">
+                        <span class="drag-handle" title="Drag to move">⋮⋮</span>
+                        <h4>${esc(reminder.title)} <span class="priority-badge ${esc(reminder.priority)}">${esc(reminder.priority.toUpperCase())}</span></h4>
+                        ${steps.length ? `<span class="step-progress">${done}/${steps.length} done</span>` : ''}
+                    </div>
+                    <p><strong>Description:</strong> ${esc(reminder.description) || 'No description'}</p>
+                    <p><strong>Due Date:</strong> ${esc(reminder.dueDate) || 'No due date'}</p>
+                    <p><strong>Added:</strong> ${esc(reminder.timestamp)}</p>
+                    ${steps.length ? `<div class="steps">${steps.map(s => `
+                        <label class="step-item ${s.completed ? 'completed' : ''}">
+                            <input type="checkbox" ${s.completed ? 'checked' : ''} onchange="toggleStep(${reminder.id}, ${s.id})">
+                            <span>${esc(s.text)}</span>
+                        </label>`).join('')}</div>` : ''}
+                    <button class="edit-btn" onclick="editReminder(${reminder.id})">Edit</button>
+                    <button class="delete-btn" onclick="deleteReminder(${reminder.id})">Delete</button>
+                `;
+                setupReminderDrag(reminderDiv);
+                container.appendChild(reminderDiv);
+            });
+        }
+
+        function toggleStep(reminderId, stepId) {
+            saveReminders(getReminders().map(r => r.id !== reminderId ? r : {
+                ...r, steps: (r.steps || []).map(s => s.id === stepId ? { ...s, completed: !s.completed } : s)
+            }));
+            loadReminders();
+        }
+
+        // Drag and drop: only the ⋮⋮ handle starts a drag, so ticking steps and selecting text still work
+        let draggedReminder = null;
+
+        function setupReminderDrag(card) {
+            const handle = card.querySelector('.drag-handle');
+            handle.addEventListener('mousedown', () => card.draggable = true);
+            handle.addEventListener('mouseup', () => card.draggable = false);
+
+            card.addEventListener('dragstart', e => {
+                draggedReminder = card;
+                e.dataTransfer.effectAllowed = 'move';
+                try { e.dataTransfer.setData('text/plain', card.dataset.id); } catch (err) {}
+                requestAnimationFrame(() => card.classList.add('dragging'));
+            });
+
+            card.addEventListener('dragend', () => {
+                card.classList.remove('dragging');
+                card.draggable = false;
+                draggedReminder = null;
+                const order = [...document.querySelectorAll('#reminders .reminder-item')].map(el => Number(el.dataset.id));
+                saveReminders(getReminders().sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id)));
+            });
+        }
+
+        // The list works out the drop spot from the pointer, so gaps between cards count too
+        function setupReminderDrop() {
+            const list = document.getElementById('reminders');
+            list.addEventListener('dragover', e => {
+                if (!draggedReminder) return;
+                e.preventDefault();
+                e.dataTransfer.dropEffect = 'move';
+                const before = [...list.querySelectorAll('.reminder-item:not(.dragging)')]
+                    .find(c => { const r = c.getBoundingClientRect(); return e.clientY < r.top + r.height / 2; });
+                if (before) {
+                    if (before !== draggedReminder && before.previousElementSibling !== draggedReminder) list.insertBefore(draggedReminder, before);
+                } else if (list.lastElementChild !== draggedReminder) {
+                    list.appendChild(draggedReminder);
+                }
+            });
+            list.addEventListener('drop', e => { if (draggedReminder) e.preventDefault(); });
+        }
+
+        function sortRemindersByPriority() {
+            const priorityOrder = { high: 3, medium: 2, low: 1 };
+            saveReminders(getReminders().sort((a, b) => {
+                if (priorityOrder[a.priority] !== priorityOrder[b.priority]) {
+                    return priorityOrder[b.priority] - priorityOrder[a.priority];
+                }
+                return new Date(a.dueDate || '9999-12-31') - new Date(b.dueDate || '9999-12-31');
+            }));
+            loadReminders();
+        }
+
+        function deleteReminder(id) {
+            saveReminders(getReminders().filter(reminder => reminder.id !== id));
+            loadReminders();
+        }
+
+        function editReminder(id) {
+            const reminder = getReminders().find(r => r.id === id);
+            if (!reminder) return;
+
+            document.getElementById('title').value = reminder.title;
+            document.getElementById('description').value = reminder.description || '';
+            document.getElementById('dueDate').value = reminder.dueDate || '';
+            document.getElementById('priority').value = reminder.priority || 'medium';
+            draftSteps = (reminder.steps || []).map(s => ({ ...s }));
+            renderDraftSteps();
+
+            const form = document.getElementById('reminderForm');
+            form.setAttribute('data-editing-id', id);
+            document.getElementById('reminderSubmit').textContent = 'Update Reminder';
+            form.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function clearAllReminders() {
+            if (confirm('Are you sure you want to delete all reminders?')) {
+                localStorage.removeItem('reminders');
+                loadReminders();
+            }
+        }
+    </script>
+</body>
+</html>
