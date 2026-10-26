@@ -615,8 +615,16 @@
                         <input type="text" id="jobCompany" required>
                     </div>
                     <div class="form-group">
-                        <label for="jobPosition">Position:</label>
-                        <input type="text" id="jobPosition" required>
+                        <label for="jobDate">Date Applied:</label>
+                        <input type="date" id="jobDate" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="jobPosition">Jobs at this company (optional):</label>
+                    <div id="jobDraft"></div>
+                    <div class="add-step">
+                        <input type="text" id="jobPosition" placeholder="Add a job title… (Enter to add)">
+                        <button type="button" class="btn-ghost small-btn" onclick="addDraftJob()">+ Add Job</button>
                     </div>
                 </div>
                 <div class="form-row">
@@ -629,10 +637,6 @@
                             <option value="offer">Offer</option>
                             <option value="rejected">Rejected</option>
                         </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="jobDate">Date Applied:</label>
-                        <input type="date" id="jobDate">
                     </div>
                     <div class="form-group">
                         <label for="jobLink">Job Posting Link:</label>
@@ -2517,12 +2521,48 @@
             saveJob();
         };
 
+        // An application is to a company; the jobs applied for there are an optional list.
+        // Older applications kept a single 'position' string.
+        function jobPositions(j) { return Array.isArray(j.positions) ? j.positions : (j.position ? [j.position] : []); }
+
+        // Job titles being built in the form, like a reminder's checklist
+        let draftJobs = [];
+
+        function addDraftJob() {
+            const input = document.getElementById('jobPosition');
+            const text = input.value.trim();
+            if (!text) return;
+            draftJobs.push(text);
+            input.value = '';
+            input.focus();
+            renderDraftJobs();
+        }
+
+        function removeDraftJob(i) {
+            draftJobs.splice(i, 1);
+            renderDraftJobs();
+        }
+
+        function renderDraftJobs() {
+            document.getElementById('jobDraft').innerHTML = draftJobs.map((t, i) => `
+                <div class="step-item">
+                    <span>${esc(t)}</span>
+                    <button type="button" class="step-del" title="Remove job" onclick="removeDraftJob(${i})">✕</button>
+                </div>`).join('');
+        }
+
+        document.getElementById('jobPosition').addEventListener('keydown', e => {
+            if (e.key === 'Enter') { e.preventDefault(); addDraftJob(); }
+        });
+
         function saveJob() {
             const form = document.getElementById('jobForm');
             const link = document.getElementById('jobLink').value.trim();
+            // a job title typed but not added yet still counts
+            if (document.getElementById('jobPosition').value.trim()) addDraftJob();
             const data = {
                 company: document.getElementById('jobCompany').value.trim(),
-                position: document.getElementById('jobPosition').value.trim(),
+                positions: draftJobs.slice(),
                 status: document.getElementById('jobStatus').value,
                 dateApplied: document.getElementById('jobDate').value,
                 link: link ? normalizeUrl(link) : '',
@@ -2531,7 +2571,11 @@
             let jobs = getJobs();
             if (form.hasAttribute('data-editing-id')) {
                 const editingId = parseInt(form.getAttribute('data-editing-id'));
-                jobs = jobs.map(j => j.id === editingId ? { ...j, ...data } : j);
+                jobs = jobs.map(j => {
+                    if (j.id !== editingId) return j;
+                    const { position, ...rest } = j;   // replaced by the positions list
+                    return { ...rest, ...data };
+                });
             } else {
                 jobs.unshift({ ...data, id: Date.now() });
             }
@@ -2545,6 +2589,8 @@
             form.reset();
             form.removeAttribute('data-editing-id');
             document.getElementById('jobSubmit').textContent = 'Add Application';
+            draftJobs = [];
+            renderDraftJobs();
         }
 
         function loadJobs() {
@@ -2568,7 +2614,7 @@
                 return `
                 <div class="job-item ${esc(j.status)}">
                     <div class="job-head">
-                        <h4>${esc(j.company)} <span class="position">— ${esc(j.position)}</span></h4>
+                        <h4>${esc(j.company)}${jobPositions(j).length ? ` <span class="position">— ${jobPositions(j).map(esc).join(', ')}</span>` : ''}</h4>
                         <select class="status-select" onchange="setJobStatus(${j.id}, this.value)">${options}</select>
                     </div>
                     <p><strong>Date Applied:</strong> ${esc(j.dateApplied) || 'Not set'}</p>
@@ -2594,7 +2640,9 @@
             const j = getJobs().find(x => x.id === id);
             if (!j) return;
             document.getElementById('jobCompany').value = j.company;
-            document.getElementById('jobPosition').value = j.position;
+            document.getElementById('jobPosition').value = '';
+            draftJobs = jobPositions(j).slice();
+            renderDraftJobs();
             document.getElementById('jobStatus').value = j.status;
             document.getElementById('jobDate').value = j.dateApplied || '';
             document.getElementById('jobLink').value = j.link || '';
